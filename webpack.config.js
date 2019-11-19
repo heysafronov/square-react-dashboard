@@ -17,6 +17,7 @@ module.exports = {
       actions: path.resolve(__dirname, 'src/store/actions/'),
       constants: path.resolve(__dirname, 'src/store/constants/'),
       reducers: path.resolve(__dirname, 'src/store/reducers/'),
+      types: path.resolve(__dirname, 'src/store/types/'),
       utils: path.resolve(__dirname, 'src/utils/')
     }
   },

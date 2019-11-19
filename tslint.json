@@ -74,7 +74,6 @@
     "align": [true],
     "class-name": true,
     "comment-format": [true, "check-space"],
-    "interface-name": [true, "always-prefix"],
     "jsdoc-format": true,
     "no-consecutive-blank-lines": [true],
     "no-parameter-properties": false,

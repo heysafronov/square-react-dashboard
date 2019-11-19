@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { AddOne } from 'actions'
+import { AddOne } from 'actions/counter'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
+import AppState from 'reducers'
 
 const Title = styled.button`
   background-color: pink;
@@ -18,7 +19,7 @@ const Main = props => {
   )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: AppState) => {
   return {
     add: state.addOneStore.addOne
   }
