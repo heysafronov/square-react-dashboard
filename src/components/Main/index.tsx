@@ -10,7 +10,13 @@ const Title = styled.button`
   font-size: 20px;
 `
 
-const Main = props => {
+interface MainProps {
+  AddOne: typeof AddOne
+  add: number
+}
+
+const Main: React.FC<MainProps> = props => {
+  console.log(props)
   return (
     <>
       <Title onClick={props.AddOne}>Больше на 1</Title>
