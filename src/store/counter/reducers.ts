@@ -1,7 +1,7 @@
-import { ADD_ONE, CounterState, AddOneMoreTypes } from 'types/counter'
+import { ADD_ONE, CounterState, AddOneMoreTypes } from 'store/counter/types'
 
 const initialState: CounterState = {
-  addOne: null
+  addOne: 1
 }
 
 export function addOneReducer(

@@ -1,4 +1,4 @@
-import { ADD_ONE, AddOneMoreTypes } from 'types/counter'
+import { ADD_ONE, AddOneMoreTypes } from 'store/counter/types'
 
 export const AddOne = (context: object): AddOneMoreTypes => {
   return {

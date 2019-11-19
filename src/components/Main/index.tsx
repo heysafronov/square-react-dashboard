@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { AddOne } from 'actions/counter'
+import { AddOne } from 'store/counter/actions'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-import AppState from 'reducers'
+import { AppState } from 'store'
 
 const Title = styled.button`
   background-color: pink;
