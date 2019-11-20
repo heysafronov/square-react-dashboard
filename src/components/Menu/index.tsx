@@ -16,6 +16,7 @@ const Menu = () => {
         <Link to='/about/'>About</Link>
         <Link to='/users/'>Users</Link>
         <Link to='/users/1'>Users #1</Link>
+        <Link to='/login'>Login</Link>
       </Links>
     </>
   )
