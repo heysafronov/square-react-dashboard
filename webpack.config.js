@@ -15,7 +15,7 @@ module.exports = {
       components: path.resolve(__dirname, 'src/components/'),
       store: path.resolve(__dirname, 'src/store/'),
       utils: path.resolve(__dirname, 'src/utils/'),
-      assets: path.resolve(__dirname, 'src/assets/'),
+      assets: path.resolve(__dirname, 'src/assets/')
     }
   },
   module: {
@@ -25,7 +25,14 @@ module.exports = {
         exclude: /node_modules/,
         use: [{ loader: 'babel-loader' }]
       },
-      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader']
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: ['file-loader']
+      }
     ]
   },
   devServer: {

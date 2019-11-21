@@ -4,8 +4,9 @@ import Menu from 'components/Menu'
 import Users from 'components/Users'
 import About from 'components/About'
 import Login from 'components/Login'
-import PrivateRoute from 'components/Common/PrivateRoute'
+import PrivateRoute from 'components/common/PrivateRoute'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+import GlobalStyleComponent from 'components/common/GlobalStyle'
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           </Route>
         </Switch>
       </Router>
+      <GlobalStyleComponent />
     </>
   )
 }

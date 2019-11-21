@@ -7,6 +7,13 @@ module.exports = function(api) {
     '@babel/preset-react'
   ]
   const plugins = [
+    [
+      'babel-plugin-styled-components',
+      {
+        displayName: true,
+        fileName: true
+      }
+    ],
     '@babel/proposal-class-properties',
     '@babel/proposal-object-rest-spread'
   ]
