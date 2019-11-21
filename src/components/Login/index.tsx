@@ -1,15 +1,22 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import Form from 'components/Login/Form'
 import Logo from 'components/common/Logo'
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+  background-color: #0062ff;
+}
+`
 
 const LoginSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #0062ff;
 `
+
 const logoProps = {
   title: {
     size: 25,
@@ -24,11 +31,14 @@ const logoProps = {
 
 const Login = () => {
   return (
-    <LoginSection>
-      <Logo {...logoProps} />
-      <span>Form</span>
-      <span>Terms text</span>
-    </LoginSection>
+    <>
+      <GlobalStyle />
+      <LoginSection>
+        <Logo {...logoProps} />
+        <Form />
+        <span>Terms text</span>
+      </LoginSection>
+    </>
   )
 }
 
