@@ -12,7 +12,7 @@ const LoginSection = styled.section`
 `
 const logoProps = {
   title: {
-    size: 50,
+    size: 25,
     color: 'white',
     text: 'Square'
   },

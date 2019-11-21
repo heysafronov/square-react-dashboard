@@ -16,6 +16,9 @@ const GlobalStyle = createGlobalStyle`
   font-weight: 600;
   font-style: normal;
 }
+  body {
+  font-family: Poppins;
+}
 `
 
 const GlobalStyleComponent = () => {
