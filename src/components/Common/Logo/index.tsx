@@ -6,7 +6,7 @@ import LogoTitle from 'components/Common/Logo/LogoTitle'
 const LogoSection = styled.section`
   display: flex;
   align-items: center;
-  width: 145px;
+  width: 148px;
   justify-content: space-between;
 `
 

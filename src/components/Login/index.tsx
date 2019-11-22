@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const LoginSection = styled.section`
+  height: 98vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,7 +20,7 @@ const LoginSection = styled.section`
 
 const logoProps = {
   title: {
-    size: 25,
+    size: 26,
     color: 'white',
     text: 'Square'
   },

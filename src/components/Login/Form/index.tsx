@@ -10,7 +10,7 @@ const FormSection = styled.section`
   height: 365px;
   background-color: white;
   border-radius: 20px;
-  margin: 40px 10px 25px 10px;
+  margin: 35px 10px 25px 10px;
 `
 
 const Form = () => {
