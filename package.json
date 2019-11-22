@@ -1,7 +1,7 @@
 {
   "name": "square-dashboard",
   "version": "1.0.0",
-  "description": "React web application: Square dashboard",
+  "description": "Square Dashboard: React Web Application",
   "author": "Egor Safronov",
   "license": "MIT",
   "main": "index.tsx",

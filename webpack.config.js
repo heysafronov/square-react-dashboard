@@ -26,7 +26,7 @@ module.exports = {
         use: [{ loader: 'babel-loader' }]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|ico)$/,
         use: ['file-loader']
       },
       {
@@ -43,7 +43,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      favicon:  './src/assets/images/favicon.png',
     })
   ]
 }

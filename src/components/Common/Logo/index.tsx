@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import LogoImage from 'components/common/Logo/LogoImage'
-import LogoTitle from 'components/common/Logo/LogoTitle'
+import LogoImage from 'components/Common/Logo/LogoImage'
+import LogoTitle from 'components/Common/Logo/LogoTitle'
 
 const LogoSection = styled.section`
   display: flex;

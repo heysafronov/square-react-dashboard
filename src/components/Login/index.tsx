@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Form from 'components/Login/Form'
-import Logo from 'components/common/Logo'
+import Logo from 'components/Common/Logo'
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
