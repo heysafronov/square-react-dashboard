@@ -1,9 +1,8 @@
-import * as React from 'react'
 import { createGlobalStyle } from 'styled-components'
 import Roboto from 'assets/fonts/Roboto/Roboto-Regular.woff'
 import Poppins from 'assets/fonts/Poppins/Poppins-Regular.woff'
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   @font-face {
   font-family: 'Poppins';
   src: url('${Poppins}') format('woff');
@@ -20,9 +19,3 @@ const GlobalStyle = createGlobalStyle`
   font-family: Poppins;
 }
 `
-
-const GlobalStyleComponent = () => {
-  return <GlobalStyle />
-}
-
-export default GlobalStyleComponent
