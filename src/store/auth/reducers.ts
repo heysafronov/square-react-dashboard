@@ -15,9 +15,9 @@ export function authReducer(
       return Object.assign(
         {},
         {
-          isAuth: !state.isAuth,
-          login: state.login,
-          password: state.password
+          isAuth: true,
+          login: action.payload.login,
+          password: action.payload.password
         }
       )
     default:

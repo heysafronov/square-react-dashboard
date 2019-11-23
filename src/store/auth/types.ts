@@ -8,5 +8,8 @@ export interface IAuthState {
 
 export interface IAuthCheckAction {
   type: typeof AUTH
-  payload: object
+  payload: {
+    login: string
+    password: string
+  }
 }
