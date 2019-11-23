@@ -1,5 +1,7 @@
 import * as React from 'react'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
+import { checkAuth } from 'store/auth/actions'
 
 const FormSection = styled.section`
   display: flex;
@@ -14,13 +16,18 @@ const FormSection = styled.section`
   margin: 35px 10px 25px 10px;
 `
 
-const Form = () => {
+interface IFormProps {
+  checkAuth: typeof checkAuth
+}
+
+const Form: React.FC<IFormProps> = props => {
   const [login, setLogin] = React.useState('')
   const [password, setPassword] = React.useState('')
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
-    console.log({
+
+    props.checkAuth({
       login: login,
       password: password
     })
@@ -58,4 +65,11 @@ const Form = () => {
   )
 }
 
-export default Form
+const mapDispatchToProps = {
+  checkAuth
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Form)

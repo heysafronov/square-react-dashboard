@@ -16,7 +16,6 @@ interface MainProps {
 }
 
 const Main: React.FC<MainProps> = props => {
-  console.log(props)
   return (
     <>
       <Title onClick={props.AddOne}>Больше на 1</Title>

@@ -8,7 +8,10 @@ export function addOneReducer(
   state = initialState,
   action: AddOneMoreTypes
 ): CounterState {
-  if (action.type === ADD_ONE) {
-    return { addOne: state.addOne + 1 }
-  } else return state
+  switch (action.type) {
+    case ADD_ONE:
+      return { addOne: state.addOne + 1 }
+    default:
+      return state
+  }
 }

@@ -18,6 +18,7 @@
     "no-inferrable-types": [false],
     "no-internal-module": true,
     "no-var-requires": false,
+    "interface-name" : [true, "always-prefix"],
     "typedef-whitespace": [
       true,
       {
