@@ -23,7 +23,7 @@ interface IFormProps {
 const Form: React.FC<IFormProps> = props => {
   const [login, setLogin] = React.useState('')
   const [password, setPassword] = React.useState('')
-  const [error, setError] = React.useState({ login: 'no', password: 'no' })
+  const [error, setError] = React.useState({ login: '', password: '' })
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
@@ -33,34 +33,28 @@ const Form: React.FC<IFormProps> = props => {
     })
   }
 
-  const handleLogin = (e: any) => {
+  const handleChange = (e: any) => {
+    const { name, value } = e.target.name
     if (e.target.value !== 'admin') {
-      setError(prevState => ({
-        ...prevState,
-        login: 'Login error'
-      }))
+      switch (name) {
+        case 'login':
+          setError(prevState => ({
+            ...prevState,
+            login: 'Login error'
+          }))
+          break
+        case 'password':
+          setError(prevState => ({
+            ...prevState,
+            password: 'Login error'
+          }))
+          break
+        default:
+          break
+      }
     } else {
-      setError(prevState => ({
-        ...prevState,
-        login: ''
-      }))
+      value === 'login' ? setLogin(e.target.value) : setPassword(e.target.value)
     }
-    setLogin(e.target.value)
-  }
-
-  const handlePassword = (e: any) => {
-    if (e.target.value !== 'admin') {
-      setError(prevState => ({
-        ...prevState,
-        password: 'Password error'
-      }))
-    } else {
-      setError(prevState => ({
-        ...prevState,
-        password: ''
-      }))
-    }
-    setPassword(e.target.value)
   }
 
   return (
@@ -71,7 +65,7 @@ const Form: React.FC<IFormProps> = props => {
           type='text'
           placeholder='Your login'
           name='login'
-          onChange={handleLogin}
+          onChange={handleChange}
           value={login}
         />
         <span>{error.login}</span>
@@ -79,7 +73,7 @@ const Form: React.FC<IFormProps> = props => {
           type='password'
           placeholder='Your password'
           name='password'
-          onChange={handlePassword}
+          onChange={handleChange}
           value={password}
         />
         <span>{error.password}</span>
