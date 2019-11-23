@@ -22,7 +22,7 @@ const InputWrapper = styled.div`
 const InputLabel = styled.label`
   position: absolute;
   top: 0;
-  padding: 0 0 3px 20px;
+  padding: 0 0 1px 20px;
   transition: all 200ms;
   opacity: 0.5;
   color: #92929d;
