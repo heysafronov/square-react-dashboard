@@ -23,6 +23,7 @@ interface IFormProps {
 const Form: React.FC<IFormProps> = props => {
   const [login, setLogin] = React.useState('')
   const [password, setPassword] = React.useState('')
+  const [error, setError] = React.useState({ login: 'no', password: 'no' })
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
@@ -33,10 +34,32 @@ const Form: React.FC<IFormProps> = props => {
   }
 
   const handleLogin = (e: any) => {
+    if (e.target.value !== 'admin') {
+      setError(prevState => ({
+        ...prevState,
+        login: 'Login error'
+      }))
+    } else {
+      setError(prevState => ({
+        ...prevState,
+        login: ''
+      }))
+    }
     setLogin(e.target.value)
   }
 
   const handlePassword = (e: any) => {
+    if (e.target.value !== 'admin') {
+      setError(prevState => ({
+        ...prevState,
+        password: 'Password error'
+      }))
+    } else {
+      setError(prevState => ({
+        ...prevState,
+        password: ''
+      }))
+    }
     setPassword(e.target.value)
   }
 
@@ -47,10 +70,11 @@ const Form: React.FC<IFormProps> = props => {
         <input
           type='text'
           placeholder='Your login'
-          name='name'
+          name='login'
           onChange={handleLogin}
           value={login}
         />
+        <span>{error.login}</span>
         <input
           type='password'
           placeholder='Your password'
@@ -58,6 +82,7 @@ const Form: React.FC<IFormProps> = props => {
           onChange={handlePassword}
           value={password}
         />
+        <span>{error.password}</span>
         <input type='submit' value='Sign in' />
       </form>
     </FormSection>
