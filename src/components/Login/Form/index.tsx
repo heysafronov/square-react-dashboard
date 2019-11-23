@@ -54,10 +54,15 @@ const Form: React.FC<IFormProps> = props => {
           break
       }
     } else {
-      setError({
-        login: '',
-        password: ''
-      })
+      name === 'login'
+        ? setError(prevState => ({
+            ...prevState,
+            login: ''
+          }))
+        : setError(prevState => ({
+            ...prevState,
+            password: ''
+          }))
     }
     name === 'login'
       ? setUser(prevState => ({
