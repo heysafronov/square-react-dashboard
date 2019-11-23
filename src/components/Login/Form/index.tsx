@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import FormSocial from 'components/Login/Social'
+import FormSocial from 'components/Login/LoginSocial'
 import FormMain from 'components/Login/Form/FormMain'
 
 const FormSection = styled.section`

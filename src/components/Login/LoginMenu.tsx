@@ -15,7 +15,7 @@ const MenuWrapper = styled.div`
   }
 `
 
-const Menu = () => {
+const LoginMenu = () => {
   return (
     <MenuWrapper>
       <Link to='#'>Privacy policy</Link> • <Link to='#'>Terms of use</Link>
@@ -23,4 +23,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
+export default LoginMenu
