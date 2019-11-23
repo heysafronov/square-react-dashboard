@@ -23,7 +23,7 @@ const ButtonGoogle = styled.button`
   border: none;
   background: #fc5a5a;
   border-radius: 10px;
-  cursor: pointer;
+  cursor: not-allowed;
   :focus {
     outline: none;
   }
@@ -42,8 +42,8 @@ const ButtonFacebook = styled.button`
   border: none;
   background: #50b5ff;
   border-radius: 10px;
-  cursor: pointer;
   margin-top: 10px;
+  cursor: not-allowed;
   :focus {
     outline: none;
   }
