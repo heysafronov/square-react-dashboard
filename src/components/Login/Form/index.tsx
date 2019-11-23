@@ -26,10 +26,12 @@ const Form: React.FC<IFormProps> = props => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
-    props.checkAuth({
-      login: user.login,
-      password: user.password
-    })
+    if (!error.login && !error.password) {
+      props.checkAuth({
+        login: user.login,
+        password: user.password
+      })
+    }
   }
 
   const handleChange = (e: any) => {
