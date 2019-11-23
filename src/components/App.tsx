@@ -21,9 +21,12 @@ const App = () => {
             <Menu />
             <About />
           </Route>
-          <PrivateRoute path='/users'>
+          <Route path='/users'>
             <Menu />
             <Users />
+          </Route>
+          <PrivateRoute path='/dont'>
+            <Menu />
           </PrivateRoute>
           <Route path='/login'>
             <Menu />
