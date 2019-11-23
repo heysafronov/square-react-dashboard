@@ -9,7 +9,6 @@ const GlobalStyle = createGlobalStyle`
   background-color: #0062ff;
 }
 `
-
 const LoginSection = styled.section`
   height: 98vh;
   display: flex;

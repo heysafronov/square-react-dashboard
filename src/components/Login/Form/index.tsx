@@ -15,12 +15,44 @@ const FormSection = styled.section`
 `
 
 const Form = () => {
+  const [login, setLogin] = React.useState('')
+  const [password, setPassword] = React.useState('')
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault()
+    console.log({
+      login: login,
+      password: password
+    })
+  }
+
+  const handleLogin = (e: any) => {
+    setLogin(e.target.value)
+  }
+
+  const handlePassword = (e: any) => {
+    setPassword(e.target.value)
+  }
+
   return (
     <FormSection>
       <h3>Login to your account</h3>
-      <form>
-        <input type='text' name='name' />
-        <input type='password' value='' />
+      <form onSubmit={handleSubmit}>
+        <input
+          type='text'
+          placeholder='Your login'
+          name='name'
+          onChange={handleLogin}
+          value={login}
+        />
+        <input
+          type='password'
+          placeholder='Your password'
+          name='password'
+          onChange={handlePassword}
+          value={password}
+        />
+        <input type='submit' value='Sign in' />
       </form>
     </FormSection>
   )
