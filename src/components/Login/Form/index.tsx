@@ -2,6 +2,7 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { checkAuth } from 'store/auth/actions'
+import FormSocial from 'components/Login/Form/FormSocial'
 
 const FormSection = styled.section`
   display: flex;
@@ -49,7 +50,7 @@ const InputText = styled.input`
     font-size: 75%;
     transform: translate3d(0, -100%, 0);
     opacity: 1;
-    color: #0062ff;
+    color: #fc5a5a;
   }
 `
 const InputSubmit = styled.input`
@@ -167,6 +168,7 @@ const Form: React.FC<IFormProps> = props => {
           disabled={error.login || error.password}
         />
       </form>
+      <FormSocial />
     </FormSection>
   )
 }
