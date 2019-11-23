@@ -54,7 +54,7 @@ const ButtonFacebook = styled.button`
   }
 `
 
-const FormSocial = () => {
+const Social = () => {
   return (
     <FormSocialWrapper>
       <SpanText>or</SpanText>
@@ -70,4 +70,4 @@ const FormSocial = () => {
   )
 }
 
-export default FormSocial
+export default Social
