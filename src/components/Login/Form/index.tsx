@@ -21,21 +21,20 @@ interface IFormProps {
 }
 
 const Form: React.FC<IFormProps> = props => {
-  const [login, setLogin] = React.useState('')
-  const [password, setPassword] = React.useState('')
+  const [user, setUser] = React.useState({ login: '', password: '' })
   const [error, setError] = React.useState({ login: '', password: '' })
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
     props.checkAuth({
-      login: login,
-      password: password
+      login: user.login,
+      password: user.password
     })
   }
 
   const handleChange = (e: any) => {
-    const { name, value } = e.target.name
-    if (e.target.value !== 'admin') {
+    const { name, value } = e.target
+    if (value !== 'admin') {
       switch (name) {
         case 'login':
           setError(prevState => ({
@@ -46,15 +45,27 @@ const Form: React.FC<IFormProps> = props => {
         case 'password':
           setError(prevState => ({
             ...prevState,
-            password: 'Login error'
+            password: 'Password error'
           }))
           break
         default:
           break
       }
     } else {
-      value === 'login' ? setLogin(e.target.value) : setPassword(e.target.value)
+      setError({
+        login: '',
+        password: ''
+      })
     }
+    name === 'login'
+      ? setUser(prevState => ({
+          ...prevState,
+          login: value
+        }))
+      : setUser(prevState => ({
+          ...prevState,
+          password: value
+        }))
   }
 
   return (
@@ -66,7 +77,7 @@ const Form: React.FC<IFormProps> = props => {
           placeholder='Your login'
           name='login'
           onChange={handleChange}
-          value={login}
+          value={user.login}
         />
         <span>{error.login}</span>
         <input
@@ -74,7 +85,7 @@ const Form: React.FC<IFormProps> = props => {
           placeholder='Your password'
           name='password'
           onChange={handleChange}
-          value={password}
+          value={user.password}
         />
         <span>{error.password}</span>
         <input type='submit' value='Sign in' />
