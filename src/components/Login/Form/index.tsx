@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const FormSection = styled.section`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 360px;
@@ -16,7 +17,11 @@ const FormSection = styled.section`
 const Form = () => {
   return (
     <FormSection>
-      <h2>Login to your acount</h2>
+      <h3>Login to your account</h3>
+      <form>
+        <input type='text' name='name' />
+        <input type='password' value='' />
+      </form>
     </FormSection>
   )
 }
