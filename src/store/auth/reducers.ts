@@ -12,11 +12,14 @@ export function authReducer(
 ): IAuthState {
   switch (action.type) {
     case AUTH:
-      return {
-        isAuth: !state.isAuth,
-        login: state.login,
-        password: state.password
-      }
+      return Object.assign(
+        {},
+        {
+          isAuth: !state.isAuth,
+          login: state.login,
+          password: state.password
+        }
+      )
     default:
       return state
   }
