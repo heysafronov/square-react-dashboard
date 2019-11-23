@@ -25,6 +25,7 @@ const InputLabel = styled.label`
   padding: 0 0 3px 20px;
   transition: all 200ms;
   opacity: 0.5;
+  color: #92929d;
 `
 const InputText = styled.input`
   z-index: 1;
@@ -37,6 +38,7 @@ const InputText = styled.input`
   padding: 0 20px;
   margin-bottom: 15px;
   font-size: 12px;
+  color: #92929d;
   :focus {
     outline: none;
     ::placeholder {
@@ -47,6 +49,7 @@ const InputText = styled.input`
     font-size: 75%;
     transform: translate3d(0, -100%, 0);
     opacity: 1;
+    color: #0062ff;
   }
 `
 const InputSubmit = styled.input`
@@ -74,7 +77,10 @@ interface IFormProps {
 
 const Form: React.FC<IFormProps> = props => {
   const [user, setUser] = React.useState({ login: '', password: '' })
-  const [error, setError] = React.useState({ login: '', password: '' })
+  const [error, setError] = React.useState({
+    login: 'Login error',
+    password: 'Password error'
+  })
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
@@ -139,10 +145,10 @@ const Form: React.FC<IFormProps> = props => {
             onChange={handleChange}
             value={user.login}
           />
-          <InputLabel>Your login</InputLabel>
+          <InputLabel>
+            {error.login ? 'Error, your login: admin' : ''}
+          </InputLabel>
         </InputWrapper>
-        <span>{error.login}</span>
-
         <InputWrapper>
           <InputText
             type='password'
@@ -151,11 +157,15 @@ const Form: React.FC<IFormProps> = props => {
             onChange={handleChange}
             value={user.password}
           />
-          <InputLabel>Your password</InputLabel>
+          <InputLabel>
+            {error.password ? 'Error, your password: admin' : ''}
+          </InputLabel>
         </InputWrapper>
-        <span>{error.password}</span>
-
-        <InputSubmit type='submit' value='Sign in' disabled={true} />
+        <InputSubmit
+          type='submit'
+          value='Sign in'
+          disabled={error.login || error.password}
+        />
       </form>
     </FormSection>
   )
