@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import Form from 'components/Login/Form'
 import Logo from 'components/Common/Logo'
+import LoginForm from 'components/Login/LoginForm'
 import LoginMenu from 'components/Login/LoginMenu'
 import { createGlobalStyle } from 'styled-components'
 
@@ -36,7 +36,7 @@ const Login = () => {
       <GlobalStyle />
       <LoginSection>
         <Logo {...logoProps} />
-        <Form />
+        <LoginForm />
         <LoginMenu />
       </LoginSection>
     </>

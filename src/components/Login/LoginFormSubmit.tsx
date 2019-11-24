@@ -64,7 +64,7 @@ interface IFormProps {
   checkAuth: typeof checkAuth
 }
 
-const Form: React.FC<IFormProps> = props => {
+const LoginFormSubmit: React.FC<IFormProps> = props => {
   const [redirect, setRedirect] = React.useState(false)
   const [user, setUser] = React.useState({ login: '', password: '' })
   const [error, setError] = React.useState({
@@ -171,4 +171,4 @@ const mapDispatchToProps = {
 export default connect(
   null,
   mapDispatchToProps
-)(Form)
+)(LoginFormSubmit)
