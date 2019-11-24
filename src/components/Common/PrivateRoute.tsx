@@ -1,8 +1,9 @@
 import * as React from 'react'
+import { AppState } from 'store'
+import { connect } from 'react-redux'
 import { Route, Redirect } from 'react-router-dom'
 
-function PrivateRoute({ children, ...rest }) {
-  const auth = false
+function PrivateRoute({ auth, children, ...rest }) {
   return (
     <Route
       {...rest}
@@ -22,4 +23,10 @@ function PrivateRoute({ children, ...rest }) {
   )
 }
 
-export default PrivateRoute
+const mapStateToProps = (state: AppState) => {
+  return {
+    auth: state.auth.isAuth
+  }
+}
+
+export default connect(mapStateToProps)(PrivateRoute)

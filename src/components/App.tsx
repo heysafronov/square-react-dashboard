@@ -6,7 +6,7 @@ import About from 'components/About'
 import Login from 'components/Login'
 import PrivateRoute from 'components/Common/PrivateRoute'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
-import { GlobalStyle } from 'components/Common/GlobalStyle'
+import { GlobalStyle } from 'components/Common/Styles/GlobalStyle'
 
 const App = () => {
   return (
