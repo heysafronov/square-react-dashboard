@@ -10,8 +10,6 @@ interface IProps {
 }
 
 function PrivateRoute({ auth, children, ...rest }: IProps) {
-  console.log('children', children)
-
   return (
     <Route
       {...rest}
