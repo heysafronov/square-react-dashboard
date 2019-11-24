@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-interface Props {
+interface IProps {
   size: number
   color: string
 }
 
-const LogoImage = (props: Props) => {
+const LogoImage = (props: IProps) => {
   return (
     <svg
       width={`${props.size}`}

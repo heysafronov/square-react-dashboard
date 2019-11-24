@@ -1,19 +1,19 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-interface Props {
+interface IProps {
   size: number
   color: string
   text: string
 }
 
 const Title = styled.span`
-  font-size: ${(props: Props) => props.size}px;
-  color: ${(props: Props) => props.color};
+  font-size: ${(props: IProps) => props.size}px;
+  color: ${(props: IProps) => props.color};
   font-weight: 900;
 `
 
-const LogoTitle = (props: Props) => {
+const LogoTitle = (props: IProps) => {
   return <Title {...props}>{props.text}</Title>
 }
 
