@@ -11,7 +11,6 @@ const IconGoogle = () => {
     >
       <mask
         id='mask0'
-        maskType='alpha'
         maskUnits='userSpaceOnUse'
         x='0'
         y='0'
@@ -33,7 +32,6 @@ const IconGoogle = () => {
       </g>
       <mask
         id='mask1'
-        mask-type='alpha'
         maskUnits='userSpaceOnUse'
         x='0'
         y='0'
@@ -55,7 +53,6 @@ const IconGoogle = () => {
       </g>
       <mask
         id='mask2'
-        maskType='alpha'
         maskUnits='userSpaceOnUse'
         x='0'
         y='0'
@@ -77,7 +74,6 @@ const IconGoogle = () => {
       </g>
       <mask
         id='mask3'
-        maskType='alpha'
         maskUnits='userSpaceOnUse'
         x='0'
         y='0'

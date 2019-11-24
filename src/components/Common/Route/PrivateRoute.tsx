@@ -3,7 +3,15 @@ import { AppState } from 'store'
 import { connect } from 'react-redux'
 import { Route, Redirect } from 'react-router-dom'
 
-function PrivateRoute({ auth, children, ...rest }) {
+interface IProps {
+  auth: boolean
+  children: object | []
+  rest: object
+}
+
+function PrivateRoute({ auth, children, ...rest }: IProps) {
+  console.log('children', children)
+
   return (
     <Route
       {...rest}
