@@ -4,7 +4,7 @@ import Menu from 'components/Menu'
 import Users from 'components/Users'
 import About from 'components/About'
 import Loader from 'components/Common/Loader'
-import PrivateRoute from 'components/Common/PrivateRoute'
+import PrivateRoute from 'components/Common/Route/PrivateRoute'
 import { GlobalStyle } from 'components/Common/Styles/GlobalStyle'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 
