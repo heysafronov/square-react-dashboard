@@ -7,7 +7,6 @@ const SvgWrapper = styled.div`
   align-items: center;
   height: 98vh;
 `
-
 const Svg = styled.svg`
   @keyframes rotate {
     0% {
