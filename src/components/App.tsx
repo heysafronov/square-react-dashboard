@@ -13,18 +13,18 @@ const App = () => {
     <>
       <Router>
         <Switch>
-          <Route exact path='/'>
+          <PrivateRoute exact path='/'>
             <Menu />
             <Main />
-          </Route>
-          <Route path='/about'>
+          </PrivateRoute>
+          <PrivateRoute path='/about'>
             <Menu />
             <About />
-          </Route>
-          <Route path='/users'>
+          </PrivateRoute>
+          <PrivateRoute path='/users'>
             <Menu />
             <Users />
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path='/dont'>
             <Menu />
           </PrivateRoute>
