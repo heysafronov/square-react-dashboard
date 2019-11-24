@@ -3,20 +3,22 @@ import Main from 'components/Main'
 import Menu from 'components/Menu'
 import Users from 'components/Users'
 import About from 'components/About'
-import Login from 'components/Login'
+import Loader from 'components/Common/Loader'
 import PrivateRoute from 'components/Common/PrivateRoute'
-import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import { GlobalStyle } from 'components/Common/Styles/GlobalStyle'
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+
+const Login = React.lazy(() => import('components/Login'))
 
 const App = () => {
   return (
-    <>
+    <React.Suspense fallback={<Loader />}>
       <Router>
         <Switch>
-          <PrivateRoute exact path='/'>
+          <Route exact path='/'>
             <Menu />
             <Main />
-          </PrivateRoute>
+          </Route>
           <PrivateRoute path='/about'>
             <Menu />
             <About />
@@ -29,13 +31,12 @@ const App = () => {
             <Menu />
           </PrivateRoute>
           <Route path='/login'>
-            <Menu />
             <Login />
           </Route>
         </Switch>
       </Router>
       <GlobalStyle />
-    </>
+    </React.Suspense>
   )
 }
 
