@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
+import { Redirect } from 'react-router-dom'
 import { checkAuth } from 'store/auth/actions'
 
 const InputWrapper = styled.div`
@@ -64,11 +65,18 @@ interface IFormProps {
 }
 
 const Form: React.FC<IFormProps> = props => {
+  const [redirect, setRedirect] = React.useState(false)
   const [user, setUser] = React.useState({ login: '', password: '' })
   const [error, setError] = React.useState({
     login: 'Login error',
     password: 'Password error'
   })
+
+  const renderRedirect = (): object | void => {
+    if (redirect) {
+      return <Redirect to='/' />
+    }
+  }
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
@@ -77,6 +85,7 @@ const Form: React.FC<IFormProps> = props => {
         login: user.login,
         password: user.password
       })
+      setRedirect(true)
     }
   }
 
@@ -150,6 +159,7 @@ const Form: React.FC<IFormProps> = props => {
         value='Sign in'
         disabled={error.login || error.password}
       />
+      {renderRedirect()}
     </form>
   )
 }
