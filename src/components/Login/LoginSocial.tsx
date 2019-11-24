@@ -33,25 +33,9 @@ const ButtonGoogle = styled.button`
     font-size: 12px;
   }
 `
-const ButtonFacebook = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 320px;
-  height: 38px;
-  border: none;
+const ButtonFacebook = styled(ButtonGoogle)`
   background: #50b5ff;
-  border-radius: 10px;
   margin-top: 10px;
-  cursor: not-allowed;
-  :focus {
-    outline: none;
-  }
-  span {
-    margin-left: 10px;
-    color: white;
-    font-size: 12px;
-  }
 `
 
 const LoginSocial = () => {
