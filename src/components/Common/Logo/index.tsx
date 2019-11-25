@@ -6,11 +6,10 @@ import LogoTitle from 'components/Common/Logo/LogoTitle'
 const LogoSection = styled.section`
   display: flex;
   align-items: center;
-  width: 148px;
   justify-content: space-between;
 `
 
-interface Props {
+interface IProps {
   title: {
     size: number
     color: string
@@ -22,7 +21,7 @@ interface Props {
   }
 }
 
-const Logo = (props: Props) => {
+const Logo = (props: IProps) => {
   return (
     <LogoSection>
       <LogoImage {...props.image} />

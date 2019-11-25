@@ -4,6 +4,7 @@ import Menu from 'components/Menu'
 import Users from 'components/Users'
 import About from 'components/About'
 import Loader from 'components/Common/Loader'
+import Header from 'components/Common/Header'
 import PrivateRoute from 'components/Common/PrivateRoute'
 import { GlobalStyle } from 'components/Common/GlobalStyle'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
@@ -16,6 +17,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path='/'>
+            <Header />
             <Menu />
             <Main />
           </Route>
