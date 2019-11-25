@@ -6,6 +6,7 @@ const ActionsShapeWrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  cursor: pointer;
 `
 const Notification = styled.div`
   background-color: #fc5a5a;
