@@ -4,24 +4,26 @@ import styled from 'styled-components'
 const ActionsSearchWrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-around;
   background: #f1f1f5;
   border-radius: 10px;
-  padding-left: 10px;
+  width: 86px;
+  height: 38px;
 `
 
 const Input = styled.input`
-  width: 60px;
+  width: 45px;
   height: 38px;
   background: #f1f1f5;
   border-radius: 10px;
   border: none;
-  padding: 0 5px 0 10px;
   transition: width 0.3s;
   font-size: 14px;
   color: #696974;
   :focus {
     width: 200px;
     outline: none;
+    padding: 0 10px;
     ::placeholder {
       opacity: 0;
     }
