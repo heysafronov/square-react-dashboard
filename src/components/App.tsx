@@ -19,10 +19,10 @@ const App = () => {
           <Route exact path='/'>
             <Header />
             <Menu />
-            <Main />
           </Route>
           <PrivateRoute path='/about'>
             <Menu />
+            <Main />
             <About />
           </PrivateRoute>
           <PrivateRoute path='/users'>

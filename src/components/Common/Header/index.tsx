@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import Logo from 'components/Common/Logo'
 import Actions from 'components/Common/Header/Actions'
 
@@ -14,6 +15,9 @@ const HeaderWrapper = styled.section`
 `
 const DivWrapperLogo = styled.div`
   margin-left: 25px;
+  a {
+    text-decoration: none;
+  }
 `
 const DivWrapperActions = styled.div`
   margin-right: 25px;
@@ -35,7 +39,9 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <DivWrapperLogo>
-        <Logo {...logoProps} />
+        <Link to='/'>
+          <Logo {...logoProps} />
+        </Link>
       </DivWrapperLogo>
       <DivWrapperActions>
         <Actions />

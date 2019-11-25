@@ -10,6 +10,7 @@ interface IAvatarProps {
 const WithAvatarWrapper = styled.img`
   width: 32px;
   height: 32px;
+  cursor: pointer;
   border-radius: 32px;
 `
 const WithoutAvatarWrapper = styled.div`
@@ -21,6 +22,7 @@ const WithoutAvatarWrapper = styled.div`
   width: 32px;
   height: 32px;
   border-radius: 32px;
+  cursor: pointer;
   background-color: ${props => props.color};
 `
 
