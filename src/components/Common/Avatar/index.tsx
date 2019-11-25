@@ -12,7 +12,6 @@ const WithAvatarWrapper = styled.img`
   height: 32px;
   border-radius: 32px;
 `
-
 const WithoutAvatarWrapper = styled.div`
   display: flex;
   justify-content: center;

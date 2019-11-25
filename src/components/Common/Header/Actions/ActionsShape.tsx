@@ -14,8 +14,8 @@ const Notification = styled.div`
   height: 12px;
   border-radius: 12px;
   position: absolute;
-  left: 16px;
-  top: 0;
+  right: -4px;
+  top: -6px;
 `
 
 const ActionShape = () => {
