@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Links = styled.div`
   display: flex;
   justify-content: space-around;
-  margin: 0 auto;
+  margin: 150px auto 0 auto;
 `
 
 const Menu = () => {
