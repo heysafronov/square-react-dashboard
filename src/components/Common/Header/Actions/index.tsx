@@ -5,7 +5,9 @@ import ActionsSearch from 'components/Common/Header/Actions/ActionsSearch'
 import ActionsButton from 'components/Common/Header/Actions/ActionsButton'
 
 const ActionsWrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 3fr 3fr 1fr;
 `
 
 const Actions = () => {

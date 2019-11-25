@@ -13,7 +13,7 @@ const Notification = styled.div`
   height: 12px;
   border-radius: 12px;
   position: absolute;
-  left: 11px;
+  left: 16px;
   top: 0;
 `
 
