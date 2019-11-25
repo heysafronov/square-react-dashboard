@@ -18,9 +18,8 @@ const Notification = styled.div`
   top: -6px;
 `
 
-const ActionShape = () => {
-  const notification = true
-  const shapeIcon = (
+const ShapeIcon = () => {
+  return (
     <svg
       width='19'
       height='21'
@@ -36,13 +35,17 @@ const ActionShape = () => {
       />
     </svg>
   )
+}
+
+const ActionShape = () => {
+  const notification = true
 
   return (
     <ActionsShapeWrapper>
-      <div>
+      <>
         {notification ? <Notification /> : null}
-        {shapeIcon}
-      </div>
+        {ShapeIcon()}
+      </>
     </ActionsShapeWrapper>
   )
 }

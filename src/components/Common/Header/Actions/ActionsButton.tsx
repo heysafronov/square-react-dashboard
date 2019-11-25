@@ -16,8 +16,8 @@ const ActionsButtonWrapper = styled.button`
   font-size: 14px;
 `
 
-const ActionsButton = () => {
-  const pathIcon = (
+const PathIcon = () => {
+  return (
     <svg
       width='18'
       height='18'
@@ -33,9 +33,12 @@ const ActionsButton = () => {
       />
     </svg>
   )
+}
+
+const ActionsButton = () => {
   return (
     <ActionsButtonWrapper>
-      {pathIcon}
+      {PathIcon()}
       <span>New</span>
     </ActionsButtonWrapper>
   )

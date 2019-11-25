@@ -8,7 +8,6 @@ const ActionsSearchWrapper = styled.div`
   width: 86px;
   height: 38px;
 `
-
 const Input = styled.input`
   width: 86px;
   height: 38px;

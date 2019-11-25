@@ -12,11 +12,9 @@ const HeaderWrapper = styled.section`
   margin: 0 auto;
   box-shadow: inset 0px -1px 0px #e2e2ea;
 `
-
 const DivWrapperLogo = styled.div`
   margin-left: 25px;
 `
-
 const DivWrapperActions = styled.div`
   margin-right: 25px;
 `
