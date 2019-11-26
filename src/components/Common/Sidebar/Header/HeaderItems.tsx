@@ -42,7 +42,7 @@ const HeaderItems = () => {
         <div onClick={handleOpened}>{opened ? <ArrowDown /> : <ArrowUp />}</div>
       </FlexWrapperBetween>
       {opened ? <HeaderTeams /> : null}
-      <div>4</div>
+      <div>4 control</div>
     </HeaderItemsWrapper>
   )
 }
