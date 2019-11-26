@@ -2,11 +2,15 @@ import * as React from 'react'
 import styled from 'styled-components'
 import Avatar from 'components/Common/Avatar'
 
+const variables = {
+  size: 12
+}
+
 const Notification = styled.div`
   background-color: #fc5a5a;
-  width: 12px;
-  height: 12px;
-  border-radius: 12px;
+  width: ${variables.size}px;
+  height: ${variables.size}px;
+  border-radius: ${variables.size}px;
   position: absolute;
   right: -4px;
   top: -6px;

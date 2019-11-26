@@ -1,6 +1,10 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
+const variables = {
+  color: '#0062ff'
+}
+
 const SvgWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -21,10 +25,10 @@ const Svg = styled.svg`
 const Circle = styled.circle`
   @keyframes colors {
     0% {
-      stroke: #0062ff;
+      stroke: ${variables.color};
     }
     100% {
-      stroke: #0062ff;
+      stroke: ${variables.color};
     }
   }
   @keyframes dash {

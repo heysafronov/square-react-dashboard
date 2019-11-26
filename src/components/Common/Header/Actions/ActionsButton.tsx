@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 const variables = {
   color: '#0062ff',
-  crossSize: 18
+  crossSize: 18,
+  colorWhite: '#fff'
 }
 
 const Cross = styled.div`
@@ -19,7 +20,7 @@ const Cross = styled.div`
     content: '';
     height: ${variables.crossSize}px;
     width: 2px;
-    background-color: white;
+    background-color: ${variables.colorWhite};
   }
   :before {
     transform: rotate(90deg);
@@ -40,10 +41,10 @@ const ActionsButtonWrapper = styled.button`
   border: none;
   cursor: pointer;
   outline: none;
-  color: white;
+  color: ${variables.colorWhite};
   font-size: 14px;
   :hover {
-    background-color: white;
+    background-color: ${variables.colorWhite};
     border: 1px solid ${variables.color};
     color: ${variables.color};
   }
