@@ -29,8 +29,8 @@ const Main: React.FC<IMainProps> = props => {
       <MainWrapper>
         <Sidebar />
         <div>
-          <Title onClick={props.AddOne}>Больше на 1</Title>
-          <span>{props.add}</span>
+          {/*<Title onClick={props.AddOne}>Больше на 1</Title>*/}
+          {/*<span>{props.add}</span>*/}
         </div>
       </MainWrapper>
     </>
