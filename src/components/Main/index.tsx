@@ -1,12 +1,14 @@
 import * as React from 'react'
 import { AppState } from 'store'
-import { AddOne } from 'store/counter/actions'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import Header from 'components/Common/Header'
 import Sidebar from 'components/Common/Sidebar'
-import Menu from 'components/Menu'
+import { AddOne } from 'store/counter/actions'
 
+const MainWrapper = styled.div`
+  display: flex;
+`
 const Title = styled.button`
   background-color: pink;
   color: white;
@@ -22,10 +24,13 @@ const Main: React.FC<IMainProps> = props => {
   return (
     <>
       <Header />
-      <Sidebar />
-      <Title onClick={props.AddOne}>Больше на 1</Title>
-      <Menu />
-      <span>{props.add}</span>
+      <MainWrapper>
+        <Sidebar />
+        <div>
+          <Title onClick={props.AddOne}>Больше на 1</Title>
+          <span>{props.add}</span>
+        </div>
+      </MainWrapper>
     </>
   )
 }
