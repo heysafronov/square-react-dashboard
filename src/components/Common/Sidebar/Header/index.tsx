@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import HeaderItems from 'components/Common/Sidebar/Header/HeaderItems'
 
 const HeaderWrapper = styled.div`
   height: 230px;
@@ -19,7 +20,9 @@ const HeaderMain = styled.div`
 const Header = () => {
   return (
     <HeaderWrapper>
-      <HeaderMain />
+      <HeaderMain>
+        <HeaderItems />
+      </HeaderMain>
     </HeaderWrapper>
   )
 }
