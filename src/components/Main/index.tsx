@@ -1,8 +1,11 @@
 import * as React from 'react'
+import { AppState } from 'store'
 import { AddOne } from 'store/counter/actions'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-import { AppState } from 'store'
+import Header from 'components/Common/Header'
+import Sidebar from 'components/Common/Sidebar'
+import Menu from 'components/Menu'
 
 const Title = styled.button`
   background-color: pink;
@@ -10,15 +13,18 @@ const Title = styled.button`
   font-size: 20px;
 `
 
-interface MainProps {
+interface IMainProps {
   AddOne: typeof AddOne
   add: number
 }
 
-const Main: React.FC<MainProps> = props => {
+const Main: React.FC<IMainProps> = props => {
   return (
     <>
+      <Header />
+      <Sidebar />
       <Title onClick={props.AddOne}>Больше на 1</Title>
+      <Menu />
       <span>{props.add}</span>
     </>
   )
