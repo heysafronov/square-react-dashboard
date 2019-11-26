@@ -27,40 +27,40 @@ const Teammates = styled.div`
 
 const teammates = [
   {
-    size: 25,
+    size: 26,
+    name: 'KA',
+    color: '#FFC542',
+    avatar: ''
+  },
+  {
+    size: 26,
     name: 'TE',
     color: '',
     avatar: require('assets/images/james.png')
   },
   {
-    size: 25,
-    name: 'TE',
-    color: '',
-    avatar: require('assets/images/james.png')
+    size: 26,
+    name: 'AS',
+    color: '#A461D8',
+    avatar: ''
   },
   {
-    size: 25,
-    name: 'TE',
-    color: '',
-    avatar: require('assets/images/james.png')
+    size: 26,
+    name: 'GU',
+    color: '#FF9AD5;',
+    avatar: ''
   },
   {
-    size: 25,
-    name: 'TE',
-    color: '',
-    avatar: require('assets/images/james.png')
+    size: 26,
+    name: 'ZT',
+    color: '#82C43C',
+    avatar: ''
   },
   {
-    size: 25,
-    name: 'TE',
-    color: '',
-    avatar: require('assets/images/james.png')
-  },
-  {
-    size: 25,
-    name: 'TE',
-    color: '',
-    avatar: require('assets/images/james.png')
+    size: 26,
+    name: 'MI',
+    color: '#50B5FF',
+    avatar: ''
   }
 ]
 

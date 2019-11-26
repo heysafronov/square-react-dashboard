@@ -12,7 +12,7 @@ const WithAvatarWrapper = styled.img`
   width: ${(props: IAvatarProps) => props.size}px;
   height: ${(props: IAvatarProps) => props.size}px;
   cursor: pointer;
-  border-radius: 32px;
+  border-radius: ${(props: IAvatarProps) => props.size}px;
 `
 const WithoutAvatarWrapper = styled.div`
   display: flex;
@@ -20,9 +20,9 @@ const WithoutAvatarWrapper = styled.div`
   align-items: center;
   font-size: 14px;
   color: white;
-  width: 32px;
-  height: 32px;
-  border-radius: 32px;
+  width: ${(props: IAvatarProps) => props.size}px;
+  height: ${(props: IAvatarProps) => props.size}px;
+  border-radius: ${(props: IAvatarProps) => props.size}px;
   cursor: pointer;
   background-color: ${(props: IAvatarProps) => props.color};
 `
