@@ -54,6 +54,9 @@ const ActionsButtonWrapper = styled.button`
   :hover ${Cross}:after {
     background-color: ${variables.color};
   }
+  @media (max-width: 450px) {
+    display: none;
+  }
 `
 
 const ActionsButton = () => {

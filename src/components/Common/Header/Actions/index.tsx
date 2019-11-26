@@ -11,6 +11,10 @@ const ActionsWrapper = styled.div`
   justify-items: center;
   align-items: center;
   grid-template-columns: 3fr 3fr 1fr 1fr;
+  @media (max-width: 450px) {
+    grid-template-columns: 1fr 1fr;
+    justify-items: end;
+  }
 `
 
 const userProps = {

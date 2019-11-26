@@ -7,6 +7,9 @@ const ActionsSearchWrapper = styled.div`
   justify-content: space-around;
   width: 86px;
   height: 38px;
+  @media (max-width: 450px) {
+    display: none;
+  }
 `
 const Input = styled.input`
   width: 86px;
