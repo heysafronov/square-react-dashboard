@@ -1,7 +1,22 @@
 import * as React from 'react'
+import styled from 'styled-components'
+import Header from 'components/Common/Sidebar/Header'
+
+const SidebarWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  background-color: pink;
+  height: 90vh;
+`
 
 const Sidebar = () => {
-  return <div>Sidebar</div>
+  return (
+    <SidebarWrapper>
+      <Header />
+      <div>column 2</div>
+    </SidebarWrapper>
+  )
 }
 
 export default Sidebar
