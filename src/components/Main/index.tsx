@@ -8,6 +8,8 @@ import { AddOne } from 'store/counter/actions'
 
 const MainWrapper = styled.div`
   display: flex;
+  max-width: 1600px;
+  margin: 0 auto;
 `
 const Title = styled.button`
   background-color: pink;
