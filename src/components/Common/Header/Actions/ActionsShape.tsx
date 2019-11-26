@@ -1,13 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import Avatar from 'components/Common/Avatar'
 
-const ActionsShapeWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
-`
 const Notification = styled.div`
   background-color: #fc5a5a;
   width: 12px;
@@ -16,7 +10,58 @@ const Notification = styled.div`
   position: absolute;
   right: -4px;
   top: -6px;
+  opacity: 1;
+  transition: opacity 0.4s;
 `
+const ShapeInfo = styled.div`
+  z-index: 1;
+  width: 200px;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 35px;
+  right: -50px;
+  background: #ffffff;
+  border: 1px solid #f1f1f5;
+  box-shadow: 0 5px 15px rgba(68, 68, 79, 0.1);
+  border-radius: 8px;
+  color: #696974;
+  font-size: 12px;
+  padding: 15px;
+`
+const InformationText = styled.span`
+  font-style: italic;
+  margin: 10px 0 0 0;
+`
+const ActionsShapeWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  :hover ${Notification} {
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  :hover ${ShapeInfo} {
+    display: flex;
+  }
+`
+const AvatarWrapper = styled.div`
+  display: flex;
+  width: 25px;
+  align-items: center;
+  span {
+    margin: 0 0 0 10px;
+  }
+`
+
+const userProps = {
+  size: 25,
+  name: 'TE',
+  color: '',
+  avatar: require('assets/images/james.png')
+}
 
 const ShapeIcon = () => {
   return (
@@ -39,10 +84,18 @@ const ShapeIcon = () => {
 
 const ActionShape = () => {
   const notification = true
+  const text = `React can also render on the server using Node and power mobile apps using React Native`
 
   return (
     <ActionsShapeWrapper>
       <>
+        <ShapeInfo>
+          <AvatarWrapper>
+            <Avatar {...userProps} />
+            <span>@MikeCobain:</span>
+          </AvatarWrapper>
+          <InformationText>{text}</InformationText>
+        </ShapeInfo>
         {notification ? <Notification /> : null}
         {ShapeIcon()}
       </>

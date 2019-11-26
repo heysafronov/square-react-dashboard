@@ -14,6 +14,7 @@ const ActionsWrapper = styled.div`
 `
 
 const userProps = {
+  size: 32,
   name: 'KA',
   color: '',
   avatar: require('assets/images/james.png')

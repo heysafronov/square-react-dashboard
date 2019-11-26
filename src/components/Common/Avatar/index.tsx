@@ -2,14 +2,15 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 interface IAvatarProps {
+  size: number
   name: string
   color: string
   avatar: string
 }
 
 const WithAvatarWrapper = styled.img`
-  width: 32px;
-  height: 32px;
+  width: ${(props: IAvatarProps) => props.size}px;
+  height: ${(props: IAvatarProps) => props.size}px;
   cursor: pointer;
   border-radius: 32px;
 `
@@ -23,11 +24,11 @@ const WithoutAvatarWrapper = styled.div`
   height: 32px;
   border-radius: 32px;
   cursor: pointer;
-  background-color: ${props => props.color};
+  background-color: ${(props: IAvatarProps) => props.color};
 `
 
 const WithAvatar = (props: IAvatarProps) => {
-  return <WithAvatarWrapper src={props.avatar} alt='User avatar' />
+  return <WithAvatarWrapper {...props} src={props.avatar} alt='User avatar' />
 }
 
 const WithoutAvatar = (props: IAvatarProps) => {
