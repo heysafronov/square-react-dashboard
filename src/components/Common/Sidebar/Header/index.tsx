@@ -4,7 +4,6 @@ import HeaderItems from 'components/Common/Sidebar/Header/HeaderItems'
 
 const HeaderWrapper = styled.div`
   height: 230px;
-  background-color: aquamarine;
   padding: 40px 20px 20px 20px;
   display: flex;
   justify-content: center;
@@ -13,8 +12,7 @@ const HeaderWrapper = styled.div`
 const HeaderMain = styled.div`
   height: 210px;
   width: 230px;
-  background-color: bisque;
-  border-bottom: 2px solid red;
+  border-bottom: 1px solid #F1F1F5;
 `
 
 const Header = () => {

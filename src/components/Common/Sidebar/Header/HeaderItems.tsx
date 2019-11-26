@@ -16,6 +16,7 @@ const Arrow = styled.div`
   border-width: 0 2px 2px 0;
   display: flex;
   padding: 3px;
+  cursor: pointer;
 `
 const ArrowDown = styled(Arrow)`
   transform: rotate(45deg);
@@ -27,6 +28,7 @@ const TeamsTitle = styled.span`
   text-transform: uppercase;
   font-size: 14px;
   color: #92929d;
+  letter-spacing: 1px;
 `
 
 const HeaderItems = () => {
@@ -38,9 +40,9 @@ const HeaderItems = () => {
 
   return (
     <HeaderItemsWrapper>
-      <FlexWrapperBetween>
+      <FlexWrapperBetween onClick={handleOpened}>
         <TeamsTitle>Teams</TeamsTitle>
-        <div onClick={handleOpened}>{opened ? <ArrowDown /> : <ArrowUp />}</div>
+        <div>{opened ? <ArrowDown /> : <ArrowUp />}</div>
       </FlexWrapperBetween>
       {opened ? <HeaderTeams /> : null}
       <HeaderButton />

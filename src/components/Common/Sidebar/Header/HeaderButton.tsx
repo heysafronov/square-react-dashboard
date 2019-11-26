@@ -4,7 +4,6 @@ import styled from 'styled-components'
 const HeaderButtonWrapper = styled.div`
   display: flex;
   margin-top: 30px;
-  cursor: pointer;
 `
 const TextButton = styled.button`
   display: flex;
@@ -15,6 +14,10 @@ const TextButton = styled.button`
   text-transform: uppercase;
   color: #0062ff;
   border: none;
+  cursor: pointer;
+  :focus {
+    outline: none;
+  }
 `
 const Cross = styled.div`
   width: 7px;

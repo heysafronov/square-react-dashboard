@@ -6,7 +6,6 @@ const SidebarWrapper = styled.section`
   display: flex;
   flex-direction: column;
   width: 250px;
-  background-color: pink;
   height: 90vh;
 `
 
