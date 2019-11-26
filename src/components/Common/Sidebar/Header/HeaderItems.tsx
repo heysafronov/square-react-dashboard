@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import HeaderTeams from 'components/Common/Sidebar/Header/HeaderTeams'
+import HeaderButton from 'components/Common/Sidebar/Header/HeaderButton'
 
 const HeaderItemsWrapper = styled.div`
   display: flex;
@@ -42,7 +43,7 @@ const HeaderItems = () => {
         <div onClick={handleOpened}>{opened ? <ArrowDown /> : <ArrowUp />}</div>
       </FlexWrapperBetween>
       {opened ? <HeaderTeams /> : null}
-      <div>4 control</div>
+      <HeaderButton />
     </HeaderItemsWrapper>
   )
 }

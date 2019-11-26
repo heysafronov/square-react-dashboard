@@ -5,7 +5,7 @@ import HeaderItems from 'components/Common/Sidebar/Header/HeaderItems'
 const HeaderWrapper = styled.div`
   height: 230px;
   background-color: aquamarine;
-  padding: 20px;
+  padding: 40px 20px 20px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
