@@ -7,6 +7,9 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 const Main = React.lazy(() => import('components/Main'))
 const Tasks = React.lazy(() => import('components/Tasks'))
 const Login = React.lazy(() => import('components/Login'))
+const Activity = React.lazy(() => import('components/Activity'))
+const Settings = React.lazy(() => import('components/Settings'))
+const Schedule = React.lazy(() => import('components/Schedule'))
 const Messages = React.lazy(() => import('components/Messages'))
 
 const App = () => {
@@ -23,12 +26,21 @@ const App = () => {
           <Route path='/tasks/'>
             <Tasks />
           </Route>
-          <PrivateRoute path='/dont'>
-            <div>Dont</div>
-          </PrivateRoute>
+          <Route path='/schedule/'>
+            <Schedule />
+          </Route>
+          <Route path='/activity/'>
+            <Activity />
+          </Route>
+          <Route path='/settings/'>
+            <Settings />
+          </Route>
           <Route path='/login/'>
             <Login />
           </Route>
+          <PrivateRoute path='/dont/'>
+            <div>Dont</div>
+          </PrivateRoute>
         </Switch>
       </Router>
       <GlobalStyle />
