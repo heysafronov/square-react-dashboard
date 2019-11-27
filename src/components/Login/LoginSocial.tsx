@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import IconGoogle from 'components/Common/Icons/IconGoogle'
-import IconFacebook from 'components/Common/Icons/IconFacebook'
+import IconGoogle from 'components/Common/Icons/SocialMedia/Google'
+import IconFacebook from 'components/Common/Icons/SocialMedia/Facebook'
 
 const FormSocialWrapper = styled.div`
   display: flex;

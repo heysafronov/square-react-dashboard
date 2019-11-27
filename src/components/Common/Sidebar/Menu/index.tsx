@@ -1,12 +1,12 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Item from 'components/Common/Sidebar/Menu/Item'
-import IconTasks from 'components/Common/Icons/Menu/IconTasks'
-import IconMessages from 'components/Common/Icons/Menu/IconMessages'
-import IconSchedule from 'components/Common/Icons/Menu/IconSchedule'
-import IconActivity from 'components/Common/Icons/Menu/IconActivity'
-import IconSettings from 'components/Common/Icons/Menu/IconSettings'
-import IconDashboard from 'components/Common/Icons/Menu/IconDashboard'
+import IconTasks from 'components/Common/Icons/Menu/Tasks'
+import IconMessages from 'components/Common/Icons/Menu/Messages'
+import IconSchedule from 'components/Common/Icons/Menu/Schedule'
+import IconActivity from 'components/Common/Icons/Menu/Activity'
+import IconSettings from 'components/Common/Icons/Menu/Settings'
+import IconDashboard from 'components/Common/Icons/Menu/Dashboard'
 
 const MenuWrapper = styled.nav`
   display: flex;
