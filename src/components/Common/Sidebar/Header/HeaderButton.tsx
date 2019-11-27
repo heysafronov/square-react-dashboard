@@ -20,6 +20,7 @@ const TextButton = styled.button`
   color: ${variables.color};
   border: none;
   cursor: pointer;
+  background-color: white;
   :focus {
     outline: none;
   }

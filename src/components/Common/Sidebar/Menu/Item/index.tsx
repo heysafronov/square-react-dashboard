@@ -33,6 +33,11 @@ const ItemWrapper = styled.div`
 const IconWrapper = styled.div`
   margin: 0 24px;
 `
+const NameLink = styled.span`
+  @media (max-width: 450px) {
+    display: none;
+  }
+`
 
 interface IItemProps {
   name: string
@@ -45,7 +50,7 @@ const Item: React.FC<IItemProps> = props => {
     <ItemWrapper>
       <NavItem exact activeClassName={active} to={props.link}>
         <IconWrapper>{props.icon}</IconWrapper>
-        <span>{props.name}</span>
+        <NameLink>{props.name}</NameLink>
       </NavItem>
     </ItemWrapper>
   )

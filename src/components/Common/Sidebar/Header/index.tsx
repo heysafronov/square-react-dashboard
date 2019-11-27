@@ -8,6 +8,9 @@ const HeaderWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 450px) {
+    display: none;
+  }
 `
 const HeaderMain = styled.div`
   height: 190px;

@@ -7,6 +7,9 @@ import IconMessages from 'components/Common/Icons/IconMessages'
 const MenuWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  @media (max-width: 450px) {
+    margin-top: 40px;
+  }
 `
 
 const itemsData = [
