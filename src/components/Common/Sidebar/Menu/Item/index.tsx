@@ -2,13 +2,24 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
-const StyledLink = styled(NavLink)`
+const active = 'nav-item-active'
+const NavItem = styled(NavLink).attrs({
+  active
+})`
   display: flex;
   align-items: center;
   text-decoration: none;
   color: #171725;
   font-size: 14px;
   letter-spacing: 0.1px;
+
+  &.${active} {
+    color: #0062ff;
+    border-left: 3px solid #0062ff;
+    img {
+      background-color: red;
+    }
+  }
 `
 const ItemWrapper = styled.div`
   display: flex;
@@ -28,14 +39,7 @@ interface IItemProps {
 const Item: React.FC<IItemProps> = props => {
   return (
     <ItemWrapper>
-      <StyledLink
-        exact
-        to={props.link}
-        activeStyle={{
-          color: '#0062ff',
-          borderLeft: '3px solid #0062ff'
-        }}
-      >
+      <NavItem exact activeClassName={active} to={props.link}>
         <IconWrapper>
           <img
             src={require('assets/images/icons/dashboard.svg')}
@@ -43,7 +47,7 @@ const Item: React.FC<IItemProps> = props => {
           />
         </IconWrapper>
         <span>{props.name}</span>
-      </StyledLink>
+      </NavItem>
     </ItemWrapper>
   )
 }
