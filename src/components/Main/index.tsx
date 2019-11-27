@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import Content from 'components/Main/Content'
 import Header from 'components/Common/Header'
 import Sidebar from 'components/Common/Sidebar'
 
@@ -15,7 +16,7 @@ const Main = () => {
       <Header />
       <MainWrapper>
         <Sidebar />
-        <div>Main</div>
+        <Content />
       </MainWrapper>
     </>
   )
