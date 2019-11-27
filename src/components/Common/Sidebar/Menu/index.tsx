@@ -4,6 +4,9 @@ import Item from 'components/Common/Sidebar/Menu/Item'
 import IconDashboard from 'components/Common/Icons/IconDashboard'
 import IconMessages from 'components/Common/Icons/IconMessages'
 import IconTasks from 'components/Common/Icons/IconTasks'
+import IconSchedule from 'components/Common/Icons/IconSchedule'
+import IconActivity from 'components/Common/Icons/IconActivity'
+import IconSettings from 'components/Common/Icons/IconSettings'
 
 const MenuWrapper = styled.div`
   display: flex;
@@ -28,6 +31,21 @@ const itemsData = [
     name: 'Users',
     icon: IconTasks(),
     link: '/tasks/'
+  },
+  {
+    name: 'Schedule',
+    icon: IconSchedule(),
+    link: '/schedule/'
+  },
+  {
+    name: 'Activity',
+    icon: IconActivity(),
+    link: '/activity/'
+  },
+  {
+    name: 'Settings',
+    icon: IconSettings(),
+    link: '/settings/'
   }
 ]
 
