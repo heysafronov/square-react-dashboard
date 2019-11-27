@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Item from 'components/Common/Sidebar/Menu/Item'
+import IconDashboard from 'components/Common/Icons/IconDashboard'
 
 const MenuWrapper = styled.div`
   display: flex;
@@ -10,13 +11,13 @@ const MenuWrapper = styled.div`
 const itemsData = [
   {
     name: 'Dashboard',
-    icon: '',
+    icon: IconDashboard(),
     link: '/'
   },
   {
-    name: 'About',
+    name: 'Messages',
     icon: '',
-    link: '/about/'
+    link: '/messages/'
   },
   {
     name: 'Users',
@@ -27,7 +28,7 @@ const itemsData = [
 
 interface IItemProps {
   name: string
-  icon: string,
+  icon: object | string
   link: string
 }
 

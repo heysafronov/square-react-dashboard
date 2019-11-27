@@ -12,12 +12,15 @@ const NavItem = styled(NavLink).attrs({
   color: #171725;
   font-size: 14px;
   letter-spacing: 0.1px;
+  svg {
+    fill: #92929d;
+  }
 
   &.${active} {
     color: #0062ff;
     border-left: 3px solid #0062ff;
-    img {
-      background-color: red;
+    svg {
+      fill: #0062ff;
     }
   }
 `
@@ -32,7 +35,7 @@ const IconWrapper = styled.div`
 
 interface IItemProps {
   name: string
-  icon: string
+  icon: object | string
   link: string
 }
 
@@ -40,12 +43,7 @@ const Item: React.FC<IItemProps> = props => {
   return (
     <ItemWrapper>
       <NavItem exact activeClassName={active} to={props.link}>
-        <IconWrapper>
-          <img
-            src={require('assets/images/icons/dashboard.svg')}
-            alt='Icon menu'
-          />
-        </IconWrapper>
+        <IconWrapper>{props.icon}</IconWrapper>
         <span>{props.name}</span>
       </NavItem>
     </ItemWrapper>
