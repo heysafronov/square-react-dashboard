@@ -2,7 +2,11 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 const Menu = () => {
-  return <div>Menu</div>
+  return (
+    <div>
+      <div>Menu</div>
+    </div>
+  )
 }
 
 export default Menu
