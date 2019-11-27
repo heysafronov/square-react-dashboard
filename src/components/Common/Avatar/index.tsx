@@ -1,13 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-interface IAvatarProps {
-  size: number
-  name: string
-  color: string
-  avatar: string
-}
-
 const WithAvatarWrapper = styled.img`
   width: ${(props: IAvatarProps) => props.size}px;
   height: ${(props: IAvatarProps) => props.size}px;
@@ -26,6 +19,13 @@ const WithoutAvatarWrapper = styled.div`
   cursor: pointer;
   background-color: ${(props: IAvatarProps) => props.color};
 `
+
+interface IAvatarProps {
+  size: number
+  name: string
+  color: string
+  avatar: string
+}
 
 const WithAvatar = (props: IAvatarProps) => {
   return <WithAvatarWrapper {...props} src={props.avatar} alt='User avatar' />
