@@ -12,6 +12,7 @@ const NavItem = styled(NavLink).attrs({
   color: #171725;
   font-size: 14px;
   letter-spacing: 0.1px;
+  border-left: 3px solid #fff;
   svg {
     fill: #92929d;
   }

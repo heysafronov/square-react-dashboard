@@ -2,6 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import Item from 'components/Common/Sidebar/Menu/Item'
 import IconDashboard from 'components/Common/Icons/IconDashboard'
+import IconMessages from 'components/Common/Icons/IconMessages'
 
 const MenuWrapper = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ const itemsData = [
   },
   {
     name: 'Messages',
-    icon: '',
+    icon: IconMessages(),
     link: '/messages/'
   },
   {
