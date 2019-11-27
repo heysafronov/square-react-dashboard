@@ -17,6 +17,11 @@ const itemsData = [
     name: 'About',
     icon: '',
     link: '/about/'
+  },
+  {
+    name: 'Users',
+    icon: '',
+    link: '/users/'
   }
 ]
 
