@@ -1,15 +1,13 @@
 import * as React from 'react'
-import Users from 'components/Users'
-import About from 'components/About'
-import Menu from 'components/Menu'
-import Sidebar from 'components/Common/Sidebar'
 import Loader from 'components/Common/Loader'
 import PrivateRoute from 'components/Common/PrivateRoute'
 import { GlobalStyle } from 'components/Common/GlobalStyle'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 
 const Main = React.lazy(() => import('components/Main'))
+const Tasks = React.lazy(() => import('components/Tasks'))
 const Login = React.lazy(() => import('components/Login'))
+const Messages = React.lazy(() => import('components/Messages'))
 
 const App = () => {
   return (
@@ -19,19 +17,16 @@ const App = () => {
           <Route exact path='/'>
             <Main />
           </Route>
-          <PrivateRoute path='/about'>
-            <Menu />
-            <About />
-            <Sidebar />
-          </PrivateRoute>
-          <PrivateRoute path='/users'>
-            <Users />
-            <Sidebar />
-          </PrivateRoute>
+          <Route path='/messages/'>
+            <Messages />
+          </Route>
+          <Route path='/tasks/'>
+            <Tasks />
+          </Route>
           <PrivateRoute path='/dont'>
             <div>Dont</div>
           </PrivateRoute>
-          <Route path='/login'>
+          <Route path='/login/'>
             <Login />
           </Route>
         </Switch>

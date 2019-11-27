@@ -9,16 +9,16 @@ const MainWrapper = styled.div`
   margin: 0 auto;
 `
 
-const Main = () => {
+const Tasks = () => {
   return (
     <>
       <Header />
       <MainWrapper>
         <Sidebar />
-        <div>Main</div>
+        <div>Tasks</div>
       </MainWrapper>
     </>
   )
 }
 
-export default Main
+export default Tasks

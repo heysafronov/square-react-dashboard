@@ -28,7 +28,7 @@ const itemsData = [
     link: '/messages/'
   },
   {
-    name: 'Users',
+    name: 'Tasks',
     icon: IconTasks(),
     link: '/tasks/'
   },
