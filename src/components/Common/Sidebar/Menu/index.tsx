@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Item from 'components/Common/Sidebar/Menu/Item'
 import IconDashboard from 'components/Common/Icons/IconDashboard'
 import IconMessages from 'components/Common/Icons/IconMessages'
+import IconTasks from 'components/Common/Icons/IconTasks'
 
 const MenuWrapper = styled.div`
   display: flex;
@@ -25,8 +26,8 @@ const itemsData = [
   },
   {
     name: 'Users',
-    icon: '',
-    link: '/users/'
+    icon: IconTasks(),
+    link: '/tasks/'
   }
 ]
 
