@@ -3,6 +3,10 @@ import styled from 'styled-components'
 import HeaderTeams from 'components/Common/Sidebar/Header/HeaderTeams'
 import HeaderButton from 'components/Common/Sidebar/Header/HeaderButton'
 
+const variables = {
+  color: '#92929d'
+}
+
 const HeaderItemsWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -12,7 +16,7 @@ const FlexWrapperBetween = styled.div`
   justify-content: space-between;
 `
 const Arrow = styled.div`
-  border: solid #92929d;
+  border: solid ${variables.color};
   border-width: 0 2px 2px 0;
   display: flex;
   padding: 3px;
@@ -27,7 +31,7 @@ const ArrowUp = styled(Arrow)`
 const TeamsTitle = styled.span`
   text-transform: uppercase;
   font-size: 14px;
-  color: #92929d;
+  color: ${variables.color};
   letter-spacing: 1px;
 `
 

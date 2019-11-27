@@ -25,7 +25,7 @@ const Teammates = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 `
 
-const teammates = [
+const usersData = [
   {
     size: 26,
     name: 'KA',
@@ -71,8 +71,8 @@ interface IUserProps {
   avatar: string
 }
 
-const users = teammates.map((teammate: IUserProps, idx: number) => (
-  <Avatar key={idx} {...teammate} />
+const users = usersData.map((user: IUserProps, idx: number) => (
+  <Avatar key={idx} {...user} />
 ))
 
 const HeaderTeams = () => {

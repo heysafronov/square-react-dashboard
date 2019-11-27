@@ -1,6 +1,11 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
+const variables = {
+  color: '#0062ff',
+  crossSize: 7
+}
+
 const HeaderButtonWrapper = styled.div`
   display: flex;
   margin-top: 30px;
@@ -12,7 +17,7 @@ const TextButton = styled.button`
   font-size: 12px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: #0062ff;
+  color: ${variables.color};
   border: none;
   cursor: pointer;
   :focus {
@@ -20,16 +25,16 @@ const TextButton = styled.button`
   }
 `
 const Cross = styled.div`
-  width: 7px;
-  height: 7px;
+  width: ${variables.crossSize}px;
+  height: ${variables.crossSize}px;
   :before,
   :after {
     position: absolute;
     left: 2px;
     content: '';
-    height: 7px;
+    height: ${variables.crossSize}px;
     width: 1px;
-    background-color: #0062ff;
+    background-color: ${variables.color};
   }
   :before {
     transform: rotate(90deg);

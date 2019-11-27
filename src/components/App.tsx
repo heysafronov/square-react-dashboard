@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Users from 'components/Users'
 import About from 'components/About'
+import Menu from 'components/Menu'
 import Loader from 'components/Common/Loader'
 import PrivateRoute from 'components/Common/PrivateRoute'
 import { GlobalStyle } from 'components/Common/GlobalStyle'
@@ -18,6 +19,7 @@ const App = () => {
             <Main />
           </Route>
           <PrivateRoute path='/about'>
+            <Menu/>
             <About />
           </PrivateRoute>
           <PrivateRoute path='/users'>
