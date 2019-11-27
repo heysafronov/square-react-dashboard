@@ -8,7 +8,7 @@ import IconActivity from 'components/Common/Icons/IconActivity'
 import IconSettings from 'components/Common/Icons/IconSettings'
 import IconDashboard from 'components/Common/Icons/IconDashboard'
 
-const MenuWrapper = styled.div`
+const MenuWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   @media (max-width: 450px) {
