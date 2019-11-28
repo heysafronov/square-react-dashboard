@@ -4,13 +4,13 @@ import Avatar from 'components/Common/Avatar'
 import IconOval from 'components/Common/Icons/Common/Oval'
 
 const TeamCardWrapper = styled.div`
-  width: 400px;
+  width: 360px;
   min-width: 250px;
   height: 104px;
   background-color: white;
   border-radius: 20px;
   padding: 20px;
-  margin-right: 30px;
+  margin-right: 27px;
 `
 const Header = styled.div`
   display: grid;
