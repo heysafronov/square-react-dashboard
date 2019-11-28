@@ -9,6 +9,7 @@ const TeamCardWrapper = styled.div`
   background-color: white;
   border-radius: 20px;
   padding: 20px;
+  margin-right: 30px;
 `
 const Header = styled.div`
   display: grid;
@@ -39,6 +40,7 @@ const More = styled.div`
   display: grid;
   justify-items: end;
   align-items: start;
+  cursor: not-allowed;
 `
 
 const TeamCard = () => {
@@ -49,7 +51,9 @@ const TeamCard = () => {
           <img src={require('assets/images/team1.png')} alt='Team' />
         </Image>
         <TeamName>Sebo Studio</TeamName>
-        <More><IconOval/></More>
+        <More>
+          <IconOval />
+        </More>
       </Header>
       <div>Avatars</div>
     </TeamCardWrapper>
