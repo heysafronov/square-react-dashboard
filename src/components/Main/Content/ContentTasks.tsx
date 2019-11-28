@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import IconOval from 'components/Common/Icons/Common/Oval'
+import AddBigButton from 'components/Common/Buttons/AddBigButton'
 
 const Wrapper = styled.div`
   border: 1px solid #e2e2ea;
@@ -29,17 +30,26 @@ const TeamsMore = styled.div`
     display: none;
   }
 `
+const Teams = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
 
 const ContentTasks = () => {
-  return <Wrapper>
-    <Header>
-      <TeamsTitle>Tasks</TeamsTitle>
-      <TeamsMore>
-        <IconOval />
-      </TeamsMore>
-    </Header>
-    <div>Cards</div>
-  </Wrapper>
+  return (
+    <Wrapper>
+      <Header>
+        <TeamsTitle>Tasks</TeamsTitle>
+        <TeamsMore>
+          <IconOval />
+        </TeamsMore>
+      </Header>
+      <Teams>
+        <div>Cards</div>
+        <AddBigButton name='Add task' />
+      </Teams>
+    </Wrapper>
+  )
 }
 
 export default ContentTasks
