@@ -44,30 +44,42 @@ const More = styled.div`
   cursor: not-allowed;
 `
 const AvatarWrapper = styled.div`
-margin-top: 20px;
+  margin-top: 20px;
 `
 
-const userProps = {
-  size: 32,
-  name: 'KA',
-  color: '',
-  avatar: require('assets/images/james.png')
+interface IUserProps {
+  size: number
+  name: string
+  color: string
+  avatar: string
 }
 
-const TeamCard = () => {
+interface ITeamCardProps {
+  avatar: string
+  name: string
+  users: IUserProps[]
+}
+
+const Avatars = (props: ITeamCardProps) => {
+  return props.users.map((avatar: IUserProps, idx: number) => (
+    <Avatar key={idx} {...avatar} />
+  ))
+}
+
+const TeamCard: React.FC<ITeamCardProps> = props => {
   return (
     <TeamCardWrapper>
       <Header>
         <Image>
-          <img src={require('assets/images/team1.png')} alt='Team' />
+          <img src={props.avatar} alt='Team' />
         </Image>
-        <TeamName>Sebo Studio</TeamName>
+        <TeamName>{props.name}</TeamName>
         <More>
           <IconOval />
         </More>
       </Header>
       <AvatarWrapper>
-        <Avatar {...userProps} />
+        <Avatars {...props} />
       </AvatarWrapper>
     </TeamCardWrapper>
   )

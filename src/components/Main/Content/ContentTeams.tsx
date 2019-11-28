@@ -65,12 +65,71 @@ const Cross = styled.div`
   }
 `
 
+const teamCardData = [
+  {
+    id: 0,
+    avatar: require('assets/images/team1.png'),
+    name: 'Sebo Studio',
+    users: [
+      {
+        size: 32,
+        name: 'KA',
+        color: '',
+        avatar: require('assets/images/james.png')
+      },
+      {
+        size: 32,
+        name: 'KA',
+        color: '',
+        avatar: require('assets/images/james.png')
+      }
+    ]
+  },
+  {
+    id: 1,
+    avatar: require('assets/images/team1.png'),
+    name: 'Iconspace Team',
+    users: [
+      {
+        size: 32,
+        name: 'KA',
+        color: '',
+        avatar: require('assets/images/james.png')
+      },
+      {
+        size: 32,
+        name: 'KA',
+        color: '',
+        avatar: require('assets/images/james.png')
+      }
+    ]
+  }
+]
+
+interface IUserProps {
+  size: number
+  name: string
+  color: string
+  avatar: string
+}
+
+interface ITeamCardProps {
+  id: number
+  avatar: string
+  name: string
+  users: IUserProps[]
+}
+
+const teamCards = teamCardData.map((card: ITeamCardProps) => (
+  <TeamCard key={card.id} {...card} />
+))
+
 const ContentTeams = () => {
   return (
     <TeamsWrapper>
       <TeamsTitle>Teams</TeamsTitle>
       <Teams>
-        <TeamCard />
+        {teamCards}
         <NewTeam>
           <NewTeamButton>
             <Cross />
