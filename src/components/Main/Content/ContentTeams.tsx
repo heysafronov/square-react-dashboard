@@ -26,7 +26,7 @@ const Teams = styled.div`
 `
 const NewTeam = styled.div`
   width: 400px;
-  min-width: 265px;
+  min-width: 250px;
   height: 144px;
   border: 2px dashed #d5d5dc;
   border-radius: 20px;
