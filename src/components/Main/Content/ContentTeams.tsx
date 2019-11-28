@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import TeamCard from 'components/Common/TeamCard'
 
 const variables = {
   color: '#0062ff',
@@ -27,7 +28,7 @@ const Teams = styled.div`
 const NewTeam = styled.div`
   width: 400px;
   min-width: 250px;
-  height: 144px;
+  height: 140px;
   border: 2px dashed #d5d5dc;
   border-radius: 20px;
   display: flex;
@@ -69,6 +70,7 @@ const ContentTeams = () => {
     <TeamsWrapper>
       <TeamsTitle>Teams</TeamsTitle>
       <Teams>
+        <TeamCard />
         <NewTeam>
           <NewTeamButton>
             <Cross />
