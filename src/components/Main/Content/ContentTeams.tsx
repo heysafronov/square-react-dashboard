@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import TeamCard from 'components/Common/TeamCard'
+import IconOval from 'components/Common/Icons/Common/Oval'
 
 const variables = {
   color: '#0062ff',
@@ -15,11 +16,23 @@ const TeamsWrapper = styled.div`
   flex-direction: column;
   padding: 5px;
 `
+const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
 const TeamsTitle = styled.span`
   font-size: 16px;
   letter-spacing: 0.1px;
   color: #696974;
   padding: 15px 20px;
+`
+const TeamsMore = styled.div`
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  @media (max-width: 450px) {
+    display: none;
+  }
 `
 const Teams = styled.div`
   display: flex;
@@ -131,7 +144,12 @@ const teamCards = teamCardData.map((card: ITeamCardProps) => (
 const ContentTeams = () => {
   return (
     <TeamsWrapper>
-      <TeamsTitle>Teams</TeamsTitle>
+      <HeaderWrapper>
+        <TeamsTitle>Teams</TeamsTitle>
+        <TeamsMore>
+          <IconOval />
+        </TeamsMore>
+      </HeaderWrapper>
       <Teams>
         {teamCards}
         <NewTeam>
