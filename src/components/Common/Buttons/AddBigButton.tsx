@@ -15,6 +15,10 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  :hover {
+    cursor: not-allowed;
+    border: 2px dashed ${variables.color};
+  }
 `
 const Button = styled.button`
   width: 38px;
@@ -24,7 +28,6 @@ const Button = styled.button`
   border: none;
   position: relative;
   outline: none;
-  cursor: not-allowed;
 `
 const Cross = styled.div`
   width: ${variables.crossSize}px;
