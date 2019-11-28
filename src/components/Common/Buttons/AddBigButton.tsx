@@ -6,7 +6,7 @@ const variables = {
   crossSize: 15
 }
 
-const NewTeam = styled.div`
+const Wrapper = styled.div`
   width: 400px;
   min-width: 250px;
   height: 140px;
@@ -16,7 +16,7 @@ const NewTeam = styled.div`
   justify-content: center;
   align-items: center;
 `
-const NewTeamButton = styled.button`
+const Button = styled.button`
   width: 38px;
   height: 38px;
   border-radius: 38px;
@@ -45,7 +45,7 @@ const Cross = styled.div`
     transform: rotate(180deg);
   }
 `
-const NewTeamButtonText = styled.span`
+const Text = styled.span`
   font-size: 14px;
   margin-left: 5px;
 `
@@ -56,12 +56,12 @@ interface IButtonProps {
 
 const AddBigButton: React.FC<IButtonProps> = props => {
   return (
-    <NewTeam>
-      <NewTeamButton>
+    <Wrapper>
+      <Button>
         <Cross />
-      </NewTeamButton>
-      <NewTeamButtonText>{props.name}</NewTeamButtonText>
-    </NewTeam>
+      </Button>
+      <Text>{props.name}</Text>
+    </Wrapper>
   )
 }
 
