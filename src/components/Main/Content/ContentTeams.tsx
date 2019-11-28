@@ -64,6 +64,10 @@ const Cross = styled.div`
     transform: rotate(180deg);
   }
 `
+const NewTeamButtonText = styled.span`
+  font-size: 14px;
+  margin-left: 5px;
+`
 
 const teamCardData = [
   {
@@ -134,6 +138,7 @@ const ContentTeams = () => {
           <NewTeamButton>
             <Cross />
           </NewTeamButton>
+          <NewTeamButtonText>Add team</NewTeamButtonText>
         </NewTeam>
       </Teams>
     </TeamsWrapper>
