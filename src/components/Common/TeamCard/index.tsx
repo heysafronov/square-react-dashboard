@@ -5,12 +5,19 @@ import IconOval from 'components/Common/Icons/Common/Oval'
 
 const TeamCardWrapper = styled.div`
   width: 360px;
-  min-width: 250px;
+  min-width: 235px;
   height: 104px;
   background-color: white;
   border-radius: 20px;
   padding: 20px;
   margin-right: 27px;
+  @media (max-width: 1160px) {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  @media (max-width: 450px) {
+    padding: 10px;
+  }
 `
 const Header = styled.div`
   display: grid;

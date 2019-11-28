@@ -34,7 +34,7 @@ const IconWrapper = styled.div`
   margin: 0 24px;
 `
 const NameLink = styled.span`
-  @media (max-width: 450px) {
+  @media (max-width: 620px) {
     display: none;
   }
 `

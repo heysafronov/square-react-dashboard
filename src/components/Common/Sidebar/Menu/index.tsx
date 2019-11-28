@@ -11,7 +11,7 @@ import IconDashboard from 'components/Common/Icons/Menu/Dashboard'
 const MenuWrapper = styled.nav`
   display: flex;
   flex-direction: column;
-  @media (max-width: 450px) {
+  @media (max-width: 620px) {
     margin-top: 40px;
   }
 `
