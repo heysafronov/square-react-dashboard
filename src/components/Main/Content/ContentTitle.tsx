@@ -6,6 +6,9 @@ const Username = styled.span`
   text-align: center;
   letter-spacing: 0.1px;
   color: #171725;
+  @media (max-width: 450px) {
+    display: none;
+  }
 `
 const WelcomeText = styled.span`
   font-size: 18px;

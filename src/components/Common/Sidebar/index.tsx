@@ -6,7 +6,7 @@ import Header from 'components/Common/Sidebar/Header'
 const SidebarWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  width: 250px;
+  max-width: 250px;
   height: 90vh;
 `
 
