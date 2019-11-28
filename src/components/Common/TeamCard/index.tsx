@@ -52,6 +52,9 @@ const More = styled.div`
 `
 const AvatarWrapper = styled.div`
   margin-top: 20px;
+  img {
+    margin-right: 10px;
+  }
 `
 
 interface IUserProps {
