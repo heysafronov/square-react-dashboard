@@ -4,7 +4,7 @@ import ContentTitle from 'components/Main/Content/ContentTitle'
 import ContentTeams from 'components/Main/Content/ContentTeams'
 import ContentTasks from 'components/Main/Content/ContentTasks'
 
-const ContentWrapper = styled.section`
+const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -18,11 +18,11 @@ const ContentWrapper = styled.section`
 
 const Content = () => {
   return (
-    <ContentWrapper>
+    <Wrapper>
       <ContentTitle />
       <ContentTeams />
       <ContentTasks />
-    </ContentWrapper>
+    </Wrapper>
   )
 }
 
