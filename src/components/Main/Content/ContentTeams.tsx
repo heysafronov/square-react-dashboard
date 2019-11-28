@@ -30,6 +30,7 @@ const TeamsMore = styled.div`
   padding: 0 20px;
   display: flex;
   align-items: center;
+  cursor: not-allowed;
   @media (max-width: 450px) {
     display: none;
   }
@@ -85,9 +86,15 @@ const NewTeamButtonText = styled.span`
 const teamCardData = [
   {
     id: 0,
-    avatar: require('assets/images/team1.png'),
+    avatar: require('assets/images/team2.png'),
     name: 'Sebo Studio',
     users: [
+      {
+        size: 32,
+        name: 'GU',
+        color: '#FF9AD5',
+        avatar: ''
+      },
       {
         size: 32,
         name: 'KA',
@@ -96,9 +103,15 @@ const teamCardData = [
       },
       {
         size: 32,
+        name: 'ZT',
+        color: '#82C43C',
+        avatar: ''
+      },
+      {
+        size: 32,
         name: 'KA',
-        color: '',
-        avatar: require('assets/images/james.png')
+        color: '#FFC542',
+        avatar: ''
       }
     ]
   },
@@ -109,15 +122,15 @@ const teamCardData = [
     users: [
       {
         size: 32,
-        name: 'KA',
-        color: '',
-        avatar: require('assets/images/james.png')
+        name: 'MI',
+        color: '#50B5FF',
+        avatar: ''
       },
       {
         size: 32,
-        name: 'KA',
-        color: '',
-        avatar: require('assets/images/james.png')
+        name: 'AS',
+        color: '#A461D8',
+        avatar: ''
       }
     ]
   }

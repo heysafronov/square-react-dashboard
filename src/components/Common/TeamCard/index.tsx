@@ -51,8 +51,12 @@ const More = styled.div`
   cursor: not-allowed;
 `
 const AvatarWrapper = styled.div`
+  display: flex;
   margin-top: 20px;
   img {
+    margin-right: 10px;
+  }
+  div {
     margin-right: 10px;
   }
 `

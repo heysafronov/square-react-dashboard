@@ -47,7 +47,7 @@ const usersData = [
   {
     size: 26,
     name: 'GU',
-    color: '#FF9AD5;',
+    color: '#FF9AD5',
     avatar: ''
   },
   {
