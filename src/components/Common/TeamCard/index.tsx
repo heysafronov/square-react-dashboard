@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import IconOval from 'components/Common/Icons/Common/Oval'
 
 const TeamCardWrapper = styled.div`
   width: 400px;
@@ -48,7 +49,7 @@ const TeamCard = () => {
           <img src={require('assets/images/team1.png')} alt='Team' />
         </Image>
         <TeamName>Sebo Studio</TeamName>
-        <More>...</More>
+        <More><IconOval/></More>
       </Header>
       <div>Avatars</div>
     </TeamCardWrapper>
