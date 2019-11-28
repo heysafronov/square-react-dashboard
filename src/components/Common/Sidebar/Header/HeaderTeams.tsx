@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import Avatar from 'components/Common/Avatar'
 
-const FlexWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   margin: 15px 0 20px 0;
@@ -77,16 +77,16 @@ const users = usersData.map((user: IUserProps, idx: number) => (
 
 const HeaderTeams = () => {
   return (
-    <div>
-      <FlexWrapper>
+    <>
+      <Wrapper>
         <TeamAvatar
           src={require('assets/images/team1.png')}
           alt='Team avatar'
         />
         <TeamName>Iconspace Team</TeamName>
-      </FlexWrapper>
+      </Wrapper>
       <Teammates>{users}</Teammates>
-    </div>
+    </>
   )
 }
 

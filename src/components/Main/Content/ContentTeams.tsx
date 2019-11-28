@@ -16,7 +16,7 @@ const TeamsWrapper = styled.div`
   flex-direction: column;
   padding: 5px;
 `
-const HeaderWrapper = styled.div`
+const Header = styled.div`
   display: flex;
   justify-content: space-between;
 `
@@ -157,12 +157,12 @@ const teamCards = teamCardData.map((card: ITeamCardProps) => (
 const ContentTeams = () => {
   return (
     <TeamsWrapper>
-      <HeaderWrapper>
+      <Header>
         <TeamsTitle>Teams</TeamsTitle>
         <TeamsMore>
           <IconOval />
         </TeamsMore>
-      </HeaderWrapper>
+      </Header>
       <Teams>
         {teamCards}
         <NewTeam>
