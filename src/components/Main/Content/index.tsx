@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import ContentTitle from 'components/Main/Content/ContentTitle'
+import ContentTeams from 'components/Main/Content/ContentTeams'
 
 const ContentWrapper = styled.section`
   display: flex;
@@ -14,7 +15,7 @@ const Content = () => {
   return (
     <ContentWrapper>
       <ContentTitle />
-      <span>Teams</span>
+      <ContentTeams />
       <span>Tasks</span>
     </ContentWrapper>
   )

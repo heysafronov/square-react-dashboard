@@ -12,6 +12,7 @@ const WelcomeText = styled.span`
   letter-spacing: 0.1px;
   color: #92929d;
   margin-left: 10px;
+  font-family: 'Roboto', sans-serif;
 `
 
 const ContentTitle = () => {
