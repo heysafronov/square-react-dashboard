@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import Avatar from 'components/Common/Avatar'
 import IconOval from 'components/Common/Icons/Common/Oval'
 
 const TeamCardWrapper = styled.div`
@@ -42,6 +43,16 @@ const More = styled.div`
   align-items: start;
   cursor: not-allowed;
 `
+const AvatarWrapper = styled.div`
+margin-top: 20px;
+`
+
+const userProps = {
+  size: 32,
+  name: 'KA',
+  color: '',
+  avatar: require('assets/images/james.png')
+}
 
 const TeamCard = () => {
   return (
@@ -55,7 +66,9 @@ const TeamCard = () => {
           <IconOval />
         </More>
       </Header>
-      <div>Avatars</div>
+      <AvatarWrapper>
+        <Avatar {...userProps} />
+      </AvatarWrapper>
     </TeamCardWrapper>
   )
 }
