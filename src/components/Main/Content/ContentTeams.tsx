@@ -8,7 +8,7 @@ const variables = {
   crossSize: 15
 }
 
-const TeamsWrapper = styled.div`
+const Wrapper = styled.div`
   border: 1px solid #e2e2ea;
   border-radius: 23px;
   margin: 35px 0 20px 0;
@@ -156,7 +156,7 @@ const teamCards = teamCardData.map((card: ITeamCardProps) => (
 
 const ContentTeams = () => {
   return (
-    <TeamsWrapper>
+    <Wrapper>
       <Header>
         <TeamsTitle>Teams</TeamsTitle>
         <TeamsMore>
@@ -172,7 +172,7 @@ const ContentTeams = () => {
           <NewTeamButtonText>Add team</NewTeamButtonText>
         </NewTeam>
       </Teams>
-    </TeamsWrapper>
+    </Wrapper>
   )
 }
 
