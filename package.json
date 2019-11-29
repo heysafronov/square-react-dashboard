@@ -8,8 +8,7 @@
   "scripts": {
     "clear": "rimraf ./dist",
     "dev": "webpack-dev-server --mode development --open --hot",
-    "build": "npm run clear && webpack --mode production",
-    "precommit": "lint-staged"
+    "build": "npm run clear && webpack --mode production"
   },
   "devDependencies": {
     "@babel/core": "^7.7.0",
@@ -48,11 +47,5 @@
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.1",
     "styled-normalize": "^8.0.6"
-  },
-  "lint-staged": {
-    "*.{ts, tsx}": [
-      "prettier --write",
-      "git add"
-    ]
   }
 }
