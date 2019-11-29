@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
   addOneStore: addOneReducer
 })
 
-        export type AppState = ReturnType<typeof rootReducer>
+export type AppState = ReturnType<typeof rootReducer>
 
 export default function configureStore() {
   const middlewares = [thunkMiddleware]
