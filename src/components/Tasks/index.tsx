@@ -2,6 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import Header from 'components/Common/Header'
 import Sidebar from 'components/Common/Sidebar'
+import Content from 'components/Tasks/Content'
 
 const MainWrapper = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ const Tasks = () => {
       <Header />
       <MainWrapper>
         <Sidebar />
-        <div>Tasks</div>
+        <Content />
       </MainWrapper>
     </>
   )

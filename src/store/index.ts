@@ -1,11 +1,13 @@
 import thunkMiddleware from 'redux-thunk'
 import { authReducer } from 'store/auth/reducers'
 import { addOneReducer } from 'store/counter/reducers'
+import { tasksReducer } from 'store/tasks/reducers'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 
 const rootReducer = combineReducers({
   auth: authReducer,
+  tasks: tasksReducer,
   addOneStore: addOneReducer
 })
 
