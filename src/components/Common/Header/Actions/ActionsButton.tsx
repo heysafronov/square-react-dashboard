@@ -29,7 +29,7 @@ const Cross = styled.div`
     transform: rotate(180deg);
   }
 `
-const ActionsButtonWrapper = styled.button`
+const Wrapper = styled.button`
   position: relative;
   display: flex;
   align-items: center;
@@ -61,12 +61,12 @@ const ActionsButtonWrapper = styled.button`
 
 const ActionsButton = () => {
   return (
-    <ActionsButtonWrapper>
+    <Wrapper>
       <div>
         <Cross />
       </div>
       <span>New</span>
-    </ActionsButtonWrapper>
+    </Wrapper>
   )
 }
 

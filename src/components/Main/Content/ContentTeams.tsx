@@ -103,7 +103,7 @@ interface ITeamCardProps {
   users: IUserProps[]
 }
 
-const teamCards = teamCardData.map((card: ITeamCardProps) => (
+const teamCards = teamCardData.map((card: ITeamCardProps): object => (
   <TeamCard key={card.id} {...card} />
 ))
 

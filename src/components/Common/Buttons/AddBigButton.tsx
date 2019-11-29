@@ -53,11 +53,11 @@ const Text = styled.span`
   margin-left: 5px;
 `
 
-interface IButtonProps {
+interface IAddBigButtonProps {
   name: string
 }
 
-const AddBigButton: React.FC<IButtonProps> = props => {
+const AddBigButton: React.FC<IAddBigButtonProps> = props => {
   return (
     <Wrapper>
       <Button>

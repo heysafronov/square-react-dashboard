@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Menu from 'components/Common/Sidebar/Menu'
 import Header from 'components/Common/Sidebar/Header'
 
-const SidebarWrapper = styled.section`
+const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   max-width: 250px;
@@ -12,10 +12,10 @@ const SidebarWrapper = styled.section`
 
 const Sidebar = () => {
   return (
-    <SidebarWrapper>
+    <Wrapper>
       <Header />
       <Menu />
-    </SidebarWrapper>
+    </Wrapper>
   )
 }
 

@@ -16,7 +16,6 @@ const NavItem = styled(NavLink).attrs({
   svg {
     fill: #92929d;
   }
-
   &.${active} {
     color: #0062ff;
     border-left: 3px solid #0062ff;
@@ -25,12 +24,12 @@ const NavItem = styled(NavLink).attrs({
     }
   }
 `
-const ItemWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 40px;
 `
-const IconWrapper = styled.div`
+const Icon = styled.div`
   margin: 0 24px;
 `
 const NameLink = styled.span`
@@ -47,12 +46,12 @@ interface IItemProps {
 
 const Item: React.FC<IItemProps> = props => {
   return (
-    <ItemWrapper>
+    <Wrapper>
       <NavItem exact activeClassName={active} to={props.link}>
-        <IconWrapper>{props.icon}</IconWrapper>
+        <Icon>{props.icon}</Icon>
         <NameLink>{props.name}</NameLink>
       </NavItem>
-    </ItemWrapper>
+    </Wrapper>
   )
 }
 

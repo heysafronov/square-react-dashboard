@@ -6,7 +6,7 @@ const variables = {
   crossSize: 7
 }
 
-const HeaderButtonWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   margin-top: 30px;
 `
@@ -47,12 +47,12 @@ const Cross = styled.div`
 
 const HeaderButton = () => {
   return (
-    <HeaderButtonWrapper>
+    <Wrapper>
       <TextButton>
         <Cross />
         <span>Add new team</span>
       </TextButton>
-    </HeaderButtonWrapper>
+    </Wrapper>
   )
 }
 

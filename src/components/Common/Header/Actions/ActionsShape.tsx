@@ -33,11 +33,11 @@ const ShapeInfo = styled.div`
   font-size: 12px;
   padding: 15px;
 `
-const InformationText = styled.span`
+const Text = styled.span`
   font-style: italic;
   margin: 10px 0 0 0;
 `
-const ActionsShapeWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,7 +67,8 @@ const userProps = {
   avatar: require('assets/images/james.png')
 }
 
-const ShapeIcon = () => {
+const textNotification = `React can also render on the server using Node and power mobile apps using React Native`
+const ShapeIcon = (): object => {
   return (
     <svg
       width='19'
@@ -88,22 +89,21 @@ const ShapeIcon = () => {
 
 const ActionShape = () => {
   const notification = true
-  const text = `React can also render on the server using Node and power mobile apps using React Native`
 
   return (
-    <ActionsShapeWrapper>
+    <Wrapper>
       <>
         <ShapeInfo>
           <AvatarWrapper>
             <Avatar {...userProps} />
             <span>@MikeCobain:</span>
           </AvatarWrapper>
-          <InformationText>{text}</InformationText>
+          <Text>{textNotification}</Text>
         </ShapeInfo>
         {notification ? <Notification /> : null}
         {ShapeIcon()}
       </>
-    </ActionsShapeWrapper>
+    </Wrapper>
   )
 }
 

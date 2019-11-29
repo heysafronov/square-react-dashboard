@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Avatar from 'components/Common/Avatar'
 import IconOval from 'components/Common/Icons/Common/Oval'
 
-const TeamCardWrapper = styled.div`
+const Wrapper = styled.div`
   width: 360px;
   min-width: 235px;
   height: 104px;
@@ -74,15 +74,15 @@ interface ITeamCardProps {
   users: IUserProps[]
 }
 
-const Avatars = (props: ITeamCardProps) => {
-  return props.users.map((avatar: IUserProps, idx: number) => (
+const Avatars = (props: ITeamCardProps): object => {
+  return props.users.map((avatar: IUserProps, idx: number): object => (
     <Avatar key={idx} {...avatar} />
   ))
 }
 
 const TeamCard: React.FC<ITeamCardProps> = props => {
   return (
-    <TeamCardWrapper>
+    <Wrapper>
       <Header>
         <Image>
           <img src={props.avatar} alt='Team' />
@@ -95,7 +95,7 @@ const TeamCard: React.FC<ITeamCardProps> = props => {
       <AvatarWrapper>
         <Avatars {...props} />
       </AvatarWrapper>
-    </TeamCardWrapper>
+    </Wrapper>
   )
 }
 

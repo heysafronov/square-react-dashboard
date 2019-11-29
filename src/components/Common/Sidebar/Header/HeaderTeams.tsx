@@ -17,7 +17,7 @@ const TeamName = styled.span`
   letter-spacing: 0.1px;
   color: #171725;
 `
-const Teammates = styled.div`
+const Users = styled.div`
   display: grid;
   grid-gap: 10px;
   justify-items: center;
@@ -71,7 +71,7 @@ interface IUserProps {
   avatar: string
 }
 
-const users = usersData.map((user: IUserProps, idx: number) => (
+const users = usersData.map((user: IUserProps, idx: number): object => (
   <Avatar key={idx} {...user} />
 ))
 
@@ -85,7 +85,7 @@ const HeaderTeams = () => {
         />
         <TeamName>Iconspace Team</TeamName>
       </Wrapper>
-      <Teammates>{users}</Teammates>
+      <Users>{users}</Users>
     </>
   )
 }

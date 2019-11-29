@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import LoginSocial from 'components/Login/LoginSocial'
 import LoginFormSubmit from 'components/Login/Form/FormSubmit'
 
-const FormSection = styled.section`
+const Section = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,11 +18,11 @@ const FormSection = styled.section`
 
 const Index = () => {
   return (
-    <FormSection>
+    <Section>
       <h3>Login to your account</h3>
       <LoginFormSubmit />
       <LoginSocial />
-    </FormSection>
+    </Section>
   )
 }
 

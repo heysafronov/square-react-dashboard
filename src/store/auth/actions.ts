@@ -1,6 +1,6 @@
 import { AUTH, IAuthCheckAction } from 'store/auth/types'
 
-interface IUserInfo {
+ export interface IUserInfo {
   login: string
   password: string
 }

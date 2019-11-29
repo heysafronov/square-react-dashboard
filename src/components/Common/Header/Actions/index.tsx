@@ -5,7 +5,7 @@ import ActionsShape from 'components/Common/Header/Actions/ActionsShape'
 import ActionsSearch from 'components/Common/Header/Actions/ActionsSearch'
 import ActionsButton from 'components/Common/Header/Actions/ActionsButton'
 
-const ActionsWrapper = styled.div`
+const Wrapper = styled.div`
   display: grid;
   grid-gap: 10px;
   justify-items: center;
@@ -26,12 +26,12 @@ const userProps = {
 
 const Actions = () => {
   return (
-    <ActionsWrapper>
+    <Wrapper>
       <ActionsSearch />
       <ActionsButton />
       <ActionsShape />
       <Avatar {...userProps} />
-    </ActionsWrapper>
+    </Wrapper>
   )
 }
 

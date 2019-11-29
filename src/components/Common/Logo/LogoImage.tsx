@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-interface IProps {
+interface ILogoImageProps {
   size: number
   color: string
 }
 
-const LogoImage = (props: IProps) => {
+const LogoImage: React.FC<ILogoImageProps> = props => {
   return (
     <svg
       width={`${props.size}`}

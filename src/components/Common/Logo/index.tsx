@@ -3,13 +3,13 @@ import styled from 'styled-components'
 import LogoImage from 'components/Common/Logo/LogoImage'
 import LogoTitle from 'components/Common/Logo/LogoTitle'
 
-const LogoSection = styled.section`
+const Section = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
 `
 
-interface IProps {
+interface ILogoProps {
   title: {
     size: number
     color: string
@@ -21,12 +21,12 @@ interface IProps {
   }
 }
 
-const Logo = (props: IProps) => {
+const Logo = (props: ILogoProps) => {
   return (
-    <LogoSection>
+    <Section>
       <LogoImage {...props.image} />
       <LogoTitle {...props.title} />
-    </LogoSection>
+    </Section>
   )
 }
 

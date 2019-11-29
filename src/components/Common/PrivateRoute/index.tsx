@@ -1,15 +1,14 @@
 import * as React from 'react'
 import { AppState } from 'store'
 import { connect } from 'react-redux'
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Redirect, RouteProps } from 'react-router-dom'
 
-interface IProps {
+interface IPrivateRouteProps extends RouteProps {
   auth: boolean
   children: object | []
-  rest: object
 }
 
-function PrivateRoute({ auth, children, ...rest }: IProps) {
+function PrivateRoute({ auth, children, ...rest }: IPrivateRouteProps) {
   return (
     <Route
       {...rest}

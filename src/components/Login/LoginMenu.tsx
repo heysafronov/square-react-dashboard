@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-const MenuWrapper = styled.div`
+const Wrapper = styled.div`
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
   color: white;
@@ -17,9 +17,9 @@ const MenuWrapper = styled.div`
 
 const LoginMenu = () => {
   return (
-    <MenuWrapper>
+    <Wrapper>
       <Link to='#'>Privacy policy</Link> • <Link to='#'>Terms of use</Link>
-    </MenuWrapper>
+    </Wrapper>
   )
 }
 

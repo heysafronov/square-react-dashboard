@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Logo from 'components/Common/Logo'
 import Actions from 'components/Common/Header/Actions'
 
-const HeaderWrapper = styled.section`
+const Wrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13,13 +13,13 @@ const HeaderWrapper = styled.section`
   margin: 0 auto;
   box-shadow: inset 0px -1px 0px #e2e2ea;
 `
-const DivWrapperLogo = styled.div`
+const LogoWrapper = styled.div`
   margin-left: 25px;
   a {
     text-decoration: none;
   }
 `
-const DivWrapperActions = styled.div`
+const ActionsWrapper = styled.div`
   margin-right: 25px;
 `
 
@@ -37,16 +37,16 @@ const logoProps = {
 
 const Header = () => {
   return (
-    <HeaderWrapper>
-      <DivWrapperLogo>
+    <Wrapper>
+      <LogoWrapper>
         <Link to='/'>
           <Logo {...logoProps} />
         </Link>
-      </DivWrapperLogo>
-      <DivWrapperActions>
+      </LogoWrapper>
+      <ActionsWrapper>
         <Actions />
-      </DivWrapperActions>
-    </HeaderWrapper>
+      </ActionsWrapper>
+    </Wrapper>
   )
 }
 

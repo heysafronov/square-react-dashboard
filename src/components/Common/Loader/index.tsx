@@ -5,7 +5,7 @@ const variables = {
   color: '#0062ff'
 }
 
-const SvgWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,7 +52,7 @@ const Circle = styled.circle`
 
 const Loader = () => {
   return (
-    <SvgWrapper>
+    <Wrapper>
       <Svg
         width='30px'
         height='30px'
@@ -68,7 +68,7 @@ const Loader = () => {
           r='30'
         />
       </Svg>
-    </SvgWrapper>
+    </Wrapper>
   )
 }
 

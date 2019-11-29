@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-const ActionsSearchWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -37,9 +37,9 @@ const Input = styled.input`
 
 const ActionsSearch = () => {
   return (
-    <ActionsSearchWrapper>
+    <Wrapper>
       <Input type='search' placeholder='Find' />
-    </ActionsSearchWrapper>
+    </Wrapper>
   )
 }
 

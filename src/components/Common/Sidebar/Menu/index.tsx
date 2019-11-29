@@ -8,7 +8,7 @@ import IconActivity from 'components/Common/Icons/Menu/Activity'
 import IconSettings from 'components/Common/Icons/Menu/Settings'
 import IconDashboard from 'components/Common/Icons/Menu/Dashboard'
 
-const MenuWrapper = styled.nav`
+const Wrapper = styled.nav`
   display: flex;
   flex-direction: column;
   @media (max-width: 620px) {
@@ -55,12 +55,12 @@ interface IItemProps {
   link: string
 }
 
-const items = itemsData.map((item: IItemProps, idx: number) => (
+const items = itemsData.map((item: IItemProps, idx: number): object => (
   <Item key={idx} {...item} />
 ))
 
 const Menu = () => {
-  return <MenuWrapper>{items}</MenuWrapper>
+  return <Wrapper>{items}</Wrapper>
 }
 
 export default Menu

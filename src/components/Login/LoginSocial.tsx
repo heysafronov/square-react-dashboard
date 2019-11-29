@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import IconGoogle from 'components/Common/Icons/SocialMedia/Google'
 import IconFacebook from 'components/Common/Icons/SocialMedia/Facebook'
 
-const FormSocialWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `
-const SpanText = styled.span`
+const Text = styled.span`
   margin: 15px 0;
   color: #92929d;
   font-size: 12px;
@@ -40,8 +40,8 @@ const ButtonFacebook = styled(ButtonGoogle)`
 
 const LoginSocial = () => {
   return (
-    <FormSocialWrapper>
-      <SpanText>or</SpanText>
+    <Wrapper>
+      <Text>or</Text>
       <ButtonGoogle>
         <IconGoogle />
         <span>Continue with Google</span>
@@ -50,7 +50,7 @@ const LoginSocial = () => {
         <IconFacebook />
         <span>Continue with Facebook</span>
       </ButtonFacebook>
-    </FormSocialWrapper>
+    </Wrapper>
   )
 }
 

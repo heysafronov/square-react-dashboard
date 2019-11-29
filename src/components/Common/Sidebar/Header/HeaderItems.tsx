@@ -7,11 +7,11 @@ const variables = {
   color: '#92929d'
 }
 
-const HeaderItemsWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `
-const FlexWrapperBetween = styled.div`
+const Block = styled.div`
   display: flex;
   justify-content: space-between;
 `
@@ -36,21 +36,21 @@ const TeamsTitle = styled.span`
 `
 
 const HeaderItems = () => {
-  const [opened, setOpened] = React.useState(true)
+  const [opened, setOpened] = React.useState<boolean>(true)
 
-  const handleOpened = () => {
+  const handleOpened = (): void => {
     setOpened(!opened)
   }
 
   return (
-    <HeaderItemsWrapper>
-      <FlexWrapperBetween onClick={handleOpened}>
+    <Wrapper>
+      <Block onClick={handleOpened}>
         <TeamsTitle>Teams</TeamsTitle>
         <div>{opened ? <ArrowDown /> : <ArrowUp />}</div>
-      </FlexWrapperBetween>
+      </Block>
       {opened ? <HeaderTeams /> : null}
       <HeaderButton />
-    </HeaderItemsWrapper>
+    </Wrapper>
   )
 }
 

@@ -2,19 +2,19 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 const Title = styled.span`
-  font-size: ${(props: IProps) => props.size}px;
-  color: ${(props: IProps) => props.color};
+  font-size: ${(props: ILogoTitleProps) => props.size}px;
+  color: ${(props: ILogoTitleProps) => props.color};
   font-weight: 900;
   margin-left: 5px;
 `
 
-interface IProps {
+interface ILogoTitleProps {
   size: number
   color: string
   text: string
 }
 
-const LogoTitle = (props: IProps) => {
+const LogoTitle: React.FC<ILogoTitleProps> = props => {
   return <Title {...props}>{props.text}</Title>
 }
 

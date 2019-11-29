@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   background-color: #0062ff;
 }
 `
-const LoginSection = styled.section`
+const Section = styled.section`
   height: 98vh;
   display: flex;
   flex-direction: column;
@@ -34,11 +34,11 @@ const Login = () => {
   return (
     <>
       <GlobalStyle />
-      <LoginSection>
+      <Section>
         <Logo {...logoProps} />
         <LoginForm />
         <LoginMenu />
-      </LoginSection>
+      </Section>
     </>
   )
 }

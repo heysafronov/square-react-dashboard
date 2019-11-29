@@ -2,9 +2,9 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { Redirect } from 'react-router-dom'
-import { checkAuth } from 'store/auth/actions'
+import { checkAuth, IUserInfo } from 'store/auth/actions'
 
-const InputWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   position: relative;
 `
@@ -60,14 +60,14 @@ const InputSubmit = styled.input`
   }
 `
 
-interface IFormProps {
+interface IFormSubmitProps {
   checkAuth: typeof checkAuth
 }
 
-const FormSubmit: React.FC<IFormProps> = props => {
-  const [redirect, setRedirect] = React.useState(false)
-  const [user, setUser] = React.useState({ login: '', password: '' })
-  const [error, setError] = React.useState({
+const FormSubmit: React.FC<IFormSubmitProps> = props => {
+  const [redirect, setRedirect] = React.useState<boolean>(false)
+  const [user, setUser] = React.useState<IUserInfo>({ login: '', password: '' })
+  const [error, setError] = React.useState<IUserInfo>({
     login: 'Login error',
     password: 'Password error'
   })
@@ -78,7 +78,7 @@ const FormSubmit: React.FC<IFormProps> = props => {
     }
   }
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: any): void => {
     e.preventDefault()
     if (!error.login && !error.password) {
       props.checkAuth({
@@ -89,7 +89,7 @@ const FormSubmit: React.FC<IFormProps> = props => {
     }
   }
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: any): void => {
     const { name, value } = e.target
     if (value !== 'admin') {
       switch (name) {
@@ -132,7 +132,7 @@ const FormSubmit: React.FC<IFormProps> = props => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <InputWrapper>
+      <Wrapper>
         <InputText
           type='text'
           placeholder='Your login'
@@ -141,8 +141,8 @@ const FormSubmit: React.FC<IFormProps> = props => {
           value={user.login}
         />
         <InputLabel>{error.login ? 'Error, your login: admin' : ''}</InputLabel>
-      </InputWrapper>
-      <InputWrapper>
+      </Wrapper>
+      <Wrapper>
         <InputText
           type='password'
           placeholder='Your password'
@@ -153,7 +153,7 @@ const FormSubmit: React.FC<IFormProps> = props => {
         <InputLabel>
           {error.password ? 'Error, your password: admin' : ''}
         </InputLabel>
-      </InputWrapper>
+      </Wrapper>
       <InputSubmit
         type='submit'
         value='Sign in'
