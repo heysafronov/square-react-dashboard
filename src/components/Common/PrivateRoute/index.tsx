@@ -5,7 +5,6 @@ import { Route, Redirect, RouteProps } from 'react-router-dom'
 
 interface IPrivateRouteProps extends RouteProps {
   auth: boolean
-  children: object | []
 }
 
 function PrivateRoute({ auth, children, ...rest }: IPrivateRouteProps) {
