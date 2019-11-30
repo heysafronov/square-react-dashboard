@@ -16,13 +16,13 @@ const Div = styled.div`
   }
 `
 
-interface IContentProps {
+interface ITaskWrapperProps {
   dragAndDrop: typeof dragAndDrop
   data: ITaskState[]
   type: string
 }
 
-const TaskModule: React.FC<IContentProps> = props => {
+const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
   const tasks = () => {
     return props.data.map(item => <Task data={item} key={item.id} />)
   }
@@ -45,4 +45,4 @@ const TaskModule: React.FC<IContentProps> = props => {
 export default connect(
   null,
   { dragAndDrop }
-)(TaskModule)
+)(TaskWrapper)

@@ -8,8 +8,13 @@ const Div = styled.div`
   color: white;
 `
 
-const Task = props => {
-  const onDragStart = e => {
+interface ITaskProps {
+  data: object
+  key: string
+}
+
+const Task: React.FC<ITaskProps> = props => {
+  const onDragStart = (e: any) => {
     e.dataTransfer.setData('text/html', props.data.id)
   }
 
