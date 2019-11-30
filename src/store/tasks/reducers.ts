@@ -39,7 +39,7 @@ export function tasksReducer(tasks = normalizedTasks, action) {
       let filteredTasks = tasks.filter(task => {
         console.log(task.id == id)
         if (task.id == id) {
-          task.type = payload.cat
+          task.type = payload.type
         }
         return task
       })

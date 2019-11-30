@@ -32,8 +32,8 @@ const TaskModule = props => {
     onDrop(ev, props.type)
   }
 
-  const onDrop = (ev, cat) => {
-    props.dragAndDrop(ev, cat)
+  const onDrop = (ev, type) => {
+    props.dragAndDrop(ev, type)
   }
 
   const onDragEnter = () => {
