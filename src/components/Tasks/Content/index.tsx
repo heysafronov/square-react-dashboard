@@ -28,8 +28,8 @@ const Tasks = styled.div`
 `
 
 interface IContentProps {
-  backlog: () => ITaskState[]
-  todo: () => ITaskState[]
+  backlog: ITaskState[]
+  todo: ITaskState[]
 }
 
 const Content: React.FC<IContentProps> = props => {
