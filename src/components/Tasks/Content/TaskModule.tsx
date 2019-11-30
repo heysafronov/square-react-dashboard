@@ -20,12 +20,12 @@ const TaskModule = props => {
     return props.data.map(item => <Task data={item} key={item.id} />)
   }
 
-  const onDragOver = ev => {
-    ev.preventDefault()
+  const onDragOver = e => {
+    e.preventDefault()
   }
 
-  const onDrop = ev => {
-    props.dragAndDrop(ev, props.type)
+  const onDrop = e => {
+    props.dragAndDrop(e, props.type)
   }
 
   return (

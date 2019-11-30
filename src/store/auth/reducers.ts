@@ -6,7 +6,7 @@ const initialState: IAuthState = {
   password: ''
 }
 
-export function authReducer(
+export function auth(
   state = initialState,
   action: IAuthCheckAction
 ): IAuthState {

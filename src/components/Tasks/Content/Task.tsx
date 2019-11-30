@@ -9,8 +9,8 @@ const Div = styled.div`
 `
 
 const Task = props => {
-  const onDragStart = ev => {
-    ev.dataTransfer.setData('text/html', props.data.id)
+  const onDragStart = e => {
+    e.dataTransfer.setData('text/html', props.data.id)
   }
 
   return (
