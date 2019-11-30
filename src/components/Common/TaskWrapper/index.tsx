@@ -2,8 +2,8 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import Task from 'components/Common/Task'
-import { dragAndDrop } from 'store/tasks/actions'
 import { ITaskState } from 'store/tasks/types'
+import { dragAndDrop } from 'store/tasks/actions'
 
 const Div = styled.div`
   width: 250px;

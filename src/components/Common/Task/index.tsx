@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import { ITaskState } from 'store/tasks/types'
 
 const Div = styled.div`
   width: 50px;
@@ -9,7 +10,7 @@ const Div = styled.div`
 `
 
 interface ITaskProps {
-  data: object
+  data: ITaskState
   key: string
 }
 
