@@ -22,8 +22,9 @@ const Wrapper = styled.div`
   }
 `
 const Tasks = styled.div`
-  margin: 35px 0 20px 0;
-  display: flex;
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 `
 
 interface IContentProps {
