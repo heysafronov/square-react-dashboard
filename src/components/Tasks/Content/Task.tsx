@@ -9,16 +9,12 @@ const Div = styled.div`
 `
 
 const Task = props => {
-  const forDragStart = ev => {
-    onDragStart(ev, props.data.id)
-  }
-
-  const onDragStart = (ev, id) => {
-    ev.dataTransfer.setData('text/html', id)
+  const onDragStart = ev => {
+    ev.dataTransfer.setData('text/html', props.data.id)
   }
 
   return (
-    <Div draggable='true' onDragStart={forDragStart}>
+    <Div draggable='true' onDragStart={onDragStart}>
       <span>{props.data.name}</span>
     </Div>
   )

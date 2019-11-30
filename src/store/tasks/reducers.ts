@@ -1,21 +1,21 @@
 const normalizedTasks = [
   {
-    id: 1,
+    id: '1',
     name: 'Ivan',
     type: 'backlog'
   },
   {
-    id: 2,
+    id: '2',
     name: 'Petr',
     type: 'backlog'
   },
   {
-    id: 3,
+    id: '3',
     name: 'Gleb',
     type: 'todo'
   },
   {
-    id: 4,
+    id: '4',
     name: 'Egor',
     type: 'todo'
   }
@@ -37,8 +37,7 @@ export function tasksReducer(tasks = normalizedTasks, action) {
     case 'DRAG_AND_DROP':
       let id = payload.ev.dataTransfer.getData('text/html')
       let filteredTasks = tasks.filter(task => {
-        console.log(task.id == id)
-        if (task.id == id) {
+        if (task.id === id) {
           task.type = payload.type
         }
         return task
