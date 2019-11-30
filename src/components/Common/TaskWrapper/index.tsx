@@ -1,8 +1,9 @@
 import * as React from 'react'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
 import Task from 'components/Common/Task'
-import { connect } from 'react-redux'
 import { dragAndDrop } from 'store/tasks/actions'
+import { ITaskState } from 'store/tasks/types'
 
 const Div = styled.div`
   width: 250px;
@@ -15,16 +16,22 @@ const Div = styled.div`
   }
 `
 
-const TaskModule = props => {
+interface IContentProps {
+  dragAndDrop: typeof dragAndDrop
+  data: ITaskState[]
+  type: string
+}
+
+const TaskModule: React.FC<IContentProps> = props => {
   const tasks = () => {
     return props.data.map(item => <Task data={item} key={item.id} />)
   }
 
-  const onDragOver = e => {
+  const onDragOver = (e: any) => {
     e.preventDefault()
   }
 
-  const onDrop = e => {
+  const onDrop = (e: any) => {
     props.dragAndDrop(e, props.type)
   }
 
