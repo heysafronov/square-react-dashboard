@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import Task from './Task'
+import Task from 'components/Common/Task'
 import { connect } from 'react-redux'
 import { dragAndDrop } from 'store/tasks/actions'
 

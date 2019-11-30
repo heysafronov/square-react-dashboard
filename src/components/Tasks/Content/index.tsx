@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-import TaskModule from 'components/Tasks/Content/TaskModule'
+import TaskModule from 'components/Common/TaskWrapper'
 import {
   filtratedTasksBacklog,
   filtratedTasksTodo
