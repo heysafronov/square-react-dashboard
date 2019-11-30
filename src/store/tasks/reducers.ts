@@ -35,9 +35,11 @@ export function tasksReducer(tasks = normalizedTasks, action) {
       })
 
     case 'DRAG_AND_DROP':
-      let id = payload.ev.dataTransfer.getData('text/html')
-      let filteredTasks = tasks.filter(task => {
-        if (task.id === id) {
+      const id = payload.ev.dataTransfer.getData('text/html')
+      const checkIdforChrome =
+        id[0] === '<' ? id.replace(/[^\d]/g, '').slice(1) : id
+      const filteredTasks = tasks.filter(task => {
+        if (task.id === checkIdforChrome) {
           task.type = payload.type
         }
         return task
