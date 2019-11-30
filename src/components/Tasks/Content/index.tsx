@@ -1,6 +1,8 @@
 import * as React from 'react'
+import { AppState } from 'store'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
+import { ITaskState } from 'store/tasks/types'
 import TaskWrapper from 'components/Common/TaskWrapper'
 import ContentTitle from 'components/Tasks/Content/ContentTitle'
 import {
@@ -24,7 +26,12 @@ const Tasks = styled.div`
   display: flex;
 `
 
-const Content = props => {
+interface IContentProps {
+  backlog: () => ITaskState[]
+  todo: () => ITaskState[]
+}
+
+const Content: React.FC<IContentProps> = props => {
   return (
     <Wrapper>
       <ContentTitle />
@@ -36,7 +43,7 @@ const Content = props => {
   )
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: AppState) => ({
   backlog: filtratedTasksBacklog(state),
   todo: filtratedTasksTodo(state)
 })

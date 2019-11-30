@@ -1,12 +1,12 @@
-import {ITaskState} from 'store/tasks/types'
+import { ITaskState } from 'store/tasks/types'
 
-export const filtratedTasksBacklog = (state: any)  => {
+export const filtratedTasksBacklog = (state: any): ITaskState[] => {
   return state.tasks.filter((task: ITaskState) => {
     return task.type === 'backlog'
   })
 }
 
-export const filtratedTasksTodo = (state: any) => {
+export const filtratedTasksTodo = (state: any): ITaskState[] => {
   return state.tasks.filter((task: ITaskState) => {
     return task.type === 'todo'
   })
