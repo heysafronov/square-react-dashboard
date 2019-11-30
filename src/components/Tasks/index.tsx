@@ -4,7 +4,7 @@ import Header from 'components/Common/Header'
 import Sidebar from 'components/Common/Sidebar'
 import Content from 'components/Tasks/Content'
 
-const MainWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   max-width: 1600px;
   margin: 0 auto;
@@ -14,10 +14,10 @@ const Tasks = () => {
   return (
     <>
       <Header />
-      <MainWrapper>
+      <Wrapper>
         <Sidebar />
         <Content />
-      </MainWrapper>
+      </Wrapper>
     </>
   )
 }
