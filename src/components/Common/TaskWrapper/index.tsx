@@ -6,14 +6,20 @@ import { ITaskState } from 'store/tasks/types'
 import { dragAndDrop } from 'store/tasks/actions'
 import IconOval from 'components/Common/Icons/Common/Oval'
 
+const variables = {
+  color: '#0062ff',
+  colorBorder: '#e2e2ea',
+  crossSize: 16
+}
+
 const Wrapper = styled.div`
   width: 250px;
 `
 const Header = styled.div`
   border-radius: 15px 15px 0 0;
-  border-top: 1px solid #e2e2ea;
-  border-left: 1px solid #e2e2ea;
-  border-right: 1px solid #e2e2ea;
+  border-top: 1px solid ${variables.colorBorder};
+  border-left: 1px solid ${variables.colorBorder};
+  border-right: 1px solid ${variables.colorBorder};
   display: flex;
   justify-content: space-between;
 `
@@ -34,15 +40,39 @@ const More = styled.div`
 `
 const TasksWrapper = styled.div`
   height: auto;
-  border-left: 1px solid #e2e2ea;
-  border-right: 1px solid #e2e2ea;
+  border-left: 1px solid ${variables.colorBorder};
+  border-right: 1px solid ${variables.colorBorder};
 `
 const Button = styled.button`
   height: 35px;
   width: 100%;
   border-radius: 0 0 15px 15px;
   outline: none;
-  border: 1px solid #e2e2ea;
+  border: 1px solid ${variables.colorBorder};
+  position: relative;
+  cursor: not-allowed;
+`
+const Cross = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  width: ${variables.crossSize}px;
+  height: ${variables.crossSize}px;
+  :before,
+  :after {
+    position: absolute;
+    left: 0;
+    content: '';
+    height: ${variables.crossSize}px;
+    width: 2px;
+    background-color: #92929d;
+  }
+  :before {
+    transform: rotate(90deg);
+  }
+  :after {
+    transform: rotate(180deg);
+  }
 `
 
 interface ITaskWrapperProps {
@@ -73,7 +103,9 @@ const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
         </More>
       </Header>
       <TasksWrapper>{tasks()}</TasksWrapper>
-      <Button />
+      <Button>
+        <Cross />
+      </Button>
     </Wrapper>
   )
 }
