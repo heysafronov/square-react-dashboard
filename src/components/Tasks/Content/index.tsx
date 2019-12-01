@@ -37,8 +37,8 @@ const Content: React.FC<IContentProps> = props => {
     <Wrapper>
       <ContentTitle />
       <Tasks>
-        <TaskWrapper data={props.backlog} type='backlog' />
-        <TaskWrapper data={props.todo} type='todo' />
+        <TaskWrapper data={props.backlog} type='Backlog' />
+        <TaskWrapper data={props.todo} type='Todo' />
       </Tasks>
     </Wrapper>
   )

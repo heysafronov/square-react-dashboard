@@ -2,21 +2,21 @@ export const normalizedTasks = [
   {
     id: '1',
     name: 'Ivan',
-    type: 'backlog'
+    type: 'Backlog'
   },
   {
     id: '2',
     name: 'Petr',
-    type: 'backlog'
+    type: 'Backlog'
   },
   {
     id: '3',
     name: 'Gleb',
-    type: 'todo'
+    type: 'Todo'
   },
   {
     id: '4',
     name: 'Egor',
-    type: 'todo'
+    type: 'Todo'
   }
 ]

@@ -4,15 +4,31 @@ import styled from 'styled-components'
 import Task from 'components/Common/Task'
 import { ITaskState } from 'store/tasks/types'
 import { dragAndDrop } from 'store/tasks/actions'
+import IconOval from 'components/Common/Icons/Common/Oval'
 
-const Div = styled.div`
+const Wrapper = styled.div`
   width: 250px;
   height: 600px;
-  border: 1px solid red;
-  div {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 20px;
+  border: 1px solid #e2e2ea;
+  border-radius: 15px;
+`
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+const Title = styled.span`
+  font-size: 16px;
+  letter-spacing: 0.1px;
+  color: #696974;
+  padding: 15px 20px;
+`
+const More = styled.div`
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  cursor: not-allowed;
+  @media (max-width: 450px) {
+    display: none;
   }
 `
 
@@ -36,9 +52,15 @@ const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
   }
 
   return (
-    <Div onDragOver={onDragOver} onDrop={onDrop}>
+    <Wrapper onDragOver={onDragOver} onDrop={onDrop}>
+      <Header>
+        <Title>{props.type}</Title>
+        <More>
+          <IconOval />
+        </More>
+      </Header>
       <div>{tasks()}</div>
-    </Div>
+    </Wrapper>
   )
 }
 
