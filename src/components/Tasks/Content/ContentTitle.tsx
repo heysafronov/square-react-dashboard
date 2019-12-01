@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-const Username = styled.span`
+const Title = styled.span`
   font-size: 24px;
   text-align: center;
   letter-spacing: 0.1px;
@@ -21,7 +21,7 @@ const WelcomeText = styled.span`
 const ContentTitle = () => {
   return (
     <div>
-      <Username>Hi James,</Username>
+      <Title>Tasks</Title>
       <WelcomeText>here’s your currently projects</WelcomeText>
     </div>
   )
