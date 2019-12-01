@@ -14,6 +14,8 @@ const variables = {
 
 const Wrapper = styled.div`
   width: 250px;
+  //
+  //width: auto;
 `
 const Header = styled.div`
   border-radius: 15px 15px 0 0;
@@ -43,15 +45,6 @@ const TasksWrapper = styled.div`
   border-left: 1px solid ${variables.colorBorder};
   border-right: 1px solid ${variables.colorBorder};
 `
-const Button = styled.button`
-  height: 35px;
-  width: 100%;
-  border-radius: 0 0 15px 15px;
-  outline: none;
-  border: 1px solid ${variables.colorBorder};
-  position: relative;
-  cursor: not-allowed;
-`
 const Cross = styled.div`
   position: absolute;
   left: 50%;
@@ -72,6 +65,24 @@ const Cross = styled.div`
   }
   :after {
     transform: rotate(180deg);
+  }
+`
+const Button = styled.button`
+  height: 35px;
+  width: 100%;
+  border-radius: 0 0 15px 15px;
+  outline: none;
+  border: 1px solid ${variables.colorBorder};
+  position: relative;
+  cursor: not-allowed;
+  :hover {
+    border: 1px dashed ${variables.color};
+  }
+  :hover ${Cross}:before {
+    background-color: ${variables.color};
+  }
+  :hover ${Cross}:after {
+    background-color: ${variables.color};
   }
 `
 
