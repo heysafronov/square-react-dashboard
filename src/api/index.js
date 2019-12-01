@@ -11,11 +11,26 @@ export const normalizedTasks = [
   },
   {
     id: '3',
+    name: 'Ivan',
+    type: 'Backlog'
+  },
+  {
+    id: '4',
+    name: 'Ivan',
+    type: 'Backlog'
+  },
+  {
+    id: '5',
+    name: 'Ivan',
+    type: 'Backlog'
+  },
+  {
+    id: '6',
     name: 'Gleb',
     type: 'Todo'
   },
   {
-    id: '4',
+    id: '7',
     name: 'Egor',
     type: 'Todo'
   }

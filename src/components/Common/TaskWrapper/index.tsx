@@ -8,11 +8,12 @@ import IconOval from 'components/Common/Icons/Common/Oval'
 
 const Wrapper = styled.div`
   width: 250px;
-  height: 600px;
-  border: 1px solid #e2e2ea;
-  border-radius: 15px;
 `
 const Header = styled.div`
+  border-radius: 15px 15px 0 0;
+  border-top: 1px solid #e2e2ea;
+  border-left: 1px solid #e2e2ea;
+  border-right: 1px solid #e2e2ea;
   display: flex;
   justify-content: space-between;
 `
@@ -30,6 +31,18 @@ const More = styled.div`
   @media (max-width: 450px) {
     display: none;
   }
+`
+const TasksWrapper = styled.div`
+  height: auto;
+  border-left: 1px solid #e2e2ea;
+  border-right: 1px solid #e2e2ea;
+`
+const Button = styled.button`
+  height: 35px;
+  width: 100%;
+  border-radius: 0 0 15px 15px;
+  outline: none;
+  border: 1px solid #e2e2ea;
 `
 
 interface ITaskWrapperProps {
@@ -59,7 +72,8 @@ const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
           <IconOval />
         </More>
       </Header>
-      <div>{tasks()}</div>
+      <TasksWrapper>{tasks()}</TasksWrapper>
+      <Button />
     </Wrapper>
   )
 }
