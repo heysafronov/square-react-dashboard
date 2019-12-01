@@ -17,6 +17,7 @@
     "noEmit": true,
     "strict": true,
     "importHelpers": true,
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "strictNullChecks": true,
     "removeComments": true,

@@ -20,7 +20,7 @@ const Task: React.FC<ITaskProps> = props => {
   }
 
   return (
-    <Div draggable='true' onDragStart={onDragStart}>
+    <Div draggable={true} onDragStart={onDragStart}>
       <span>{props.data.name}</span>
     </Div>
   )

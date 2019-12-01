@@ -1,3 +1,7 @@
+import {
+  filtratedTasksBacklog,
+  filtratedTasksTodo
+} from 'store/tasks/selectors'
 import * as React from 'react'
 import { AppState } from 'store'
 import { connect } from 'react-redux'
@@ -5,10 +9,6 @@ import styled from 'styled-components'
 import { ITaskState } from 'store/tasks/types'
 import TaskWrapper from 'components/Common/TaskWrapper'
 import ContentTitle from 'components/Tasks/Content/ContentTitle'
-import {
-  filtratedTasksBacklog,
-  filtratedTasksTodo
-} from 'store/tasks/selectors'
 
 const Wrapper = styled.div`
   display: flex;

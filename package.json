@@ -10,7 +10,7 @@
     "dev": "webpack-dev-server --mode development --open --hot",
     "build": "npm run clear && webpack --mode production",
     "format": "prettier \"./src/**/*.+(js|jsx|ts|tsx)\" --write",
-    "tsc": "tsc"
+    "ts": "tsc"
   },
   "devDependencies": {
     "@babel/core": "^7.7.0",
