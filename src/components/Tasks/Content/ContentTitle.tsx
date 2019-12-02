@@ -24,18 +24,18 @@ const Sort = styled.div`
 `
 const Select = styled.div`
   position: absolute;
-  width: 200px;
+  width: 199px;
   height: 149px;
-  left: 50px;
-  top: 30px;
+  left: 0;
+  top: 39px;
   background: white;
   border: 1px solid #f1f1f5;
   box-shadow: 0 5px 15px rgba(68, 68, 79, 0.1);
-  border-radius: 0 0 8px 8px;
+  border-radius: 8px;
 `
 const ArrowWrapper = styled.div`
   height: 100%;
-  width: 50px;
+  width: 30px;
   border-left: 1px solid #f1f1f5;
   display: flex;
   align-items: center;
