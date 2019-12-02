@@ -6,7 +6,7 @@ export interface ITypes {
 }
 
 export interface IShowState {
-  show: ITypes
+  list: ITypes
 }
 
 export interface IShowMoreAction {
