@@ -1,8 +1,8 @@
-import { SHOW_MORE, IShowMoreAction } from 'store/show/types'
+import { SHOW_MORE, IShowMoreAction, ITypes } from 'store/show/types'
 
-export const ShowMore = (type: string): IShowMoreAction => {
+export const ShowMore = (types: ITypes): IShowMoreAction => {
   return {
     type: SHOW_MORE,
-    payload: type
+    payload: types
   }
 }

@@ -47,18 +47,18 @@ const Content: React.FC<IContentProps> = props => {
     <Wrapper>
       <ContentTitle />
       <Tasks>
-        {props.showBacklog || props.showAll ? (
-          <TaskWrapper data={props.backlog} type='Backlog' />
-        ) : null}
+
+        <TaskWrapper data={props.backlog} type='Backlog' />
         <TaskWrapper data={props.progress} type='In Progress' />
+
       </Tasks>
     </Wrapper>
   )
 }
 
 const mapStateToProps = (state: AppState) => ({
-  showAll: filteredWrappers(state, types.all),
-  showBacklog: filteredWrappers(state, types.backlog),
+  // showAll: filteredWrappers(state, types.all),
+  // showBacklog: filteredWrappers(state, types.backlog),
   backlog: filteredTasks(state, types.backlog),
   progress: filteredTasks(state, types.progress)
 })

@@ -1,10 +1,15 @@
 export const SHOW_MORE = 'SHOW_MORE'
 
+export interface ITypes {
+  backlog: boolean
+  progress: boolean
+}
+
 export interface IShowState {
-  show: string[]
+  show: ITypes
 }
 
 export interface IShowMoreAction {
   type: typeof SHOW_MORE
-  payload: string
+  payload: object
 }
