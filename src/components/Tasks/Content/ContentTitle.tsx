@@ -103,7 +103,7 @@ const ContentTitle: React.FC<IContentTitleProps> = props => {
     const value = e.target.value
     props.ShowMore(value)
     setChecked(prevState => ({ ...prevState, [name]: !checked[name] }))
-    setFilter(prevState => [...prevState, value])
+    setFilter([value])
   }
 
   return (
