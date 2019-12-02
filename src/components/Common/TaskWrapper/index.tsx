@@ -75,6 +75,7 @@ const Button = styled.button`
   border: 1px solid ${variables.colorBorder};
   position: relative;
   cursor: not-allowed;
+  background-color: white;
   :hover {
     border: 1px dashed ${variables.color};
   }
