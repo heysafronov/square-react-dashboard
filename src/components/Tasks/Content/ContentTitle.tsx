@@ -1,7 +1,10 @@
 import * as React from 'react'
+import { AppState } from 'store'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { ShowMore } from 'store/show/actions'
+import { IShowTypes } from 'store/show/types'
+import { getShowState } from 'store/show/selectors'
 
 const Wrapper = styled.div`
   display: flex;
@@ -78,15 +81,12 @@ const What = styled.span`
 
 interface IContentTitleProps {
   ShowMore: typeof ShowMore
+  showState: IShowTypes
 }
 
 const ContentTitle: React.FC<IContentTitleProps> = props => {
   const [opened, setOpened] = React.useState<boolean>(false)
   const [filter, setFilter] = React.useState<string[]>(['All tasks'])
-  const [checked, setChecked] = React.useState({
-    backlog: false,
-    progress: false
-  })
 
   const handleOpened = (e: any): void => {
     if (e.target === e.currentTarget) {
@@ -102,10 +102,7 @@ const ContentTitle: React.FC<IContentTitleProps> = props => {
     const name = e.target.name
     const value = e.target.value
     setFilter([value])
-    setChecked(prevState => {
-      props.ShowMore({ ...prevState, [name]: !checked[name] })
-      return { ...prevState, [name]: !checked[name] }
-    })
+    props.ShowMore({ ...props.showState, [name]: !props.showState[name] })
   }
 
   return (
@@ -127,7 +124,7 @@ const ContentTitle: React.FC<IContentTitleProps> = props => {
                 value='Backlog'
                 name='backlog'
                 onChange={handleCheckbox}
-                checked={checked.backlog}
+                checked={props.showState.backlog}
               />
               Backlog
             </label>
@@ -137,7 +134,7 @@ const ContentTitle: React.FC<IContentTitleProps> = props => {
                 value='In progress'
                 name='progress'
                 onChange={handleCheckbox}
-                checked={checked.progress}
+                checked={props.showState.progress}
               />
               In progress
             </label>
@@ -148,11 +145,15 @@ const ContentTitle: React.FC<IContentTitleProps> = props => {
   )
 }
 
+const mapStateToProps = (state: AppState) => ({
+  showState: getShowState(state)
+})
+
 const mapDispatchToProps = {
   ShowMore
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(ContentTitle)

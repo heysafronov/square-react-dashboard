@@ -1,12 +1,12 @@
 export const SHOW_MORE = 'SHOW_MORE'
 
-export interface ITypes {
+export interface IShowTypes {
   backlog: boolean
   progress: boolean
 }
 
 export interface IShowState {
-  list: ITypes
+  list: IShowTypes
 }
 
 export interface IShowMoreAction {
