@@ -1,7 +1,5 @@
-import {
-  filtratedTasksBacklog,
-  filtratedTasksTodo
-} from 'store/tasks/selectors'
+import { filtratedTasks } from 'store/tasks/selectors'
+import { isBacklog } from 'store/show/selectors'
 import * as React from 'react'
 import { AppState } from 'store'
 import { connect } from 'react-redux'
@@ -36,12 +34,19 @@ interface IContentProps {
   todo: ITaskState[]
 }
 
+const taskTypes = {
+  backlog: 'Backlog',
+  todo: 'Todo'
+}
+
 const Content: React.FC<IContentProps> = props => {
   return (
     <Wrapper>
       <ContentTitle />
       <Tasks>
-        <TaskWrapper data={props.backlog} type='Backlog' />
+        {props.showBacklog ? (
+          <TaskWrapper data={props.backlog} type='Backlog' />
+        ) : null}
         <TaskWrapper data={props.todo} type='Todo' />
       </Tasks>
     </Wrapper>
@@ -49,8 +54,9 @@ const Content: React.FC<IContentProps> = props => {
 }
 
 const mapStateToProps = (state: AppState) => ({
-  backlog: filtratedTasksBacklog(state),
-  todo: filtratedTasksTodo(state)
+  backlog: filtratedTasks(state, taskTypes.backlog),
+  showBacklog: isBacklog(state),
+  todo: filtratedTasks(state, taskTypes.todo)
 })
 
 export default connect(mapStateToProps)(Content)

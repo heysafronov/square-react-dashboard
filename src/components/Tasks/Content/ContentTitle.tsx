@@ -1,5 +1,7 @@
 import * as React from 'react'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
+import { ShowMore } from 'store/show/actions'
 
 const Wrapper = styled.div`
   display: flex;
@@ -74,9 +76,13 @@ const What = styled.span`
   margin-left: 10px;
 `
 
-const ContentTitle = () => {
+interface IContentTitleProps {
+  ShowMore: typeof ShowMore
+}
+
+const ContentTitle: React.FC<IContentTitleProps> = props => {
   const [opened, setOpened] = React.useState<boolean>(false)
-  const [filter, setFilter] = React.useState(['All tasks'])
+  const [filter, setFilter] = React.useState<string[]>(['All tasks'])
 
   const handleOpened = (e: any): void => {
     e.preventDefault()
@@ -91,6 +97,7 @@ const ContentTitle = () => {
 
   const handleFilters = (e: any): void => {
     const choice = e.target.textContent
+    props.ShowMore(choice)
     setFilter(prevState => [...prevState, choice])
   }
 
@@ -107,8 +114,9 @@ const ContentTitle = () => {
         </ArrowWrapper>
         {opened ? (
           <Select onClick={handleFilters}>
-            <span>111</span>
-            <span>222</span>
+            <span>Backlog</span>
+            <span>In Progress</span>
+            <span>Complete</span>
           </Select>
         ) : null}
       </Sort>
@@ -116,4 +124,11 @@ const ContentTitle = () => {
   )
 }
 
-export default ContentTitle
+const mapDispatchToProps = {
+  ShowMore
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ContentTitle)
