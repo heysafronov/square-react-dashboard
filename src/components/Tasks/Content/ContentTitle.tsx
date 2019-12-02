@@ -13,7 +13,7 @@ const Title = styled.span`
 `
 const Sort = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   position: relative;
   width: 200px;
   height: 38px;
@@ -55,6 +55,22 @@ const ArrowDown = styled(Arrow)`
 const ArrowUp = styled(Arrow)`
   transform: rotate(135deg);
 `
+const ShowWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 20px;
+`
+const Show = styled.span`
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: #696974;
+`
+const What = styled.span`
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  color: #44444f;
+  margin-left: 10px;
+`
 
 const ContentTitle = () => {
   const [opened, setOpened] = React.useState<boolean>(false)
@@ -66,11 +82,19 @@ const ContentTitle = () => {
     }
   }
 
+  const handleOpenedSimple = (): void => {
+    setOpened(!opened)
+  }
+
   return (
     <Wrapper>
       <Title>Tasks</Title>
       <Sort onClick={handleOpened}>
-        <ArrowWrapper onClick={handleOpened}>
+        <ShowWrapper onClick={handleOpenedSimple}>
+          <Show>Show:</Show>
+          <What>All tasks</What>
+        </ShowWrapper>
+        <ArrowWrapper onClick={handleOpenedSimple}>
           {opened ? <ArrowDown /> : <ArrowUp />}
         </ArrowWrapper>
         {opened ? <Select /> : null}
