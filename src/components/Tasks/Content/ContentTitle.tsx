@@ -32,6 +32,8 @@ const Select = styled.div`
   border: 1px solid #f1f1f5;
   box-shadow: 0 5px 15px rgba(68, 68, 79, 0.1);
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
 `
 const ArrowWrapper = styled.div`
   height: 100%;
@@ -74,6 +76,7 @@ const What = styled.span`
 
 const ContentTitle = () => {
   const [opened, setOpened] = React.useState<boolean>(false)
+  const [filter, setFilter] = React.useState(['All tasks'])
 
   const handleOpened = (e: any): void => {
     e.preventDefault()
@@ -86,18 +89,28 @@ const ContentTitle = () => {
     setOpened(!opened)
   }
 
+  const handleFilters = (e: any): void => {
+    const choice = e.target.textContent
+    setFilter(prevState => [...prevState, choice])
+  }
+
   return (
     <Wrapper>
       <Title>Tasks</Title>
       <Sort onClick={handleOpened}>
         <ShowWrapper onClick={handleOpenedSimple}>
           <Show>Show:</Show>
-          <What>All tasks</What>
+          <What>{filter[filter.length - 1]}</What>
         </ShowWrapper>
         <ArrowWrapper onClick={handleOpenedSimple}>
           {opened ? <ArrowDown /> : <ArrowUp />}
         </ArrowWrapper>
-        {opened ? <Select /> : null}
+        {opened ? (
+          <Select onClick={handleFilters}>
+            <span>111</span>
+            <span>222</span>
+          </Select>
+        ) : null}
       </Sort>
     </Wrapper>
   )
