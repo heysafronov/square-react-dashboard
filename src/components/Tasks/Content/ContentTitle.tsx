@@ -83,9 +83,12 @@ interface IContentTitleProps {
 const ContentTitle: React.FC<IContentTitleProps> = props => {
   const [opened, setOpened] = React.useState<boolean>(false)
   const [filter, setFilter] = React.useState<string[]>(['All tasks'])
+  const [checked, setChecked] = React.useState({
+    backlog: false,
+    progress: false
+  })
 
   const handleOpened = (e: any): void => {
-    e.preventDefault()
     if (e.target === e.currentTarget) {
       setOpened(!opened)
     }
@@ -95,10 +98,12 @@ const ContentTitle: React.FC<IContentTitleProps> = props => {
     setOpened(!opened)
   }
 
-  const handleFilters = (e: any): void => {
-    const choice = e.target.textContent
-    props.ShowMore(choice)
-    setFilter(prevState => [...prevState, choice])
+  const handleCheckbox = (e: any) => {
+    const name = e.target.name
+    const value = e.target.value
+    props.ShowMore(value)
+    setChecked(prevState => ({ ...prevState, [name]: !checked[name] }))
+    setFilter(prevState => [...prevState, value])
   }
 
   return (
@@ -113,10 +118,27 @@ const ContentTitle: React.FC<IContentTitleProps> = props => {
           {opened ? <ArrowDown /> : <ArrowUp />}
         </ArrowWrapper>
         {opened ? (
-          <Select onClick={handleFilters}>
-            <span>Backlog</span>
-            <span>In Progress</span>
-            <span>Complete</span>
+          <Select>
+            <label>
+              <input
+                type='checkbox'
+                value='Backlog'
+                name='backlog'
+                onChange={handleCheckbox}
+                checked={checked.backlog}
+              />
+              Backlog
+            </label>
+            <label>
+              <input
+                type='checkbox'
+                value='In progress'
+                name='progress'
+                onChange={handleCheckbox}
+                checked={checked.progress}
+              />
+              In progress
+            </label>
           </Select>
         ) : null}
       </Sort>
