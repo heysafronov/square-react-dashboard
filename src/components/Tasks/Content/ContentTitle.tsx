@@ -101,9 +101,9 @@ const ContentTitle: React.FC<IContentTitleProps> = props => {
   const handleCheckbox = (e: any) => {
     const name = e.target.name
     const value = e.target.value
-    props.ShowMore(value)
-    setChecked(prevState => ({ ...prevState, [name]: !checked[name] }))
     setFilter([value])
+    setChecked(prevState => ({ ...prevState, [name]: !checked[name] }))
+    // props.ShowMore(result)
   }
 
   return (
