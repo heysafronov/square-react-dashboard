@@ -1,5 +1,3 @@
-import { filteredTasks } from 'store/tasks/selectors'
-import { filteredWrappers } from 'store/show/selectors'
 import * as React from 'react'
 import { AppState } from 'store'
 import { connect } from 'react-redux'
@@ -7,6 +5,7 @@ import styled from 'styled-components'
 import { IShowTypes } from 'store/show/types'
 import { ITaskState } from 'store/tasks/types'
 import { getShowState } from 'store/show/selectors'
+import { filteredTasks } from 'store/tasks/selectors'
 import TaskWrapper from 'components/Common/TaskWrapper'
 import ContentTitle from 'components/Tasks/Content/ContentTitle'
 
@@ -62,11 +61,9 @@ const Content: React.FC<IContentProps> = props => {
 }
 
 const mapStateToProps = (state: AppState) => ({
-  // showAll: filteredWrappers(state, types.all),
-  // showBacklog: filteredWrappers(state, types.backlog),
+  showState: getShowState(state),
   backlog: filteredTasks(state, types.backlog),
-  progress: filteredTasks(state, types.progress),
-  showState: getShowState(state)
+  progress: filteredTasks(state, types.progress)
 })
 
 export default connect(mapStateToProps)(Content)
