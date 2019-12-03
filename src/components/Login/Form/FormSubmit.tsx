@@ -65,8 +65,13 @@ interface IFormSubmitProps {
 }
 
 const FormSubmit: React.FC<IFormSubmitProps> = props => {
+  let dataUser = {
+    login: '',
+    password: ''
+  }
+
+  const [user, setUser] = React.useState<IUserInfo>(dataUser)
   const [redirect, setRedirect] = React.useState<boolean>(false)
-  const [user, setUser] = React.useState<IUserInfo>({ login: '', password: '' })
   const [error, setError] = React.useState<IUserInfo>({
     login: 'Login error',
     password: 'Password error'
