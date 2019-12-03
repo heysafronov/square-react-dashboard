@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import Task from 'components/Common/Task'
 import { ITaskState } from 'store/tasks/types'
-import { getKanbanOption } from 'store/show/selectors'
 import { dragAndDrop } from 'store/tasks/actions'
+import { getKanbanOption } from 'store/show/selectors'
 import IconOval from 'components/Common/Icons/Common/Oval'
 
 const variables = {
@@ -15,9 +15,8 @@ const variables = {
 }
 
 const Wrapper = styled.div`
-  width: ${(props: ITaskWrapperProps) => (props.kanbanOption ? '250px' : 'auto')};
-  //
-  //width: auto;
+  width: ${(props: ITaskWrapperProps) =>
+    props.kanbanOption ? '250px' : 'auto'};
 `
 const Header = styled.div`
   border-radius: 15px 15px 0 0;

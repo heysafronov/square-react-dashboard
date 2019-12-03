@@ -4,10 +4,10 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { IShowTypes } from 'store/show/types'
 import { ITaskState } from 'store/tasks/types'
-import { getShowState, getKanbanOption } from 'store/show/selectors'
 import { filteredTasks } from 'store/tasks/selectors'
 import TaskWrapper from 'components/Common/TaskWrapper'
 import ContentTitle from 'components/Tasks/Content/ContentTitle'
+import { getShowState, getKanbanOption } from 'store/show/selectors'
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,8 +25,6 @@ const Tasks = styled.div`
   display: grid;
   grid-template-columns: ${(props: IContentProps) =>
     props.kanbanOption ? `repeat(auto-fill, minmax(250px, 1fr))` : 'none'};
-  //
-  //grid-template-rows: repeat(4, auto);
   grid-template-rows: ${(props: IContentProps) =>
     props.kanbanOption ? 'none' : 'repeat(4, auto)'};
   grid-column-gap: 20px;
