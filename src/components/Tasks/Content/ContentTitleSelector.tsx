@@ -29,6 +29,7 @@ const Select = styled.div`
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 `
 const ArrowWrapper = styled.div`
   height: 100%;

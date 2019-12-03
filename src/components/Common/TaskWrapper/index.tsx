@@ -16,7 +16,7 @@ const variables = {
 
 const Wrapper = styled.div`
   width: ${(props: ITaskWrapperProps) =>
-    props.kanbanOption ? '250px' : 'auto'};
+    props.kanbanOption ? '280px' : 'auto'};
 `
 const Header = styled.div`
   border-radius: 15px 15px 0 0;

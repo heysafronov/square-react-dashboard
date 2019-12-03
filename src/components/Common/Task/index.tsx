@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { ITaskState } from 'store/tasks/types'
 
-const Div = styled.div`
+const Wrapper = styled.div`
   width: 50px;
   height: 50px;
   background-color: red;
@@ -20,9 +20,9 @@ const Task: React.FC<ITaskProps> = props => {
   }
 
   return (
-    <Div draggable={true} onDragStart={onDragStart}>
+    <Wrapper draggable={true} onDragStart={onDragStart}>
       <span>{props.data.name}</span>
-    </Div>
+    </Wrapper>
   )
 }
 

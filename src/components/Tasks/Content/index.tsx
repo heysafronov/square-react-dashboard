@@ -24,7 +24,7 @@ const Tasks = styled.div`
   margin-top: 35px;
   display: grid;
   grid-template-columns: ${(props: IContentProps) =>
-    props.kanbanOption ? `repeat(auto-fill, minmax(250px, 1fr))` : 'none'};
+    props.kanbanOption ? `repeat(auto-fill, minmax(280px, 1fr))` : 'none'};
   grid-template-rows: ${(props: IContentProps) =>
     props.kanbanOption ? 'none' : 'repeat(4, auto)'};
   grid-column-gap: 20px;
