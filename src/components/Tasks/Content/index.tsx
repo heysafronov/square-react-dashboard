@@ -25,7 +25,7 @@ const Tasks = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   //
-  //grid-template-rows: 1fr 1fr 1fr 1fr;
+  //grid-template-rows: repeat(4, auto);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 `
