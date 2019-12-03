@@ -23,11 +23,11 @@ const Wrapper = styled.div`
 const Tasks = styled.div`
   margin-top: 35px;
   display: grid;
-  grid-template-columns: ${props =>
+  grid-template-columns: ${(props: IContentProps) =>
     props.kanbanOption ? `repeat(auto-fill, minmax(250px, 1fr))` : 'none'};
   //
   //grid-template-rows: repeat(4, auto);
-  grid-template-rows: ${props =>
+  grid-template-rows: ${(props: IContentProps) =>
     props.kanbanOption ? 'none' : 'repeat(4, auto)'};
   grid-column-gap: 20px;
   grid-row-gap: 20px;

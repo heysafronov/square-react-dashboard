@@ -15,7 +15,7 @@ const variables = {
 }
 
 const Wrapper = styled.div`
-  width: ${props => (props.kanbanOption ? '250px' : 'auto')};
+  width: ${(props: ITaskWrapperProps) => (props.kanbanOption ? '250px' : 'auto')};
   //
   //width: auto;
 `
