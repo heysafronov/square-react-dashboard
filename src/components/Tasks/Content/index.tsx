@@ -64,6 +64,7 @@ const Content: React.FC<IContentProps> = props => {
         {props.showState.complete ? (
           <TaskWrapper data={props.complete} type='Complete' />
         ) : null}
+        <TaskWrapper data={[]} type='New' />
       </Tasks>
     </Wrapper>
   )
