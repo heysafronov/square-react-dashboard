@@ -81,7 +81,7 @@ const FormSubmit: React.FC<IFormSubmitProps> = props => {
 
   const renderRedirect = (): object | void => {
     if (redirect) {
-      return <Redirect to='/' />
+      return <Redirect to='/tasks/' />
     }
   }
 
