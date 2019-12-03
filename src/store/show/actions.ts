@@ -1,8 +1,22 @@
-import { SHOW_MORE, IShowMoreAction, IShowTypes } from 'store/show/types'
+import {
+  SHOW_MORE,
+  SWITCH_KANBAN,
+  IShowMoreAction,
+  IShowTypes,
+  ISwitchKanbanAction
+} from 'store/show/types'
 
 export const ShowMore = (types: IShowTypes): IShowMoreAction => {
   return {
     type: SHOW_MORE,
     payload: types
+  }
+}
+
+export const switchKanban = (option: boolean): ISwitchKanbanAction => {
+  console.log(option)
+  return {
+    type: SWITCH_KANBAN,
+    payload: option
   }
 }

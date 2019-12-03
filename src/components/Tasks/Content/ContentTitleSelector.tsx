@@ -74,7 +74,7 @@ interface IContentTitleProps {
   showState: IShowTypes
 }
 
-const ContentTitle: React.FC<IContentTitleProps> = props => {
+const ContentTitleSelector: React.FC<IContentTitleProps> = props => {
   const [opened, setOpened] = React.useState<boolean>(false)
   const [filter, setFilter] = React.useState<string[]>(['All tasks'])
 
@@ -153,4 +153,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ContentTitle)
+)(ContentTitleSelector)

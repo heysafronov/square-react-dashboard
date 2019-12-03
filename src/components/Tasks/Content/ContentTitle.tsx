@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import ContentTitleSelector from 'components/Tasks/Content/ContentTitleSelector'
+import ContentTitleSwitcher from 'components/Tasks/Content/ContentTitleSwitcher'
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,10 +19,7 @@ const ContentTitle = () => {
     <Wrapper>
       <Title>Tasks</Title>
       <ContentTitleSelector />
-      <div>
-        <div>On</div>
-        <div>Off</div>
-      </div>
+      <ContentTitleSwitcher />
     </Wrapper>
   )
 }
