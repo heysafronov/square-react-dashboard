@@ -14,7 +14,6 @@ export const ShowMore = (types: IShowTypes): IShowMoreAction => {
 }
 
 export const switchKanban = (option: boolean): ISwitchKanbanAction => {
-  console.log(option)
   return {
     type: SWITCH_KANBAN,
     payload: option

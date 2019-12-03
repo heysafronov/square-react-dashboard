@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { IShowTypes } from 'store/show/types'
 import { ITaskState } from 'store/tasks/types'
-import { getShowState } from 'store/show/selectors'
+import { getShowState, getKanbanOption } from 'store/show/selectors'
 import { filteredTasks } from 'store/tasks/selectors'
 import TaskWrapper from 'components/Common/TaskWrapper'
 import ContentTitle from 'components/Tasks/Content/ContentTitle'
@@ -23,9 +23,11 @@ const Wrapper = styled.div`
 const Tasks = styled.div`
   margin-top: 35px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: ${props =>
+    props.option ? `repeat(auto-fill, minmax(250px, 1fr))` : 'none'};
   //
   //grid-template-rows: repeat(4, auto);
+  grid-template-rows: ${props => (props.option ? 'none' : 'repeat(4, auto)')};
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 `
@@ -37,6 +39,7 @@ interface IContentProps {
   showAll: boolean
   showBacklog: boolean
   showState: IShowTypes
+  kanbanOption: boolean
 }
 
 const types = {
@@ -50,7 +53,7 @@ const Content: React.FC<IContentProps> = props => {
   return (
     <Wrapper>
       <ContentTitle />
-      <Tasks>
+      <Tasks option={props.kanbanOption}>
         {props.showState.backlog ? (
           <TaskWrapper data={props.backlog} type='Backlog' />
         ) : null}
@@ -66,6 +69,7 @@ const Content: React.FC<IContentProps> = props => {
 }
 
 const mapStateToProps = (state: AppState) => ({
+  kanbanOption: getKanbanOption(state),
   showState: getShowState(state),
   backlog: filteredTasks(state, types.backlog),
   progress: filteredTasks(state, types.progress),

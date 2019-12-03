@@ -1,8 +1,10 @@
 import * as React from 'react'
+import { AppState } from 'store'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import Task from 'components/Common/Task'
 import { ITaskState } from 'store/tasks/types'
+import { getKanbanOption } from 'store/show/selectors'
 import { dragAndDrop } from 'store/tasks/actions'
 import IconOval from 'components/Common/Icons/Common/Oval'
 
@@ -13,7 +15,7 @@ const variables = {
 }
 
 const Wrapper = styled.div`
-  width: 250px;
+  width: ${props => (props.option ? '250px' : 'auto')};
   //
   //width: auto;
 `
@@ -91,6 +93,7 @@ interface ITaskWrapperProps {
   dragAndDrop: typeof dragAndDrop
   data: ITaskState[]
   type: string
+  kanbanOption: boolean
 }
 
 const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
@@ -107,7 +110,11 @@ const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
   }
 
   return (
-    <Wrapper onDragOver={onDragOver} onDrop={onDrop}>
+    <Wrapper
+      onDragOver={onDragOver}
+      onDrop={onDrop}
+      option={props.kanbanOption}
+    >
       <Header>
         <Title>{props.type}</Title>
         <More>
@@ -122,7 +129,11 @@ const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
   )
 }
 
+const mapStateToProps = (state: AppState) => ({
+  kanbanOption: getKanbanOption(state)
+})
+
 export default connect(
-  null,
+  mapStateToProps,
   { dragAndDrop }
 )(TaskWrapper)
