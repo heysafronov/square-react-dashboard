@@ -10,7 +10,7 @@ const Wrapper = styled.section`
   align-items: center;
   justify-content: center;
   color: red;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(23, 23, 37, 0.4);
   z-index: 100;
 `
 
