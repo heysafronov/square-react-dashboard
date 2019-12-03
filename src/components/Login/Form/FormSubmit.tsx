@@ -70,12 +70,14 @@ const FormSubmit: React.FC<IFormSubmitProps> = props => {
     password: ''
   }
 
-  const [user, setUser] = React.useState<IUserInfo>(dataUser)
-  const [redirect, setRedirect] = React.useState<boolean>(false)
-  const [error, setError] = React.useState<IUserInfo>({
+  let dataError = {
     login: 'Login error',
     password: 'Password error'
-  })
+  }
+
+  const [user, setUser] = React.useState<IUserInfo>(dataUser)
+  const [error, setError] = React.useState<IUserInfo>(dataError)
+  const [redirect, setRedirect] = React.useState<boolean>(false)
 
   const renderRedirect = (): object | void => {
     if (redirect) {
