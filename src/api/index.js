@@ -33,5 +33,20 @@ export const normalizedTasks = [
     id: '7',
     name: 'Egor',
     type: 'In Progress'
+  },
+  {
+    id: '8',
+    name: 'Masha',
+    type: 'Complete'
+  },
+  {
+    id: '9',
+    name: 'Petya',
+    type: 'Complete'
+  },
+  {
+    id: '10',
+    name: 'Dysya',
+    type: 'Complete'
   }
 ]

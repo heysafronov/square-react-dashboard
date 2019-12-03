@@ -33,6 +33,7 @@ const Tasks = styled.div`
 interface IContentProps {
   backlog: ITaskState[]
   progress: ITaskState[]
+  complete: ITaskState[]
   showAll: boolean
   showBacklog: boolean
   showState: IShowTypes
@@ -41,7 +42,8 @@ interface IContentProps {
 const types = {
   all: 'All tasks',
   backlog: 'Backlog',
-  progress: 'In Progress'
+  progress: 'In Progress',
+  complete: 'Complete'
 }
 
 const Content: React.FC<IContentProps> = props => {
@@ -55,6 +57,9 @@ const Content: React.FC<IContentProps> = props => {
         {props.showState.progress ? (
           <TaskWrapper data={props.progress} type='In Progress' />
         ) : null}
+        {props.showState.complete ? (
+          <TaskWrapper data={props.complete} type='Complete' />
+        ) : null}
       </Tasks>
     </Wrapper>
   )
@@ -63,7 +68,8 @@ const Content: React.FC<IContentProps> = props => {
 const mapStateToProps = (state: AppState) => ({
   showState: getShowState(state),
   backlog: filteredTasks(state, types.backlog),
-  progress: filteredTasks(state, types.progress)
+  progress: filteredTasks(state, types.progress),
+  complete: filteredTasks(state, types.complete)
 })
 
 export default connect(mapStateToProps)(Content)

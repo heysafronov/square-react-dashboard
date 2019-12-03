@@ -3,7 +3,8 @@ import { SHOW_MORE, IShowState, IShowMoreAction } from 'store/show/types'
 const initialState: IShowState = {
   list: {
     backlog: true,
-    progress: true
+    progress: true,
+    complete: true
   }
 }
 

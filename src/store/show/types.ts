@@ -2,7 +2,8 @@ export const SHOW_MORE = 'SHOW_MORE'
 
 export interface IShowTypes {
   backlog: boolean
-  progress: boolean
+  progress: boolean,
+  complete: boolean
 }
 
 export interface IShowState {
