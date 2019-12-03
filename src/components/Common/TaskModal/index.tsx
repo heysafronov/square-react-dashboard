@@ -1,4 +1,5 @@
 import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 import styled from 'styled-components'
 
 const Wrapper = styled.section`
@@ -22,11 +23,12 @@ interface ITaskModalProps {
 }
 
 const TaskModal: React.FC<ITaskModalProps> = props => {
-  return (
+  return ReactDOM.createPortal(
     <Wrapper>
       <button onClick={props.onClose}>Закрыть</button>
       {props.name}
-    </Wrapper>
+    </Wrapper>,
+    document.getElementById('modal')
   )
 }
 

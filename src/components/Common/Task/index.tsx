@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { AppState } from 'store'
-import * as ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { ITaskState } from 'store/tasks/types'
@@ -78,13 +77,7 @@ const Task: React.FC<ITaskProps> = props => {
           <div>ava 3</div>
         </Avatars>
       </Wrapper>
-      <>
-        {modal &&
-          ReactDOM.createPortal(
-            <TaskModal {...props.data} onClose={toggleModal} />,
-            document.getElementById('modal')
-          )}
-      </>
+      <>{modal && <TaskModal {...props.data} onClose={toggleModal} />}</>
     </>
   )
 }
