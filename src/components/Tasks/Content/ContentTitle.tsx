@@ -18,6 +18,10 @@ const ContentTitle = () => {
     <Wrapper>
       <Title>Tasks</Title>
       <ContentTitleSelector />
+      <div>
+        <div>On</div>
+        <div>Off</div>
+      </div>
     </Wrapper>
   )
 }
