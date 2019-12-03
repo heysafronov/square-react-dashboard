@@ -15,7 +15,7 @@ const variables = {
 }
 
 const Wrapper = styled.div`
-  width: ${props => (props.option ? '250px' : 'auto')};
+  width: ${props => (props.kanbanOption ? '250px' : 'auto')};
   //
   //width: auto;
 `
@@ -110,11 +110,7 @@ const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
   }
 
   return (
-    <Wrapper
-      onDragOver={onDragOver}
-      onDrop={onDrop}
-      option={props.kanbanOption}
-    >
+    <Wrapper onDragOver={onDragOver} onDrop={onDrop} {...props}>
       <Header>
         <Title>{props.type}</Title>
         <More>

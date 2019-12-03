@@ -24,10 +24,11 @@ const Tasks = styled.div`
   margin-top: 35px;
   display: grid;
   grid-template-columns: ${props =>
-    props.option ? `repeat(auto-fill, minmax(250px, 1fr))` : 'none'};
+    props.kanbanOption ? `repeat(auto-fill, minmax(250px, 1fr))` : 'none'};
   //
   //grid-template-rows: repeat(4, auto);
-  grid-template-rows: ${props => (props.option ? 'none' : 'repeat(4, auto)')};
+  grid-template-rows: ${props =>
+    props.kanbanOption ? 'none' : 'repeat(4, auto)'};
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 `
@@ -53,7 +54,7 @@ const Content: React.FC<IContentProps> = props => {
   return (
     <Wrapper>
       <ContentTitle />
-      <Tasks option={props.kanbanOption}>
+      <Tasks {...props}>
         {props.showState.backlog ? (
           <TaskWrapper data={props.backlog} type='Backlog' />
         ) : null}
