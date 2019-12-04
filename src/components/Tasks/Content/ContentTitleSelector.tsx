@@ -80,7 +80,6 @@ const ContentTitleSelector: React.FC<IContentTitleProps> = props => {
   const [filter, setFilter] = React.useState<string[]>(['All tasks'])
 
   const handleOpened = (e: React.ChangeEvent<any>): void => {
-    console.log(e.target)
     if (e.target === e.currentTarget) {
       setOpened(prevState => !prevState)
     }

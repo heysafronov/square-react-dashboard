@@ -27,13 +27,12 @@ export function tasks(
     case DRAG_AND_DROP:
       const id = payload.e.dataTransfer.getData('text/html')
       const checkedId = checkChrome(id)
-      const filteredTasks = tasks.filter(task => {
+      return tasks.filter(task => {
         if (task.id === checkedId) {
           task.type = payload.type
         }
         return task
       })
-      return (tasks = filteredTasks)
     default:
       return tasks
   }

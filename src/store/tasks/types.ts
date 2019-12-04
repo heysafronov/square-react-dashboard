@@ -9,7 +9,7 @@ export interface ITaskState {
 export interface ITasksDragAndDropAction {
   type: typeof DRAG_AND_DROP
   payload: {
-    e: object
+    e: any
     type: string
   }
 }
