@@ -61,7 +61,7 @@ const AvatarWrapper = styled.div`
   }
 `
 
-interface IUserProps {
+interface IAvatarProps {
   size: number
   name: string
   color: string
@@ -71,11 +71,11 @@ interface IUserProps {
 interface ITeamCardProps {
   avatar: string
   name: string
-  users: IUserProps[]
+  users: IAvatarProps[]
 }
 
 const Avatars = (props: ITeamCardProps): object => {
-  return props.users.map((avatar: IUserProps, idx: number): object => (
+  return props.users.map((avatar: IAvatarProps, idx: number): object => (
     <Avatar key={idx} {...avatar} />
   ))
 }
