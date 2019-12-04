@@ -67,7 +67,7 @@ const Task: React.FC<ITaskProps> = props => {
           <div>4/5</div>
           <div>2 days left</div>
         </Info>
-        <Score>
+        <Score {...props}>
           <div>100%</div>
           <div>---------</div>
         </Score>

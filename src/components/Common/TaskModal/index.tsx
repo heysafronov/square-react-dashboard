@@ -23,12 +23,14 @@ interface ITaskModalProps {
 }
 
 const TaskModal: React.FC<ITaskModalProps> = props => {
+  const element = document.getElementById('modal')
+
   return ReactDOM.createPortal(
     <Wrapper>
       <button onClick={props.onClose}>Закрыть</button>
       {props.name}
     </Wrapper>,
-    document.getElementById('modal')
+    element
   )
 }
 
