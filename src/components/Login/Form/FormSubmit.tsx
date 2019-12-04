@@ -85,7 +85,7 @@ const FormSubmit: React.FC<IFormSubmitProps> = props => {
     }
   }
 
-  const handleSubmit = (e: any): void => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     if (!error.login && !error.password) {
       props.checkAuth({
