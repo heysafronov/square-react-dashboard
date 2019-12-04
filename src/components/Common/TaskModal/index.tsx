@@ -19,7 +19,7 @@ interface ITaskModalProps {
   id: string
   name: string
   type: string
-  onClose: () => void
+  onClose(): void
 }
 
 const TaskModal: React.FC<ITaskModalProps> = props => {
