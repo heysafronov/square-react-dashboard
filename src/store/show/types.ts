@@ -14,7 +14,7 @@ export interface IShowState {
 
 export interface IShowMoreAction {
   type: typeof SHOW_MORE
-  payload: object
+  payload: IShowTypes
 }
 
 export interface ISwitchKanbanAction {
