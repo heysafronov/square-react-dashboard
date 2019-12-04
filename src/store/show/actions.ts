@@ -6,7 +6,7 @@ import {
   ISwitchKanbanAction
 } from 'store/show/types'
 
-export const ShowMore = (types: IShowTypes): IShowMoreAction => {
+export const showMore = (types: IShowTypes): IShowMoreAction => {
   return {
     type: SHOW_MORE,
     payload: types

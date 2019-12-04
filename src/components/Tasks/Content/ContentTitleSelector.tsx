@@ -2,7 +2,7 @@ import * as React from 'react'
 import { AppState } from 'store'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-import { ShowMore } from 'store/show/actions'
+import { showMore } from 'store/show/actions'
 import { IShowTypes } from 'store/show/types'
 import { getShowState } from 'store/show/selectors'
 
@@ -71,7 +71,7 @@ const What = styled.span`
 `
 
 interface IContentTitleProps {
-  ShowMore: typeof ShowMore
+  showMore: typeof showMore
   showState: IShowTypes
 }
 
@@ -93,7 +93,7 @@ const ContentTitleSelector: React.FC<IContentTitleProps> = props => {
     const name = e.target.name
     const value = e.target.value
     setFilter([value])
-    props.ShowMore({ ...props.showState, [name]: !props.showState[name] })
+    props.showMore({ ...props.showState, [name]: !props.showState[name] })
   }
 
   return (
@@ -148,7 +148,7 @@ const mapStateToProps = (state: AppState) => ({
 })
 
 const mapDispatchToProps = {
-  ShowMore
+  showMore
 }
 
 export default connect(
