@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import IconOval from 'components/Common/Icons/Common/Oval'
 import AddBigButton from 'components/Common/Buttons/AddBigButton'

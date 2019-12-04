@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Item from 'components/Common/Sidebar/Menu/Item'
 import IconTasks from 'components/Common/Icons/Menu/Tasks'

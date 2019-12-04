@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Avatar from 'components/Common/Avatar'
 import ActionsShape from 'components/Common/Header/Actions/ActionsShape'

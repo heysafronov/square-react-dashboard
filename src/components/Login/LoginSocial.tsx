@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import IconGoogle from 'components/Common/Icons/SocialMedia/Google'
 import IconFacebook from 'components/Common/Icons/SocialMedia/Facebook'

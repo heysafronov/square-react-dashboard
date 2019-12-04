@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import ContentTitle from 'components/Main/Content/ContentTitle'
 import ContentTeams from 'components/Main/Content/ContentTeams'

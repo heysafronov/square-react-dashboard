@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import LogoImage from 'components/Common/Logo/LogoImage'
 import LogoTitle from 'components/Common/Logo/LogoTitle'

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import HeaderTeams from 'components/Common/Sidebar/Header/HeaderTeams'
 import HeaderButton from 'components/Common/Sidebar/Header/HeaderButton'

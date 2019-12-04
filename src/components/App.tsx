@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Loader from 'components/Common/Loader'
 import PrivateRoute from 'components/Common/PrivateRoute'
 import { GlobalStyle } from 'components/Common/GlobalStyle'

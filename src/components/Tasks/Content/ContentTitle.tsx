@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import ContentTitleSelector from 'components/Tasks/Content/ContentTitleSelector'
 import ContentTitleSwitcher from 'components/Tasks/Content/ContentTitleSwitcher'

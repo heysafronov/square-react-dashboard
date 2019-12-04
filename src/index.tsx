@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 import App from 'components/App'
 import configureStore from 'store'
-import * as ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { Normalize } from 'styled-normalize'
 

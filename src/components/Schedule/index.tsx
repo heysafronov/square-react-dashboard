@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Header from 'components/Common/Header'
 import Sidebar from 'components/Common/Sidebar'

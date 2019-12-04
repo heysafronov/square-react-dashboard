@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { AppState } from 'store'
 import { connect } from 'react-redux'
 import { Route, Redirect, RouteProps } from 'react-router-dom'
