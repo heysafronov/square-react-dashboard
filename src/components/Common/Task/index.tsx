@@ -42,7 +42,7 @@ interface ITaskProps {
 const Task: React.FC<ITaskProps> = props => {
   const [modal, setModal] = React.useState<boolean>(false)
 
-  const onDragStart = (e: any) => {
+  const onDragStart = (e: React.DragEvent<HTMLDivElement>): void => {
     e.dataTransfer.setData('text/html', props.data.id)
   }
 

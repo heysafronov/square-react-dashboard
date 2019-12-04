@@ -48,7 +48,7 @@ const HeaderItems = () => {
         <TeamsTitle>Teams</TeamsTitle>
         <div>{opened ? <ArrowDown /> : <ArrowUp />}</div>
       </Block>
-      {opened ? <HeaderTeams /> : null}
+      {opened && <HeaderTeams />}
       <HeaderButton />
     </Wrapper>
   )

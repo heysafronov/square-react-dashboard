@@ -100,11 +100,11 @@ const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
     return props.data.map(item => <Task data={item} key={item.id} />)
   }
 
-  const onDragOver = (e: any) => {
+  const onDragOver = (e: React.DragEvent<HTMLDivElement>): void => {
     e.preventDefault()
   }
 
-  const onDrop = (e: any) => {
+  const onDrop = (e: React.DragEvent<HTMLDivElement>): void => {
     props.dragAndDrop(e, props.type)
   }
 

@@ -100,7 +100,7 @@ const ActionShape = () => {
           </AvatarWrapper>
           <Text>{textNotification}</Text>
         </ShapeInfo>
-        {notification ? <Notification /> : null}
+        {notification && <Notification />}
         {ShapeIcon()}
       </>
     </Wrapper>
