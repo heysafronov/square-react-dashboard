@@ -96,7 +96,7 @@ const FormSubmit: React.FC<IFormSubmitProps> = props => {
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target
     if (value !== 'admin') {
       switch (name) {
