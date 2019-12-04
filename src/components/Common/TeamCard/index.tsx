@@ -74,7 +74,7 @@ interface ITeamCardProps {
   users: IAvatarProps[]
 }
 
-const Avatars = (props: ITeamCardProps): object => {
+const Avatars = (props: ITeamCardProps): any => {
   return props.users.map((avatar: IAvatarProps, idx: number): object => (
     <Avatar key={idx} {...avatar} />
   ))
