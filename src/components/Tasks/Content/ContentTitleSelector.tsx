@@ -79,7 +79,7 @@ const ContentTitleSelector: React.FC<IContentTitleProps> = props => {
   const [opened, setOpened] = React.useState<boolean>(false)
   const [filter, setFilter] = React.useState<string[]>(['All tasks'])
 
-  const handleOpened = (e: any): void => {
+  const handleOpened = (e: React.ChangeEvent<any>) => {
     if (e.target === e.currentTarget) {
       setOpened(!opened)
     }
@@ -89,7 +89,7 @@ const ContentTitleSelector: React.FC<IContentTitleProps> = props => {
     setOpened(!opened)
   }
 
-  const handleCheckbox = (e: any) => {
+  const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
     const name = e.target.name
     const value = e.target.value
     setFilter([value])
