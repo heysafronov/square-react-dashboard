@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Item from 'components/Common/Sidebar/Menu/Item'
 import IconTasks from 'components/Common/Icons/Menu/Tasks'
+import ErrorBoundary from 'components/Common/ErrorBoundary'
 import IconMessages from 'components/Common/Icons/Menu/Messages'
 import IconSchedule from 'components/Common/Icons/Menu/Schedule'
 import IconActivity from 'components/Common/Icons/Menu/Activity'
@@ -60,7 +61,11 @@ const items = itemsData.map((item: IItemProps, idx: number): object => (
 ))
 
 const Menu = () => {
-  return <Wrapper>{items}</Wrapper>
+  return (
+    <ErrorBoundary>
+      <Wrapper>{items}</Wrapper>
+    </ErrorBoundary>
+  )
 }
 
 export default Menu
