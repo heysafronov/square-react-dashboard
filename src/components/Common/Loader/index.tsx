@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 98vh;
+  margin: 0 auto;
 `
 const Svg = styled.svg`
   @keyframes rotate {

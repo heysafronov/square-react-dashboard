@@ -1,8 +1,10 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import Content from 'components/Main/Content'
+import Loader from 'components/Common/Loader'
 import Header from 'components/Common/Header'
 import Sidebar from 'components/Common/Sidebar'
+
+const Content = React.lazy(() => import('components/Main/Content'))
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,7 +18,9 @@ const Main = () => {
       <Header />
       <Wrapper>
         <Sidebar />
-        <Content />
+        <React.Suspense fallback={<Loader />}>
+          <Content />
+        </React.Suspense>
       </Wrapper>
     </>
   )
