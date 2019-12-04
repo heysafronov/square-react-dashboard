@@ -81,12 +81,12 @@ const ContentTitleSelector: React.FC<IContentTitleProps> = props => {
 
   const handleOpened = (e: React.ChangeEvent<any>) => {
     if (e.target === e.currentTarget) {
-      setOpened(!opened)
+      setOpened(prevState => !prevState)
     }
   }
 
   const handleOpenedSimple = (): void => {
-    setOpened(!opened)
+    setOpened(prevState => !prevState)
   }
 
   const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -39,7 +39,7 @@ const HeaderItems = () => {
   const [opened, setOpened] = React.useState<boolean>(true)
 
   const handleOpened = (): void => {
-    setOpened(!opened)
+    setOpened(prevState => !prevState)
   }
 
   return (
