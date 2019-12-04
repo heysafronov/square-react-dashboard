@@ -2,7 +2,7 @@
   "compilerOptions": {
     "jsx": "react",
     "module": "commonjs",
-    "target": "esnext",
+    "target": "ES5",
     "baseUrl": "./src/",
     "outDir": "./dist/",
     "moduleResolution": "node",
