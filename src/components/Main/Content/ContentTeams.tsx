@@ -39,59 +39,6 @@ const Teams = styled.div`
   flex-wrap: wrap;
 `
 
-const teamCardData = [
-  {
-    id: 0,
-    avatar: require('assets/images/team2.png'),
-    name: 'Sebo Studio',
-    users: [
-      {
-        size: 32,
-        name: 'GU',
-        color: '#FF9AD5',
-        avatar: ''
-      },
-      {
-        size: 32,
-        name: 'KA',
-        color: '',
-        avatar: require('assets/images/james.png')
-      },
-      {
-        size: 32,
-        name: 'ZT',
-        color: '#82C43C',
-        avatar: ''
-      },
-      {
-        size: 32,
-        name: 'KA',
-        color: '#FFC542',
-        avatar: ''
-      }
-    ]
-  },
-  {
-    id: 1,
-    avatar: require('assets/images/team1.png'),
-    name: 'Iconspace Team',
-    users: [
-      {
-        size: 32,
-        name: 'MI',
-        color: '#50B5FF',
-        avatar: ''
-      },
-      {
-        size: 32,
-        name: 'AS',
-        color: '#A461D8',
-        avatar: ''
-      }
-    ]
-  }
-]
-
 interface IUserProps {
   size: number
   name: string
@@ -116,7 +63,7 @@ const ContentTeams: React.FC<IContentTeamsProps> = props => {
     props.fetchTeams()
   }, [])
 
-  const teamCards = props.teams.map((card: ITeamCardProps): object => (
+  const teamCards = props.teams.map((card: ITeamCardProps): any => (
     <TeamCard key={card.id} {...card} />
   ))
 
