@@ -53,15 +53,15 @@ const Content: React.FC<IContentProps> = props => {
     <Wrapper>
       <ContentTitle />
       <Tasks {...props}>
-        {props.showState.backlog ? (
+        {props.showState.backlog && (
           <TaskWrapper data={props.backlog} type='Backlog' />
-        ) : null}
-        {props.showState.progress ? (
+        )}
+        {props.showState.progress && (
           <TaskWrapper data={props.progress} type='In Progress' />
-        ) : null}
-        {props.showState.complete ? (
+        )}
+        {props.showState.complete && (
           <TaskWrapper data={props.complete} type='Complete' />
-        ) : null}
+        )}
         <TaskWrapper data={[]} type='New' />
       </Tasks>
     </Wrapper>
