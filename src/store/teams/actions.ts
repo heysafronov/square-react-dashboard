@@ -1,13 +1,12 @@
-import axios from 'axios'
+import instance from 'api/axios'
+import { Dispatch } from 'redux'
 import { FETCH_TEAMS } from 'store/teams/types'
 
-export const fetchTeams = () => async dispatch => {
+export const fetchTeams = () => async (dispatch: Dispatch): Promise<void> => {
   try {
-    const { data } = await axios.get(
-      'https://square-dashboard-6ffae.firebaseio.com/teams.json'
-    )
+    const { data } = await instance.get('teams.json')
     dispatch({ type: FETCH_TEAMS, payload: data })
   } catch (err) {
-    console.error(err)
+    console.error(`action fetchTeams: ${err}`)
   }
 }
