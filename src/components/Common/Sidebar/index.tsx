@@ -7,7 +7,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   max-width: 250px;
-  height: 90vh;
+  height: 92vh;
 `
 
 const Sidebar = () => {
