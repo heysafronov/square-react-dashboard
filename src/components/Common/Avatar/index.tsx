@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const WithAvatarWrapper = styled.img`
   width: ${(props: IAvatarProps) => props.size}px;
   height: ${(props: IAvatarProps) => props.size}px;
-  cursor: pointer;
+  cursor: not-allowed;
   border-radius: ${(props: IAvatarProps) => props.size}px;
 `
 const WithoutAvatarWrapper = styled.div`
@@ -16,7 +16,7 @@ const WithoutAvatarWrapper = styled.div`
   width: ${(props: IAvatarProps) => props.size}px;
   height: ${(props: IAvatarProps) => props.size}px;
   border-radius: ${(props: IAvatarProps) => props.size}px;
-  cursor: pointer;
+  cursor: not-allowed;
   background-color: ${(props: IAvatarProps) => props.color};
 `
 

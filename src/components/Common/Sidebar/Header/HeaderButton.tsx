@@ -19,7 +19,7 @@ const TextButton = styled.button`
   text-transform: uppercase;
   color: ${variables.color};
   border: none;
-  cursor: pointer;
+  cursor: not-allowed;
   background-color: white;
   :focus {
     outline: none;

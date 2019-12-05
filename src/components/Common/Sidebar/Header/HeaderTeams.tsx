@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   margin: 15px 0 20px 0;
+  cursor: not-allowed;
 `
 const TeamAvatar = styled.img`
   width: 32px;

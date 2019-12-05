@@ -39,7 +39,7 @@ const Wrapper = styled.button`
   width: 86px;
   height: 38px;
   border: none;
-  cursor: pointer;
+  cursor: not-allowed;
   outline: none;
   color: ${variables.colorWhite};
   font-size: 14px;
