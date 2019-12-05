@@ -8,7 +8,10 @@ const initialState: ITeamsState = {
   list: []
 }
 
-export function teams(state = initialState, action: ITeamsFetchTeamsAction) {
+export function teams(
+  state = initialState,
+  action: ITeamsFetchTeamsAction
+): ITeamsState {
   switch (action.type) {
     case FETCH_TEAMS:
       return { ...state, list: action.payload }

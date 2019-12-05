@@ -18,7 +18,7 @@ const initialState: IShowState = {
 export function show(
   state = initialState,
   action: IShowMoreAction | ISwitchKanbanAction
-) {
+): IShowState {
   switch (action.type) {
     case SHOW_MORE:
       return { ...state, list: { ...action.payload } }
