@@ -15,17 +15,25 @@ const Icon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: #fff;
   svg {
     fill: #b5b5be;
   }
 `
 const Kanban = styled(Icon)`
   border-radius: 10px 0 0 10px;
+  background-color: ${props => (props.kanban ? '#b5b5be' : '#fff')};
+  svg {
+    fill: ${props => (props.kanban ? '#fff' : '#b5b5be')};
+  }
 `
 const Default = styled(Icon)`
   border-right: 1px solid #f1f1f5;
   border-left: 1px solid #f1f1f5;
+  background-color: ${props => (props.default ? '#b5b5be' : '#fff')};
+  svg {
+    fill: ${props => (props.default ? '#fff' : '#b5b5be')};
+  }
 `
 const Gantt = styled(Icon)`
   border-radius: 0 10px 10px 0;
@@ -36,16 +44,24 @@ interface IContentTitleSwitcherProps {
 }
 
 const ContentTitleSwitcher: React.FC<IContentTitleSwitcherProps> = props => {
-  const handleSwitcher = (option: boolean): void => {
+  let optionsTypes = {
+    kanban: true,
+    default: false
+  }
+
+  const [types, setTypes] = React.useState<object>(optionsTypes)
+
+  const handleSwitcher = (option: boolean, type: string): void => {
     props.switchKanban(option)
+    setTypes(prevState => ({ ...prevState, type: !prevState.type }))
   }
 
   return (
     <Wrapper>
-      <Kanban onClick={() => handleSwitcher(true)}>
+      <Kanban {...types} onClick={() => handleSwitcher(true, 'kanban')}>
         <KanbanIcon />
       </Kanban>
-      <Default onClick={() => handleSwitcher(false)}>
+      <Default {...types} onClick={() => handleSwitcher(false, 'default')}>
         <DefaultIcon />
       </Default>
       <Gantt>
