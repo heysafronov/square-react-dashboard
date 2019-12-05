@@ -45,14 +45,16 @@ interface IContentTeamsProps {
   teams: ITeamsState[]
 }
 
+const TeamCards = (props: IContentTeamsProps): any => {
+  return props.teams.map((card: ITeamListState) => (
+    <TeamCard key={card.id} {...card} />
+  ))
+}
+
 const ContentTeams: React.FC<IContentTeamsProps> = props => {
   React.useEffect(() => {
     props.fetchTeams()
   }, [])
-
-  const teamCards = props.teams.map((card: ITeamListState) => (
-    <TeamCard key={card.id} {...card} />
-  ))
 
   return (
     <Wrapper>
@@ -63,7 +65,7 @@ const ContentTeams: React.FC<IContentTeamsProps> = props => {
         </TeamsMore>
       </Header>
       <Teams>
-        {teamCards}
+        <TeamCards {...props} />
         <AddBigButton name='Add team' />
       </Teams>
     </Wrapper>
