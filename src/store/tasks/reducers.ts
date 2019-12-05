@@ -17,13 +17,6 @@ export function tasks(
 ): ITaskState[] {
   const { type, payload } = action
   switch (type) {
-    // case 'DELETE_TASK':
-    //   return tasks.filter(task => task.id !== payload.id)
-    // case 'ADD_TASK':
-    //   return tasks.concat({
-    //     ...payload.task,
-    //     id: randomId
-    //   })
     case DRAG_AND_DROP:
       const id = payload.e.dataTransfer.getData('text/html')
       const checkedId = checkChrome(id)
