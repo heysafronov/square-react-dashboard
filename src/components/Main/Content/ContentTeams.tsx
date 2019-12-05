@@ -5,8 +5,8 @@ import styled from 'styled-components'
 import { fetchTeams } from 'store/teams/actions'
 import TeamCard from 'components/Common/TeamCard'
 import IconOval from 'components/Common/Icons/Common/Oval'
-import AddBigButton from 'components/Common/Buttons/AddBigButton'
 import { ITeamsState, ITeamListState } from 'store/teams/types'
+import AddBigButton from 'components/Common/Buttons/AddBigButton'
 
 const Wrapper = styled.div`
   border: 1px solid #e2e2ea;
