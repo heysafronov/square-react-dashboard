@@ -6,6 +6,7 @@ import { fetchTeams } from 'store/teams/actions'
 import TeamCard from 'components/Common/TeamCard'
 import IconOval from 'components/Common/Icons/Common/Oval'
 import AddBigButton from 'components/Common/Buttons/AddBigButton'
+import { ITeamsState, ITeamListState } from 'store/teams/types'
 
 const Wrapper = styled.div`
   border: 1px solid #e2e2ea;
@@ -39,23 +40,9 @@ const Teams = styled.div`
   flex-wrap: wrap;
 `
 
-interface IUserProps {
-  size: number
-  name: string
-  color: string
-  avatar: string
-}
-
-interface ITeamCardProps {
-  id: number
-  avatar: string
-  name: string
-  users: IUserProps[]
-}
-
 interface IContentTeamsProps {
   fetchTeams: typeof fetchTeams
-  teams: IUserProps[]
+  teams: ITeamsState[]
 }
 
 const ContentTeams: React.FC<IContentTeamsProps> = props => {
@@ -63,7 +50,7 @@ const ContentTeams: React.FC<IContentTeamsProps> = props => {
     props.fetchTeams()
   }, [])
 
-  const teamCards = props.teams.map((card: ITeamCardProps): any => (
+  const teamCards = props.teams.map((card: ITeamListState) => (
     <TeamCard key={card.id} {...card} />
   ))
 
