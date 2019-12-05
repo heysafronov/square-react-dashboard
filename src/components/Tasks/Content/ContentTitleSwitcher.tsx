@@ -16,6 +16,7 @@ const Icon = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  cursor: pointer;
   svg {
     fill: #b5b5be;
   }
@@ -37,6 +38,7 @@ const Default = styled(Icon)`
 `
 const Gantt = styled(Icon)`
   border-radius: 0 10px 10px 0;
+  cursor: not-allowed;
 `
 
 interface IContentTitleSwitcherProps {
