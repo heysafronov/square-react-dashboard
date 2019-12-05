@@ -1,10 +1,14 @@
-import { FETCH_TEAMS } from 'store/teams/types'
+import {
+  FETCH_TEAMS,
+  ITeamsState,
+  ITeamsFetchTeamsAction
+} from 'store/teams/types'
 
-const initialState = {
+const initialState: ITeamsState = {
   list: []
 }
 
-export function teams(state = initialState, action) {
+export function teams(state = initialState, action: ITeamsFetchTeamsAction) {
   switch (action.type) {
     case FETCH_TEAMS:
       return { ...state, list: action.payload }
