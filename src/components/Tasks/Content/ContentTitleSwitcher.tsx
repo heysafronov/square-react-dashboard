@@ -63,10 +63,10 @@ const ContentTitleSwitcher: React.FC<IContentTitleSwitcherProps> = props => {
 
   return (
     <Wrapper>
-      <Kanban type={typeKanban} onClick={handleTypeKanban}>
+      <Kanban type={typeKanban ? 1 : 0} onClick={handleTypeKanban}>
         <KanbanIcon />
       </Kanban>
-      <Default type={typeDefault} onClick={handleTypeDefault}>
+      <Default type={typeDefault ? 1 : 0} onClick={handleTypeDefault}>
         <DefaultIcon />
       </Default>
       <Gantt>

@@ -6,6 +6,7 @@ import ContentTitleSwitcher from 'components/Tasks/Content/ContentTitleSwitcher'
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `
 const Title = styled.span`
   font-size: 24px;
@@ -13,13 +14,19 @@ const Title = styled.span`
   letter-spacing: 0.1px;
   color: #171725;
 `
+const Controls = styled.div`
+  display: flex;
+  margin-right: 50px;
+`
 
 const ContentTitle = () => {
   return (
     <Wrapper>
       <Title>Tasks</Title>
-      <ContentTitleSelector />
-      <ContentTitleSwitcher />
+      <Controls>
+        <ContentTitleSelector />
+        <ContentTitleSwitcher />
+      </Controls>
     </Wrapper>
   )
 }
