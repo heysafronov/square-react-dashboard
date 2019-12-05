@@ -22,17 +22,17 @@ const Icon = styled.div`
 `
 const Kanban = styled(Icon)`
   border-radius: 10px 0 0 10px;
-  background-color: ${props => (props.kanban ? '#b5b5be' : '#fff')};
+  background-color: ${props => (props.typeKanban ? '#b5b5be' : '#fff')};
   svg {
-    fill: ${props => (props.kanban ? '#fff' : '#b5b5be')};
+    fill: ${props => (props.typeKanban ? '#fff' : '#b5b5be')};
   }
 `
 const Default = styled(Icon)`
   border-right: 1px solid #f1f1f5;
   border-left: 1px solid #f1f1f5;
-  background-color: ${props => (props.default ? '#b5b5be' : '#fff')};
+  background-color: ${props => (props.typeDefault ? '#b5b5be' : '#fff')};
   svg {
-    fill: ${props => (props.default ? '#fff' : '#b5b5be')};
+    fill: ${props => (props.typeDefault ? '#fff' : '#b5b5be')};
   }
 `
 const Gantt = styled(Icon)`
@@ -44,26 +44,27 @@ interface IContentTitleSwitcherProps {
 }
 
 const ContentTitleSwitcher: React.FC<IContentTitleSwitcherProps> = props => {
-  let optionsTypes = {
-    kanban: true,
-    default: false
+  const [typeKanban, setTypeKanban] = React.useState<boolean>(true)
+  const [typeDefault, setTypeDefault] = React.useState<boolean>(false)
+
+  const handleTypeKanban = () => {
+    props.switchKanban(true)
+    setTypeKanban(true)
+    setTypeDefault(false)
   }
 
-  const [types, setTypes] = React.useState<object>(optionsTypes)
-
-  const handleSwitcher = (option: boolean, type: string): void => {
-    props.switchKanban(option)
-    setTypes((prevState) => {
-      return {...prevState, [type]: !prevState[type]}
-    })
+  const handleTypeDefault = () => {
+    props.switchKanban(false)
+    setTypeDefault(true)
+    setTypeKanban(false)
   }
 
   return (
     <Wrapper>
-      <Kanban {...types} onClick={() => handleSwitcher(true, 'kanban')}>
+      <Kanban typeKanban={typeKanban} onClick={handleTypeKanban}>
         <KanbanIcon />
       </Kanban>
-      <Default {...types} onClick={() => handleSwitcher(false, 'default')}>
+      <Default typeDefault={typeDefault} onClick={handleTypeDefault}>
         <DefaultIcon />
       </Default>
       <Gantt>
