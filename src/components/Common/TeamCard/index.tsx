@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Avatar from 'components/Common/Avatar'
 import IconOval from 'components/Common/Icons/Common/Oval'
+import { ITeamListUserState } from 'store/teams/types'
 
 const Wrapper = styled.div`
   width: 360px;
@@ -61,21 +62,15 @@ const AvatarWrapper = styled.div`
   }
 `
 
-interface IAvatarProps {
-  size: number
-  name: string
-  color: string
-  avatar: string
-}
-
 interface ITeamCardProps {
+  id: number
   avatar: string
   name: string
-  users: IAvatarProps[]
+  users: ITeamListUserState[]
 }
 
 const Avatars = (props: ITeamCardProps): any => {
-  return props.users.map((avatar: IAvatarProps, idx: number): object => (
+  return props.users.map((avatar: ITeamListUserState, idx: number): object => (
     <Avatar key={idx} {...avatar} />
   ))
 }
