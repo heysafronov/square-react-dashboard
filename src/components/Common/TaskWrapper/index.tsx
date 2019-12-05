@@ -95,11 +95,13 @@ interface ITaskWrapperProps {
   kanbanOption: boolean
 }
 
-const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
-  const tasks = () => {
-    return props.data.map(item => <Task data={item} key={item.id} />)
-  }
+const Tasks = (props: ITaskWrapperProps): any => {
+  return props.data.map((item: ITaskState) => (
+    <Task data={item} key={item.id} />
+  ))
+}
 
+const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
   const onDragOver = (e: React.DragEvent<HTMLDivElement>): void => {
     e.preventDefault()
   }
@@ -116,7 +118,9 @@ const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
           <IconOval />
         </More>
       </Header>
-      <TasksWrapper>{tasks()}</TasksWrapper>
+      <TasksWrapper>
+        <Tasks {...props} />
+      </TasksWrapper>
       <Button>
         <Cross />
       </Button>
