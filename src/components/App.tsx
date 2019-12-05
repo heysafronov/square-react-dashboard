@@ -1,4 +1,6 @@
+import 'core-js/stable'
 import React from 'react'
+import 'regenerator-runtime/runtime'
 import Loader from 'components/Common/Loader'
 import PrivateRoute from 'components/Common/PrivateRoute'
 import { GlobalStyle } from 'components/Common/GlobalStyle'

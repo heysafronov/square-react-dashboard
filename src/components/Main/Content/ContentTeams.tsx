@@ -1,5 +1,8 @@
 import React from 'react'
+import { AppState } from 'store'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
+import { fetchTeams } from 'store/teams/actions'
 import TeamCard from 'components/Common/TeamCard'
 import IconOval from 'components/Common/Icons/Common/Oval'
 import AddBigButton from 'components/Common/Buttons/AddBigButton'
@@ -103,11 +106,20 @@ interface ITeamCardProps {
   users: IUserProps[]
 }
 
-const teamCards = teamCardData.map((card: ITeamCardProps): object => (
-  <TeamCard key={card.id} {...card} />
-))
+interface IContentTeamsProps {
+  fetchTeams: typeof fetchTeams
+  teams: IUserProps[]
+}
 
-const ContentTeams = () => {
+const ContentTeams: React.FC<IContentTeamsProps> = props => {
+  React.useEffect(() => {
+    props.fetchTeams()
+  }, [])
+
+  const teamCards = props.teams.map((card: ITeamCardProps): object => (
+    <TeamCard key={card.id} {...card} />
+  ))
+
   return (
     <Wrapper>
       <Header>
@@ -124,4 +136,17 @@ const ContentTeams = () => {
   )
 }
 
-export default ContentTeams
+const mapStateToProps = (state: AppState) => {
+  return {
+    teams: state.teams.list
+  }
+}
+
+const mapDispatchToProps = {
+  fetchTeams
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ContentTeams)
