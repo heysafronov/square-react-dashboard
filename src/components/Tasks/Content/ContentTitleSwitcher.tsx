@@ -9,6 +9,9 @@ import GanttIcon from 'components/Common/Icons/Switcher/Gantt'
 const Wrapper = styled.div`
   display: flex;
   margin-left: 20px;
+  @media (max-width: 450px) {
+    display: none;
+  }
 `
 const Icon = styled.div`
   width: 38px;

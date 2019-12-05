@@ -8,6 +8,11 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 `
+const Title = styled.div`
+  @media (max-width: 1050px) {
+    display: none;
+  }
+`
 const Username = styled.span`
   font-size: 24px;
   text-align: center;
@@ -32,10 +37,10 @@ const Controls = styled.div`
 const ContentTitle = () => {
   return (
     <Wrapper>
-      <div>
+      <Title>
         <Username>Hi James,</Username>
         <Text>here’s your currently tasks</Text>
-      </div>
+      </Title>
       <Controls>
         <ContentTitleSelector />
         <ContentTitleSwitcher />
