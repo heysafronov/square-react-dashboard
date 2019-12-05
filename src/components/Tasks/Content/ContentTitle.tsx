@@ -16,7 +16,7 @@ const Title = styled.span`
 `
 const Controls = styled.div`
   display: flex;
-  margin-right: 50px;
+  margin-right: 20px;
 `
 
 const ContentTitle = () => {
