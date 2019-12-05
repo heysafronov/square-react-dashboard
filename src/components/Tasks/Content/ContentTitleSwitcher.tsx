@@ -53,7 +53,9 @@ const ContentTitleSwitcher: React.FC<IContentTitleSwitcherProps> = props => {
 
   const handleSwitcher = (option: boolean, type: string): void => {
     props.switchKanban(option)
-    setTypes(prevState => ({ ...prevState, type: !prevState.type }))
+    setTypes((prevState) => {
+      return {...prevState, [type]: !prevState[type]}
+    })
   }
 
   return (
