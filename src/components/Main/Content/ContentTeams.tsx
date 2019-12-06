@@ -2,6 +2,7 @@ import React from 'react'
 import { AppState } from 'store'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
+import Loader from 'components/Common/Loader'
 import { fetchTeams } from 'store/teams/actions'
 import TeamCard from 'components/Common/TeamCard'
 import IconOval from 'components/Common/Icons/Common/Oval'
@@ -65,7 +66,11 @@ const ContentTeams: React.FC<IContentTeamsProps> = props => {
         </TeamsMore>
       </Header>
       <Teams>
-        <TeamCards {...props} />
+        {props.teams.length ? (
+          <TeamCards {...props} />
+        ) : (
+          <Loader height={'none'} />
+        )}
         <AddBigButton name='Add team' />
       </Teams>
     </Wrapper>

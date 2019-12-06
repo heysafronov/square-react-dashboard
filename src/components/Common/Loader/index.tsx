@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 98vh;
+  height: ${props => (props.height === 'none' ? 'none' : '98vh')};
   margin: 0 auto;
 `
 const Svg = styled.svg`
@@ -51,9 +51,13 @@ const Circle = styled.circle`
   animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
 `
 
-const Loader = () => {
+interface ILoaderProps {
+  height?: string
+}
+
+const Loader: React.FC<ILoaderProps> = props => {
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       <Svg
         width='30px'
         height='30px'

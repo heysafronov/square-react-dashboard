@@ -10,14 +10,14 @@ const Wrapper = styled.div`
   width: 400px;
   min-width: 250px;
   height: 140px;
-  border: 2px dashed #d5d5dc;
+  border: 2px dashed ${variables.color};
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   :hover {
     cursor: not-allowed;
-    border: 2px dashed ${variables.color};
+    border: 2px dashed #d5d5dc;
   }
 `
 const Button = styled.button`
