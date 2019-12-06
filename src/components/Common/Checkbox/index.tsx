@@ -13,8 +13,8 @@ const CheckboxCustom = styled.span`
   ::after {
     position: absolute;
     content: '';
-    left: 12px;
-    top: 12px;
+    left: 2px;
+    top: 2px;
     height: 0;
     width: 0;
     border-radius: 5px;
@@ -30,7 +30,7 @@ const CheckboxLabel = styled.label`
   font-size: 14px;
   letter-spacing: 0.1px;
   color: #696974;
-  margin: 15px;
+  margin: 15px 0 0 10px;
   input {
     position: absolute;
     opacity: 0;
@@ -45,8 +45,8 @@ const CheckboxLabel = styled.label`
   input:checked ~ ${CheckboxCustom}::after {
     transform: rotate(45deg) scale(1);
     opacity: 1;
-    left: 40%;
-    top: 25%;
+    left: 5px;
+    top: 2px;
     width: 3px;
     height: 6px;
     border: solid white;
