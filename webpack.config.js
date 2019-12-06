@@ -1,5 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin
 
 module.exports = {
   mode: 'production',
@@ -17,8 +19,7 @@ module.exports = {
       utils: path.resolve(__dirname, 'src/utils/'),
       assets: path.resolve(__dirname, 'src/assets/'),
       api: path.resolve(__dirname, 'src/api/'),
-      src: path.resolve(__dirname, 'src/'),
-
+      src: path.resolve(__dirname, 'src/')
     }
   },
   module: {
@@ -48,6 +49,11 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html',
       favicon: './src/assets/images/favicon.png'
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disabled',
+      generateStatsFile: false,
+      statsOptions: { source: false }
     })
   ]
 }

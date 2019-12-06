@@ -10,7 +10,8 @@
     "dev": "webpack-dev-server --mode development --open --hot",
     "build": "npm run clear && webpack --mode production",
     "format": "prettier \"./src/**/*.+(js|jsx|ts|tsx)\" --write",
-    "ts": "tsc"
+    "ts": "tsc",
+    "bundle-report": "webpack-bundle-analyzer --port 4200 dist/stats.json"
   },
   "devDependencies": {
     "@babel/core": "^7.7.0",
@@ -29,6 +30,7 @@
     "tslint-immutable": "^6.0.1",
     "typescript": "^3.7.2",
     "webpack": "^4.41.2",
+    "webpack-bundle-analyzer": "^3.6.0",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   },
