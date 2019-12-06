@@ -2,7 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { Redirect } from 'react-router-dom'
-import { checkAuth, IUserInfo } from 'store/auth/actions'
+import { IUserInfo } from 'store/auth/types'
+import { checkAuth } from 'store/auth/actions'
 
 const Wrapper = styled.div`
   display: flex;
