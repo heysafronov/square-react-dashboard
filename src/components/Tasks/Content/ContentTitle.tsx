@@ -7,6 +7,9 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 450px) {
+    justify-content: center;
+  }
 `
 const Title = styled.div`
   @media (max-width: 1050px) {
