@@ -21,7 +21,7 @@ const Sort = styled.div`
 const Select = styled.div`
   position: absolute;
   width: 199px;
-  height: 149px;
+  height: 110px;
   left: 0;
   top: 39px;
   background: white;
