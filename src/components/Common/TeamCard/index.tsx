@@ -12,9 +12,11 @@ const Wrapper = styled.div`
   border-radius: 20px;
   padding: 20px;
   margin-right: 27px;
-  @media (max-width: 1160px) {
-    margin-right: 0;
+  @media (max-width: 1600px) {
     margin-bottom: 10px;
+  }
+  @media (max-width: 800px) {
+    margin-right: 0;
   }
   @media (max-width: 450px) {
     padding: 10px;

@@ -23,7 +23,7 @@ const Input = styled.input`
   line-height: 38px;
   color: #696974;
   ::placeholder {
-    padding: 0 0 0 10px;
+    padding: 0 0 0 20px;
   }
   :focus {
     width: 120px;

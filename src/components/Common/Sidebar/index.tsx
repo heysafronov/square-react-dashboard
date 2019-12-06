@@ -8,6 +8,7 @@ const Wrapper = styled.section`
   flex-direction: column;
   max-width: 250px;
   height: 92vh;
+  min-height: 640px;
 `
 
 const Sidebar = () => {
