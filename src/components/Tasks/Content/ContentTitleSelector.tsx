@@ -69,6 +69,63 @@ const What = styled.span`
   color: #44444f;
   margin-left: 10px;
 `
+const CheckboxCustom = styled.span`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 14px;
+  width: 14px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #b5b5be;
+  ::after {
+    position: absolute;
+    content: '';
+    left: 12px;
+    top: 12px;
+    height: 0;
+    width: 0;
+    border-radius: 5px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    opacity: 1;
+  }
+`
+const CheckboxLabel = styled.label`
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  color: #696974;
+  margin: 15px;
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  input:checked ~ ${CheckboxCustom} {
+    background-color: #3dd598;
+    border-radius: 5px;
+    opacity: 1;
+    border: 2px solid #3dd598;
+  }
+  input:checked ~ ${CheckboxCustom}::after {
+    transform: rotate(45deg) scale(1);
+    opacity: 1;
+    left: 40%;
+    top: 25%;
+    width: 3px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    background-color: transparent;
+    border-radius: 0;
+  }
+`
+const Text = styled.span`
+  margin: 0 0 0 30px;
+`
 
 interface IContentTitleProps {
   showMore: typeof showMore
@@ -106,7 +163,7 @@ const ContentTitleSelector: React.FC<IContentTitleProps> = props => {
       </ArrowWrapper>
       {opened ? (
         <Select>
-          <label>
+          <CheckboxLabel>
             <input
               type='checkbox'
               value='Backlog'
@@ -114,9 +171,10 @@ const ContentTitleSelector: React.FC<IContentTitleProps> = props => {
               onChange={handleCheckbox}
               checked={props.showState.backlog}
             />
-            Backlog
-          </label>
-          <label>
+            <Text>Backlog</Text>
+            <CheckboxCustom />
+          </CheckboxLabel>
+          <CheckboxLabel>
             <input
               type='checkbox'
               value='In progress'
@@ -124,9 +182,10 @@ const ContentTitleSelector: React.FC<IContentTitleProps> = props => {
               onChange={handleCheckbox}
               checked={props.showState.progress}
             />
-            In progress
-          </label>
-          <label>
+            <Text>In progress</Text>
+            <CheckboxCustom />
+          </CheckboxLabel>
+          <CheckboxLabel>
             <input
               type='checkbox'
               value='Complete'
@@ -134,8 +193,9 @@ const ContentTitleSelector: React.FC<IContentTitleProps> = props => {
               onChange={handleCheckbox}
               checked={props.showState.complete}
             />
-            Complete
-          </label>
+            <Text>Complete</Text>
+            <CheckboxCustom />
+          </CheckboxLabel>
         </Select>
       ) : null}
     </Sort>
