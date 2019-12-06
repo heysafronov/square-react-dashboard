@@ -35,6 +35,11 @@ const Text = styled.span`
   margin-left: 10px;
   font-family: 'Roboto', sans-serif;
 `
+const HeaderContent = styled.div`
+  display: flex;
+  align-items: center;
+  height: 38px;
+`
 
 const Messages = () => {
   return (
@@ -43,10 +48,12 @@ const Messages = () => {
       <MainWrapper>
         <Sidebar />
         <Wrapper>
-          <div>
-            <Username>Hi James,</Username>
-            <Text>here’s your currently messages</Text>
-          </div>
+          <HeaderContent>
+            <div>
+              <Username>Hi James,</Username>
+              <Text>here’s your currently messages</Text>
+            </div>
+          </HeaderContent>
         </Wrapper>
       </MainWrapper>
     </>

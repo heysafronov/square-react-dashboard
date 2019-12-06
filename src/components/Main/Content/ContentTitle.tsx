@@ -1,6 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const HeaderContent = styled.div`
+  display: flex;
+  align-items: center;
+  height: 38px;
+`
 const Username = styled.span`
   font-size: 24px;
   text-align: center;
@@ -20,10 +25,12 @@ const WelcomeText = styled.span`
 
 const ContentTitle = () => {
   return (
-    <div>
-      <Username>Hi James,</Username>
-      <WelcomeText>here’s your currently projects</WelcomeText>
-    </div>
+    <HeaderContent>
+      <div>
+        <Username>Hi James,</Username>
+        <WelcomeText>here’s your currently projects</WelcomeText>
+      </div>
+    </HeaderContent>
   )
 }
 

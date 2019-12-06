@@ -35,6 +35,11 @@ const Text = styled.span`
   margin-left: 10px;
   font-family: 'Roboto', sans-serif;
 `
+const HeaderContent = styled.div`
+  display: flex;
+  align-items: center;
+  height: 38px;
+`
 
 const Schedule = () => {
   return (
@@ -43,10 +48,12 @@ const Schedule = () => {
       <MainWrapper>
         <Sidebar />
         <Wrapper>
-          <div>
-            <Username>Hi James,</Username>
-            <Text>here’s your currently schedule</Text>
-          </div>
+          <HeaderContent>
+            <div>
+              <Username>Hi James,</Username>
+              <Text>here’s your currently schedule</Text>
+            </div>
+          </HeaderContent>
         </Wrapper>
       </MainWrapper>
     </>

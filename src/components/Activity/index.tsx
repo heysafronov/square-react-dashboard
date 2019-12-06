@@ -35,6 +35,11 @@ const Text = styled.span`
   margin-left: 10px;
   font-family: 'Roboto', sans-serif;
 `
+const HeaderContent = styled.div`
+  display: flex;
+  align-items: center;
+  height: 38px;
+`
 
 const Activity = () => {
   return (
@@ -43,10 +48,12 @@ const Activity = () => {
       <MainWrapper>
         <Sidebar />
         <Wrapper>
-          <div>
-            <Username>Hi James,</Username>
-            <Text>here’s your currently activity</Text>
-          </div>
+          <HeaderContent>
+            <div>
+              <Username>Hi James,</Username>
+              <Text>here’s your currently activity</Text>
+            </div>
+          </HeaderContent>
         </Wrapper>
       </MainWrapper>
     </>

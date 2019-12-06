@@ -7,6 +7,6 @@ export const fetchTeams = () => async (dispatch: Dispatch): Promise<void> => {
     const { data } = await instance.get('teams.json')
     dispatch({ type: FETCH_TEAMS, payload: data })
   } catch (err) {
-    console.error(`action fetchTeams: ${err}`)
+    console.error(`[action fetchTeams] - ${err}`)
   }
 }
