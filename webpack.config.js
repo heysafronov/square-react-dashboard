@@ -51,7 +51,7 @@ module.exports = {
       favicon: './src/assets/images/favicon.png'
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
+      analyzerMode: 'disabled',
       generateStatsFile: false,
       statsOptions: { source: false }
     })
