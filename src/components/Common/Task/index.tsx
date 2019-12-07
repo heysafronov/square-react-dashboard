@@ -18,7 +18,6 @@ const Wrapper = styled.div`
   padding: 15px;
   margin: 0 5px;
   background-color: white;
-  border: 1px solid red;
 `
 const TextStyles = styled.div`
   font-size: 14px;
@@ -65,6 +64,21 @@ const Score = styled.div`
   display: flex;
   flex-direction: ${(props: ITaskProps) =>
     props.kanbanOption ? 'column' : 'row'};
+`
+const ScoreLine = styled.div`
+  background-color: #e2e2ea;
+  width: 100%;
+  height: 2.5px;
+  border-radius: 2.5px;
+  div {
+    height: 2.5px;
+    background-color: #3dd598;
+    width: ${props => `${props.line}%`}
+`
+const ScoreLineTitle = styled(Team)`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 `
 const Avatars = styled.div`
   display: flex;
@@ -114,8 +128,10 @@ const Task: React.FC<ITaskProps> = props => {
           </Activity>
         </Info>
         <Score {...props}>
-          <div>{props.data.line}%</div>
-          <div>---------</div>
+          <ScoreLineTitle>{props.data.line}%</ScoreLineTitle>
+          <ScoreLine line={props.data.line}>
+            <div />
+          </ScoreLine>
         </Score>
         <Avatars>
           <div>ava 1</div>
