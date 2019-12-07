@@ -1,3 +1,5 @@
+import { ITeamListUserState } from 'store/teams/types'
+
 export const DRAG_AND_DROP = 'DRAG_AND_DROP'
 
 export interface ITaskState {
@@ -9,6 +11,7 @@ export interface ITaskState {
   score?: string
   line: number
   type: string
+  users: ITeamListUserState[]
 }
 
 export interface ITasksDragAndDropAction {

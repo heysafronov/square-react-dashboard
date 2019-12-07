@@ -2,12 +2,14 @@ import React from 'react'
 import { AppState } from 'store'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
+import Avatar from 'components/Common/Avatar'
 import { ITaskState } from 'store/tasks/types'
 import TaskModal from 'components/Common/TaskModal'
+import { ITeamListUserState } from 'store/teams/types'
 import { getKanbanOption } from 'store/show/selectors'
 import TasksIcon from 'components/Common/Icons/Menu/Tasks'
-import ActivityIcon from 'components/Common/Icons/Menu/Activity'
 import AttachIcon from 'components/Common/Icons/Common/Attach'
+import ActivityIcon from 'components/Common/Icons/Menu/Activity'
 
 const Wrapper = styled.div`
   display: flex;
@@ -80,8 +82,11 @@ const ScoreLineTitle = styled(Team)`
   justify-content: flex-end;
   width: 100%;
 `
-const Avatars = styled.div`
-  display: flex;
+const Users = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+  margin: 10px 0 0 0;
 `
 
 interface ITaskProps {
@@ -100,6 +105,12 @@ const Task: React.FC<ITaskProps> = props => {
   const toggleModal = (): void => {
     setModal(prevState => !prevState)
   }
+
+  const users = props.data.users.map(
+    (user: ITeamListUserState, idx: number): object => (
+      <Avatar key={idx} {...user} />
+    )
+  )
 
   return (
     <>
@@ -133,11 +144,7 @@ const Task: React.FC<ITaskProps> = props => {
             <div />
           </ScoreLine>
         </Score>
-        <Avatars>
-          <div>ava 1</div>
-          <div>ava 2</div>
-          <div>ava 3</div>
-        </Avatars>
+        <Users>{users}</Users>
       </Wrapper>
       <>{modal && <TaskModal {...props.data} onClose={toggleModal} />}</>
     </>
