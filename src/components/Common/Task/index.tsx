@@ -56,6 +56,9 @@ const Status = styled(TextStyles)`
   }
 `
 const Activity = styled(Status)`
+  background-color: #f1f1f5;
+  padding: 5px;
+  border-radius: 5px;
   margin: 0;
 `
 const Info = styled.div`
@@ -96,17 +99,19 @@ interface ITaskProps {
 }
 
 const Task: React.FC<ITaskProps> = props => {
+  const { data } = props
+
   const [modal, setModal] = React.useState<boolean>(false)
 
   const onDragStart = (e: React.DragEvent<HTMLDivElement>): void => {
-    e.dataTransfer.setData('text/html', props.data.id)
+    e.dataTransfer.setData('text/html', data.id)
   }
 
   const toggleModal = (): void => {
     setModal(prevState => !prevState)
   }
 
-  const users = props.data.users.map(
+  const users = data.users.map(
     (user: ITeamListUserState, idx: number): object => (
       <Avatar key={idx} {...user} />
     )
@@ -121,32 +126,32 @@ const Task: React.FC<ITaskProps> = props => {
         onClick={toggleModal}
       >
         <Titles>
-          <Title>{props.data.title}</Title>
-          <Team>{props.data.team}</Team>
+          <Title>{data.title}</Title>
+          <Team>{data.team}</Team>
         </Titles>
         <Info>
           <Attach>
             <AttachIcon />
-            {props.data.attach}
+            {data.attach}
           </Attach>
           <Status>
             <TasksIcon />
-            {props.data.status}
+            {data.status}
           </Status>
           <Activity>
             <ActivityIcon />
-            {props.data.score}
+            {data.score}
           </Activity>
         </Info>
         <Score {...props}>
-          <ScoreLineTitle>{props.data.line}%</ScoreLineTitle>
+          <ScoreLineTitle>{data.line}%</ScoreLineTitle>
           <ScoreLine {...props}>
             <div />
           </ScoreLine>
         </Score>
         <Users>{users}</Users>
       </Wrapper>
-      <>{modal && <TaskModal {...props.data} onClose={toggleModal} />}</>
+      <>{modal && <TaskModal {...data} onClose={toggleModal} />}</>
     </>
   )
 }
