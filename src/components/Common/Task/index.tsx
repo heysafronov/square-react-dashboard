@@ -75,7 +75,7 @@ const ScoreLine = styled.div`
   div {
     height: 2.5px;
     background-color: #3dd598;
-    width: ${props => `${props.line}%`}
+    width: ${(props: ITaskProps) => `${props.data.line}%`}
 `
 const ScoreLineTitle = styled(Team)`
   display: flex;
@@ -140,7 +140,7 @@ const Task: React.FC<ITaskProps> = props => {
         </Info>
         <Score {...props}>
           <ScoreLineTitle>{props.data.line}%</ScoreLineTitle>
-          <ScoreLine line={props.data.line}>
+          <ScoreLine {...props}>
             <div />
           </ScoreLine>
         </Score>
