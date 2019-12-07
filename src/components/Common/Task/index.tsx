@@ -105,7 +105,7 @@ interface ITaskProps {
   data: ITaskState
   key: string
   kanbanOption: boolean
-  drag: boolean
+  drag?: boolean
 }
 
 const Task: React.FC<ITaskProps> = props => {
