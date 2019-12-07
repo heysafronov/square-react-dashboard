@@ -1,52 +1,32 @@
 export const normalizedTasks = [
   {
     id: '1',
-    name: 'Ivan',
-    type: 'Backlog'
-  },
-  {
-    id: '2',
-    name: 'Petr',
-    type: 'Backlog'
-  },
-  {
-    id: '3',
-    name: 'Ivan',
-    type: 'Backlog'
-  },
-  {
-    id: '4',
-    name: 'Ivan',
-    type: 'Backlog'
-  },
-  {
-    id: '5',
-    name: 'Ivan',
+    title: 'Finance App Exploration',
+    team: 'Iconspace Team',
+    attach: 13,
+    status: '4/5',
+    score: '14 days left',
+    line: 85,
     type: 'Backlog'
   },
   {
     id: '6',
-    name: 'Gleb',
+    title: 'Product Preview & Mock',
+    team: 'Iconspace Team',
+    attach: 13,
+    status: '4/5',
+    score: '2 days left',
+    line: 85,
     type: 'In Progress'
-  },
-  {
-    id: '7',
-    name: 'Egor',
-    type: 'In Progress'
-  },
-  {
-    id: '8',
-    name: 'Masha',
-    type: 'Complete'
-  },
-  {
-    id: '9',
-    name: 'Petya',
-    type: 'Complete'
   },
   {
     id: '10',
-    name: 'Dysya',
+    title: 'Reactjs.org Website',
+    team: 'Uranus Team',
+    attach: 13,
+    status: '10/10',
+    score: '0 days left',
+    line: 100,
     type: 'Complete'
   }
 ]

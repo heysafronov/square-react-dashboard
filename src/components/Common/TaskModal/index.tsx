@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
+import { ITaskState } from 'store/tasks/types'
 
 const Wrapper = styled.section`
   position: absolute;
@@ -15,10 +16,7 @@ const Wrapper = styled.section`
   z-index: 100;
 `
 
-interface ITaskModalProps {
-  id: string
-  name: string
-  type: string
+interface ITaskModalProps extends ITaskState {
   onClose(): void
 }
 
@@ -28,7 +26,7 @@ const TaskModal: React.FC<ITaskModalProps> = props => {
   return ReactDOM.createPortal(
     <Wrapper>
       <button onClick={props.onClose}>Закрыть</button>
-      {props.name}
+      {props.title}
     </Wrapper>,
     element
   )

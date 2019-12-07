@@ -2,7 +2,12 @@ export const DRAG_AND_DROP = 'DRAG_AND_DROP'
 
 export interface ITaskState {
   id: string
-  name: string
+  title: string
+  team: string
+  attach: number
+  status: string
+  score?: string
+  line: number
   type: string
 }
 

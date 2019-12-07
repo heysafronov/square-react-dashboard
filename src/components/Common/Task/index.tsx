@@ -10,27 +10,39 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: ${(props: ITaskProps) =>
     props.kanbanOption ? 'column' : 'row'};
-  padding-bottom: 20px;
   cursor: move;
+  border-radius: 20px;
+  padding: 15px;
+  margin: 0 5px;
+  background-color: white;
+  border: 1px solid red;
 `
 const Titles = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: cadetblue;
+`
+const Title = styled.span`
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  color: #171725;
+  margin-bottom: 7px;
+`
+const Team = styled.span`
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  color: #696974;
 `
 const Info = styled.div`
   display: flex;
-  background-color: bisque;
+  margin: 15px 0 10px 0;
 `
 const Score = styled.div`
   display: flex;
   flex-direction: ${(props: ITaskProps) =>
     props.kanbanOption ? 'column' : 'row'};
-  background-color: cornflowerblue;
 `
 const Avatars = styled.div`
   display: flex;
-  background-color: goldenrod;
 `
 
 interface ITaskProps {
@@ -59,16 +71,16 @@ const Task: React.FC<ITaskProps> = props => {
         onClick={toggleModal}
       >
         <Titles>
-          <span>{props.data.name}</span>
-          <span>Team</span>
+          <Title>{props.data.title}</Title>
+          <Team>{props.data.team}</Team>
         </Titles>
         <Info>
-          <div>13</div>
-          <div>4/5</div>
-          <div>2 days left</div>
+          <div>{props.data.attach}</div>
+          <div>{props.data.status}</div>
+          <div>{props.data.score}</div>
         </Info>
         <Score {...props}>
-          <div>100%</div>
+          <div>{props.data.line}%</div>
           <div>---------</div>
         </Score>
         <Avatars>
