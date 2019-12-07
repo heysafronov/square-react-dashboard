@@ -19,7 +19,16 @@ const Wrapper = styled.div`
   border-radius: 20px;
   padding: 15px;
   margin: 0 5px;
-  background-color: white;
+  background: ${props =>
+    props.drag
+      ? `repeating-linear-gradient(
+    45deg,
+    white,
+    white 5px,
+    #f1f1f5 5px,
+    #f1f1f5 10px
+  )`
+      : 'white'};
 `
 const TextStyles = styled.div`
   font-size: 14px;
@@ -96,14 +105,17 @@ interface ITaskProps {
   data: ITaskState
   key: string
   kanbanOption: boolean
+  drag: boolean
 }
 
 const Task: React.FC<ITaskProps> = props => {
   const { data } = props
 
   const [modal, setModal] = React.useState<boolean>(false)
+  const [drag, setDrag] = React.useState<boolean>(false)
 
   const onDragStart = (e: React.DragEvent<HTMLDivElement>): void => {
+    setDrag(prevState => !prevState)
     e.dataTransfer.setData('text/html', data.id)
   }
 
@@ -124,6 +136,7 @@ const Task: React.FC<ITaskProps> = props => {
         draggable={true}
         onDragStart={onDragStart}
         onClick={toggleModal}
+        drag={drag}
       >
         <Titles>
           <Title>{data.title}</Title>
