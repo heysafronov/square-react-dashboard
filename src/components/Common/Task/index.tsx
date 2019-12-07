@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { ITaskState } from 'store/tasks/types'
 import TaskModal from 'components/Common/TaskModal'
 import { getKanbanOption } from 'store/show/selectors'
+import AttachIcon from 'components/Common/Icons/Common/Attach'
 
 const Wrapper = styled.div`
   display: flex;
@@ -31,6 +32,19 @@ const Team = styled.span`
   font-size: 14px;
   letter-spacing: 0.1px;
   color: #696974;
+`
+const Attach = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  color: #92929d;
+  svg {
+    margin-right: 5px;
+  }
+`
+const Status = styled.div`
+  margin: 0 15px 0 20px;
 `
 const Info = styled.div`
   display: flex;
@@ -75,8 +89,11 @@ const Task: React.FC<ITaskProps> = props => {
           <Team>{props.data.team}</Team>
         </Titles>
         <Info>
-          <div>{props.data.attach}</div>
-          <div>{props.data.status}</div>
+          <Attach>
+            <AttachIcon />
+            {props.data.attach}
+          </Attach>
+          <Status>{props.data.status}</Status>
           <div>{props.data.score}</div>
         </Info>
         <Score {...props}>
