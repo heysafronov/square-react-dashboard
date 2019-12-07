@@ -6,6 +6,7 @@ import { ITaskState } from 'store/tasks/types'
 import TaskModal from 'components/Common/TaskModal'
 import { getKanbanOption } from 'store/show/selectors'
 import TasksIcon from 'components/Common/Icons/Menu/Tasks'
+import ActivityIcon from 'components/Common/Icons/Menu/Activity'
 import AttachIcon from 'components/Common/Icons/Common/Attach'
 
 const Wrapper = styled.div`
@@ -52,6 +53,9 @@ const Status = styled(TextStyles)`
     width: 14px;
     height: 14px;
   }
+`
+const Activity = styled(Status)`
+  margin: 0;
 `
 const Info = styled.div`
   display: flex;
@@ -104,7 +108,10 @@ const Task: React.FC<ITaskProps> = props => {
             <TasksIcon />
             {props.data.status}
           </Status>
-          <div>{props.data.score}</div>
+          <Activity>
+            <ActivityIcon />
+            {props.data.score}
+          </Activity>
         </Info>
         <Score {...props}>
           <div>{props.data.line}%</div>
