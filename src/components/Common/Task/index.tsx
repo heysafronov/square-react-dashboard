@@ -19,38 +19,33 @@ const Wrapper = styled.div`
   background-color: white;
   border: 1px solid red;
 `
+const TextStyles = styled.div`
+  font-size: 14px;
+  letter-spacing: 0.1px;
+  color: #92929d;
+`
 const Titles = styled.div`
   display: flex;
   flex-direction: column;
 `
-const Title = styled.span`
-  font-size: 14px;
-  letter-spacing: 0.1px;
+const Title = styled(TextStyles)`
   color: #171725;
   margin-bottom: 7px;
 `
-const Team = styled.span`
-  font-size: 14px;
-  letter-spacing: 0.1px;
+const Team = styled(TextStyles)`
   color: #696974;
 `
-const Attach = styled.div`
+const Attach = styled(TextStyles)`
   display: flex;
   align-items: center;
-  font-size: 14px;
-  letter-spacing: 0.1px;
-  color: #92929d;
   svg {
     margin-right: 5px;
   }
 `
-const Status = styled.div`
+const Status = styled(TextStyles)`
   margin: 0 15px 0 20px;
   display: flex;
   align-items: center;
-  font-size: 14px;
-  letter-spacing: 0.1px;
-  color: #92929d;
   svg {
     margin-right: 5px;
     fill: #92929d;
