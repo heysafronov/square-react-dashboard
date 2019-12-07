@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   cursor: move;
   border-radius: 20px;
   padding: 15px;
-  margin: 10px 5px;
+  margin: 0 5px 10px 5px;
   background: ${props =>
     props.drag
       ? `repeating-linear-gradient(
