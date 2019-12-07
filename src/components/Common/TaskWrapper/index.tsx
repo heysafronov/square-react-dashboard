@@ -45,6 +45,7 @@ const TasksWrapper = styled.div`
   height: auto;
   border-left: 1px solid ${variables.colorBorder};
   border-right: 1px solid ${variables.colorBorder};
+  padding: 20px 0;
 `
 const Cross = styled.div`
   position: absolute;
