@@ -6,6 +6,7 @@ import { IShowTypes } from 'store/show/types'
 import { ITaskState } from 'store/tasks/types'
 import { filteredTasks } from 'store/tasks/selectors'
 import TaskWrapper from 'components/Common/TaskWrapper'
+import { fetchTasks } from 'store/tasks/actions'
 import ContentTitle from 'components/Tasks/Content/ContentTitle'
 import { getShowState, getKanbanOption } from 'store/show/selectors'
 
@@ -39,6 +40,7 @@ interface IContentProps {
   showBacklog: boolean
   showState: IShowTypes
   kanbanOption: boolean
+  fetchTasks: typeof fetchTasks
 }
 
 const types = {
@@ -49,21 +51,29 @@ const types = {
 }
 
 const Content: React.FC<IContentProps> = props => {
+  React.useEffect(() => {
+    props.fetchTasks()
+  }, [])
+
   return (
     <Wrapper>
       <ContentTitle />
-      <Tasks {...props}>
-        {props.showState.backlog && (
-          <TaskWrapper data={props.backlog} type='Backlog' />
-        )}
-        {props.showState.progress && (
-          <TaskWrapper data={props.progress} type='In Progress' />
-        )}
-        {props.showState.complete && (
-          <TaskWrapper data={props.complete} type='Complete' />
-        )}
-        <TaskWrapper data={[]} type='New' />
-      </Tasks>
+      {props.tasks.length ? (
+        <Tasks {...props}>
+          {props.showState.backlog && (
+            <TaskWrapper data={props.backlog} type='Backlog' />
+          )}
+          {props.showState.progress && (
+            <TaskWrapper data={props.progress} type='In Progress' />
+          )}
+          {props.showState.complete && (
+            <TaskWrapper data={props.complete} type='Complete' />
+          )}
+          <TaskWrapper data={[]} type='New' />
+        </Tasks>
+      ) : (
+        <div>Loading</div>
+      )}
     </Wrapper>
   )
 }
@@ -73,7 +83,15 @@ const mapStateToProps = (state: AppState) => ({
   showState: getShowState(state),
   backlog: filteredTasks(state, types.backlog),
   progress: filteredTasks(state, types.progress),
-  complete: filteredTasks(state, types.complete)
+  complete: filteredTasks(state, types.complete),
+  tasks: state.tasks
 })
 
-export default connect(mapStateToProps)(Content)
+const mapDispatchToProps = {
+  fetchTasks
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Content)
