@@ -36,7 +36,7 @@ export const normalizedTasks = [
     attach: 2,
     status: '7/8',
     score: { days: 10, colors: { bg: '#F1F1F5', text: '#92929D' } },
-    line: 75,
+    line: 70,
     type: 'Backlog',
     users: [
       {
@@ -54,21 +54,51 @@ export const normalizedTasks = [
     ]
   },
   {
-    id: '6',
+    id: '3',
     title: 'Product Preview & Mock',
     team: 'Iconspace Team',
     attach: 13,
     status: '4/5',
     score: { days: 2, colors: { bg: '#FFEEEF', text: '#FC5A5A' } },
-    line: 85,
+    line: 90,
     type: 'In Progress',
     users: [
+      {
+        size: 32,
+        name: 'GU',
+        color: '#FFC542',
+        avatar: ''
+      },
       {
         size: 32,
         name: 'GU',
         color: '#FF9AD5',
         avatar: ''
       }
+    ]
+  },
+  {
+    id: '4',
+    title: 'Circle - Dashboard & Stats',
+    team: 'Iconspace Team',
+    attach: 5,
+    status: '7/8',
+    score: { days: 1, colors: { bg: '#FFEEEF', text: '#FC5A5A' } },
+    line: 75,
+    type: 'In Progress',
+    users: [
+      {
+        size: 32,
+        name: 'AS',
+        color: '#A461D8',
+        avatar: ''
+      },
+      {
+        size: 32,
+        name: 'TE',
+        color: '',
+        avatar: 'https://i.imgur.com/xyev5eL.png'
+      },
     ]
   },
   {
