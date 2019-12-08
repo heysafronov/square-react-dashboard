@@ -176,7 +176,7 @@ const Task: React.FC<ITaskProps> = props => {
           )}
         </Info>
         <Score {...props}>
-          <ScoreLineTitle>{data.line}%</ScoreLineTitle>
+          <ScoreLineTitle {...props}>{data.line}%</ScoreLineTitle>
           <ScoreLine {...props}>
             <div />
           </ScoreLine>
