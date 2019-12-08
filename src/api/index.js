@@ -132,7 +132,7 @@ export const normalizedTasks = [
     ]
   },
   {
-    id: '10',
+    id: '6',
     title: 'Reactjs.org Website',
     team: 'Uranus Team',
     attach: 13,
@@ -151,6 +151,36 @@ export const normalizedTasks = [
         size: 32,
         name: 'MI',
         color: '#50B5FF',
+        avatar: ''
+      }
+    ]
+  },
+  {
+    id: '7',
+    title: 'Nextjs.org Website',
+    team: 'Uranus Team',
+    attach: 13,
+    status: '10/10',
+    score: { days: 0, color: { bg: '', text: '' } },
+    line: 100,
+    type: 'Complete',
+    users: [
+      {
+        size: 32,
+        name: 'GU',
+        color: '#FFC542',
+        avatar: ''
+      },
+      {
+        size: 32,
+        name: 'MI',
+        color: '#50B5FF',
+        avatar: ''
+      },
+      {
+        size: 32,
+        name: 'ZT',
+        color: '#82C43C',
         avatar: ''
       }
     ]
