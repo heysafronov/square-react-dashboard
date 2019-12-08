@@ -13,6 +13,8 @@ import ActivityIcon from 'components/Common/Icons/Menu/Activity'
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: ${(props: ITaskProps) =>
+    !props.kanbanOption && 'space-around'};
   flex-direction: ${(props: ITaskProps) =>
     props.kanbanOption ? 'column' : 'row'};
   cursor: move;
@@ -88,15 +90,17 @@ const Info = styled.div`
 const Score = styled.div`
   display: flex;
   flex-direction: ${(props: ITaskProps) =>
-    props.kanbanOption ? 'column' : 'row'};
+    props.kanbanOption ? 'column' : 'row-reverse'};
+  align-items: ${(props: ITaskProps) => !props.kanbanOption && 'center'};
 `
 const ScoreLine = styled.div`
   background-color: #e2e2ea;
   width: 100%;
-  height: 2.5px;
+  height: 3px;
   border-radius: 2.5px;
+  min-width: ${(props: ITaskProps) => !props.kanbanOption && '150px'};
   div {
-    height: 2.5px;
+    height: 3px;
     background-color: #3dd598;
     width: ${(props: ITaskProps) => `${props.data.line}%`}
 `
@@ -104,6 +108,7 @@ const ScoreLineTitle = styled(Team)`
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  margin-left: ${(props: ITaskProps) => !props.kanbanOption && '10px'};
 `
 const Users = styled.div`
   display: grid;

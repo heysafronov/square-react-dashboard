@@ -31,7 +31,7 @@ export const normalizedTasks = [
   },
   {
     id: '2',
-    title: 'Illustration',
+    title: 'Illustration on Behance',
     team: 'Iconspace Team',
     attach: 2,
     status: '7/8',
@@ -57,7 +57,7 @@ export const normalizedTasks = [
     id: '3',
     title: 'Product Preview & Mock',
     team: 'Iconspace Team',
-    attach: 13,
+    attach: 9,
     status: '4/5',
     score: { days: 2, colors: { bg: '#FFEEEF', text: '#FC5A5A' } },
     line: 90,
