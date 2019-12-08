@@ -98,7 +98,37 @@ export const normalizedTasks = [
         name: 'TE',
         color: '',
         avatar: 'https://i.imgur.com/xyev5eL.png'
+      }
+    ]
+  },
+  {
+    id: '5',
+    title: 'Square - Social Media Plan ',
+    team: 'Uranus Team',
+    attach: 0,
+    status: '2/10',
+    score: { days: 8, colors: { bg: '#FFF5ED', text: '#FF974A' } },
+    line: 45,
+    type: 'In Progress',
+    users: [
+      {
+        size: 32,
+        name: 'GU',
+        color: '#FFC542',
+        avatar: ''
       },
+      {
+        size: 32,
+        name: 'KA',
+        color: '#50B5FF',
+        avatar: ''
+      },
+      {
+        size: 32,
+        name: 'AS',
+        color: '#A461D8',
+        avatar: ''
+      }
     ]
   },
   {
