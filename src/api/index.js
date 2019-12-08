@@ -5,7 +5,7 @@ export const normalizedTasks = [
     team: 'Iconspace Team',
     attach: 13,
     status: '4/5',
-    score: '14 days left',
+    score: { days: 14, colors: { bg: '#F1F1F5', text: '#92929D' } },
     line: 85,
     type: 'Backlog',
     users: [
@@ -35,7 +35,7 @@ export const normalizedTasks = [
     team: 'Iconspace Team',
     attach: 13,
     status: '4/5',
-    score: '2 days left',
+    score: { days: 2, colors: { bg: '#FFEEEF', text: '#FC5A5A' } },
     line: 85,
     type: 'In Progress',
     users: [
@@ -53,7 +53,7 @@ export const normalizedTasks = [
     team: 'Uranus Team',
     attach: 13,
     status: '10/10',
-    score: '0 days left',
+    score: { days: 0, color: { bg: '', text: '' } },
     line: 100,
     type: 'Complete',
     users: [

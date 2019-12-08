@@ -8,7 +8,7 @@ export interface ITaskState {
   team: string
   attach: number
   status: string
-  score?: string
+  score: { days: number; colors: { bg: string; text: string } }
   line: number
   type: string
   users: ITeamListUserState[]

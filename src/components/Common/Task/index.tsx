@@ -29,6 +29,8 @@ const Wrapper = styled.div`
     #f1f1f5 10px
   )`
       : 'white'};
+  border: ${props => (props.drag ? '1px dashed #92929d' : '1px dashed white')};
+  opacity: ${props => (props.drag ? '0.999' : '1')};
 `
 const TextStyles = styled.div`
   font-size: 14px;
@@ -42,6 +44,8 @@ const Titles = styled.div`
 const Title = styled(TextStyles)`
   color: #171725;
   margin-bottom: 7px;
+  text-decoration: ${(props: ITaskProps) =>
+    props.data.score.days === 0 && 'line-through'};
 `
 const Team = styled(TextStyles)`
   color: #696974;
@@ -65,10 +69,17 @@ const Status = styled(TextStyles)`
   }
 `
 const Activity = styled(Status)`
-  background-color: #f1f1f5;
+  background-color: ${(props: ITaskProps) => props.data.score.colors.bg};
+  color: ${(props: ITaskProps) => props.data.score.colors.text};
   padding: 5px;
   border-radius: 5px;
   margin: 0;
+  span:last-child {
+    margin-left: 5px;
+  }
+  svg {
+    fill: ${(props: ITaskProps) => props.data.score.colors.text};
+  }
 `
 const Info = styled.div`
   display: flex;
@@ -139,7 +150,7 @@ const Task: React.FC<ITaskProps> = props => {
         drag={drag}
       >
         <Titles>
-          <Title>{data.title}</Title>
+          <Title {...props}>{data.title}</Title>
           <Team>{data.team}</Team>
         </Titles>
         <Info>
@@ -151,10 +162,13 @@ const Task: React.FC<ITaskProps> = props => {
             <TasksIcon />
             {data.status}
           </Status>
-          <Activity>
-            <ActivityIcon />
-            {data.score}
-          </Activity>
+          {data.score.days > 0 && (
+            <Activity {...props}>
+              <ActivityIcon />
+              <span>{data.score.days}</span>
+              <span>days left</span>
+            </Activity>
+          )}
         </Info>
         <Score {...props}>
           <ScoreLineTitle>{data.line}%</ScoreLineTitle>
