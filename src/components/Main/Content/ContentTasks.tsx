@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import Task from 'components/Common/Task'
 import { ITaskState } from 'store/tasks/types'
 import IconOval from 'components/Common/Icons/Common/Oval'
-import AddBigButton from 'components/Common/Buttons/AddBigButton'
 
 const Wrapper = styled.div`
   border: 1px solid #e2e2ea;
@@ -50,12 +49,9 @@ interface IContentTasksProps {
 const ContentTasks: React.FC<IContentTasksProps> = props => {
   const { tasks } = props
 
-  const tasksList = () => {
-    const tasksList = tasks.slice(0, 3)
-    return tasksList.map((item: ITaskState) => (
-      <Task data={item} key={item.id} />
-    ))
-  }
+  const tasksList = tasks.map((item: ITaskState) => (
+    <Task data={item} key={item.id} />
+  ))
 
   return (
     <Wrapper>
@@ -66,10 +62,7 @@ const ContentTasks: React.FC<IContentTasksProps> = props => {
         </TeamsMore>
       </Header>
       <Teams>
-        <TasksWrapper>
-          {tasksList()}
-          <AddBigButton name='Add task' />
-        </TasksWrapper>
+        <TasksWrapper>{tasksList}</TasksWrapper>
       </Teams>
     </Wrapper>
   )
