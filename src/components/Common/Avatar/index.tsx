@@ -36,10 +36,10 @@ const WithoutAvatar = (props: IAvatarProps) => {
 }
 
 const Avatar: React.FC<IAvatarProps> = props => {
+  const { avatar } = props
+
   return (
-    <>
-      {props.avatar ? <WithAvatar {...props} /> : <WithoutAvatar {...props} />}
-    </>
+    <>{avatar ? <WithAvatar {...props} /> : <WithoutAvatar {...props} />}</>
   )
 }
 

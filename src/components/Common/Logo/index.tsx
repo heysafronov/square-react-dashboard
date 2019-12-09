@@ -22,10 +22,11 @@ interface ILogoProps {
 }
 
 const Logo = (props: ILogoProps) => {
+  const { image, title } = props
   return (
     <Section>
-      <LogoImage {...props.image} />
-      <LogoTitle {...props.title} />
+      <LogoImage {...image} />
+      <LogoTitle {...title} />
     </Section>
   )
 }

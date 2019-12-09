@@ -58,12 +58,14 @@ interface IAddBigButtonProps {
 }
 
 const AddBigButton: React.FC<IAddBigButtonProps> = props => {
+  const { name } = props
+
   return (
     <Wrapper>
       <Button>
         <Cross />
       </Button>
-      <Text>{props.name}</Text>
+      <Text>{name}</Text>
     </Wrapper>
   )
 }

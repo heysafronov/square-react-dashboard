@@ -1,6 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const variables = {
+  greenColor: '#3dd598'
+}
+
 const CheckboxCustom = styled.span`
   position: absolute;
   top: 0;
@@ -37,10 +41,10 @@ const CheckboxLabel = styled.label`
     cursor: pointer;
   }
   input:checked ~ ${CheckboxCustom} {
-    background-color: #3dd598;
+    background-color: ${variables.greenColor};
     border-radius: 5px;
     opacity: 1;
-    border: 2px solid #3dd598;
+    border: 2px solid ${variables.greenColor};
   }
   input:checked ~ ${CheckboxCustom}::after {
     transform: rotate(45deg) scale(1);
@@ -63,21 +67,23 @@ interface IContentTitleProps {
   name: string
   value: string
   checked: boolean
-  handleCheckbox: () => void
+  handleCheckbox?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const Checkbox: React.FC<IContentTitleProps> = props => {
+  const { name, value, checked, handleCheckbox } = props
+
   return (
     <>
       <CheckboxLabel>
         <input
           type='checkbox'
-          value={props.value}
-          name={props.name}
-          onChange={props.handleCheckbox}
-          checked={props.checked}
+          value={value}
+          name={name}
+          onChange={handleCheckbox}
+          checked={checked}
         />
-        <Text>{props.value}</Text>
+        <Text>{value}</Text>
         <CheckboxCustom />
       </CheckboxLabel>
     </>

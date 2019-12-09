@@ -15,7 +15,9 @@ interface ILogoTitleProps {
 }
 
 const LogoTitle: React.FC<ILogoTitleProps> = props => {
-  return <Title {...props}>{props.text}</Title>
+  const { text } = props
+
+  return <Title {...props}>{text}</Title>
 }
 
 export default LogoTitle

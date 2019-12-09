@@ -77,6 +77,8 @@ interface IContentTitleProps {
 }
 
 const ContentTitleSelector: React.FC<IContentTitleProps> = props => {
+  const { showState, showMore } = props
+
   const [opened, setOpened] = React.useState<boolean>(false)
   const [filter, setFilter] = React.useState<string[]>(['All tasks'])
 
@@ -93,7 +95,7 @@ const ContentTitleSelector: React.FC<IContentTitleProps> = props => {
   const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const name = e.target.name
     setFilter([e.target.value])
-    props.showMore({ ...props.showState, [name]: !props.showState[name] })
+    showMore({ ...showState, [name]: !showState[name] })
   }
 
   return (
@@ -105,35 +107,35 @@ const ContentTitleSelector: React.FC<IContentTitleProps> = props => {
       <ArrowWrapper onClick={handleOpenedSimple}>
         {opened ? <ArrowDown /> : <ArrowUp />}
       </ArrowWrapper>
-      {opened ? (
+      {opened && (
         <Select>
           <Checkbox
             handleCheckbox={handleCheckbox}
             value={'Backlog'}
             name={'backlog'}
-            checked={props.showState.backlog}
+            checked={showState.backlog}
           />
           <Checkbox
             handleCheckbox={handleCheckbox}
             value={'In progress'}
             name={'progress'}
-            checked={props.showState.progress}
+            checked={showState.progress}
           />
           <Checkbox
             handleCheckbox={handleCheckbox}
             value={'Complete'}
             name={'complete'}
-            checked={props.showState.complete}
+            checked={showState.complete}
           />
         </Select>
-      ) : null}
+      )}
     </Sort>
   )
 }
 
-const mapStateToProps = (state: AppState) => ({
-  showState: getShowState(state)
-})
+const mapStateToProps = (state: AppState) => {
+  return { showState: getShowState(state) }
+}
 
 const mapDispatchToProps = {
   showMore

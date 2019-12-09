@@ -6,10 +6,12 @@ interface ILogoImageProps {
 }
 
 const LogoImage: React.FC<ILogoImageProps> = props => {
+  const { size, color } = props
+
   return (
     <svg
-      width={`${props.size}`}
-      height={`${props.size}`}
+      width={`${size}`}
+      height={`${size}`}
       viewBox='0 0 50 50'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
@@ -20,7 +22,7 @@ const LogoImage: React.FC<ILogoImageProps> = props => {
         width='36'
         height='36'
         rx='12'
-        stroke={`${props.color}`}
+        stroke={`${color}`}
         strokeWidth='6'
       />
       <rect
@@ -29,7 +31,7 @@ const LogoImage: React.FC<ILogoImageProps> = props => {
         width='18'
         height='18'
         rx='9'
-        stroke={`${props.color}`}
+        stroke={`${color}`}
         strokeWidth='6'
       />
     </svg>
