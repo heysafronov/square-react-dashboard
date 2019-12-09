@@ -2,11 +2,12 @@ import React from 'react'
 import { AppState } from 'store'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
+import Loader from 'components/Common/Loader'
 import { IShowTypes } from 'store/show/types'
 import { ITaskState } from 'store/tasks/types'
+import { fetchTasks } from 'store/tasks/actions'
 import { filteredTasks } from 'store/tasks/selectors'
 import TaskWrapper from 'components/Common/TaskWrapper'
-import { fetchTasks } from 'store/tasks/actions'
 import ContentTitle from 'components/Tasks/Content/ContentTitle'
 import { getShowState, getKanbanOption } from 'store/show/selectors'
 
@@ -41,6 +42,7 @@ interface IContentProps {
   showState: IShowTypes
   kanbanOption: boolean
   fetchTasks: typeof fetchTasks
+  tasks: ITaskState[]
 }
 
 const types = {
@@ -72,19 +74,19 @@ const Content: React.FC<IContentProps> = props => {
           <TaskWrapper data={[]} type='New' />
         </Tasks>
       ) : (
-        <div>Loading</div>
+        <Loader />
       )}
     </Wrapper>
   )
 }
 
 const mapStateToProps = (state: AppState) => ({
+  tasks: state.tasks,
   kanbanOption: getKanbanOption(state),
   showState: getShowState(state),
   backlog: filteredTasks(state, types.backlog),
   progress: filteredTasks(state, types.progress),
-  complete: filteredTasks(state, types.complete),
-  tasks: state.tasks
+  complete: filteredTasks(state, types.complete)
 })
 
 const mapDispatchToProps = {
