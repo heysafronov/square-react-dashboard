@@ -78,13 +78,15 @@ const Avatars = (props: ITeamCardProps): any => {
 }
 
 const TeamCard: React.FC<ITeamCardProps> = props => {
+  const { avatar, name } = props
+
   return (
     <Wrapper>
       <Header>
         <Image>
-          <img src={props.avatar} alt='Team' />
+          <img src={avatar} alt='Team' />
         </Image>
-        <TeamName>{props.name}</TeamName>
+        <TeamName>{name}</TeamName>
         <More>
           <IconOval />
         </More>

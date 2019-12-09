@@ -53,6 +53,8 @@ const TeamCards = (props: IContentTeamsProps): any => {
 }
 
 const ContentTeams: React.FC<IContentTeamsProps> = props => {
+  const { teams } = props
+
   React.useEffect(() => {
     props.fetchTeams()
   }, [])
@@ -66,7 +68,7 @@ const ContentTeams: React.FC<IContentTeamsProps> = props => {
         </TeamsMore>
       </Header>
       <Teams>
-        {props.teams.length ? (
+        {teams.length ? (
           <TeamCards {...props} />
         ) : (
           <Loader height={'none'} />

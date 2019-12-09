@@ -15,8 +15,7 @@ const variables = {
 }
 
 const Wrapper = styled.div`
-  width: ${(props: ITaskWrapperProps) =>
-    props.kanbanOption ? '280px' : 'auto'};
+  width: ${(props: ITaskWrapperProps) => (props.option ? '280px' : 'auto')};
 `
 const Header = styled.div`
   border-radius: 15px 15px 0 0;
@@ -93,7 +92,7 @@ interface ITaskWrapperProps {
   dragAndDrop: typeof dragAndDrop
   data: ITaskState[]
   type: string
-  kanbanOption: boolean
+  option: boolean
 }
 
 const Tasks = (props: ITaskWrapperProps): any => {
@@ -103,18 +102,20 @@ const Tasks = (props: ITaskWrapperProps): any => {
 }
 
 const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
+  const { type } = props
+
   const onDragOver = (e: React.DragEvent<HTMLDivElement>): void => {
     e.preventDefault()
   }
 
   const onDrop = (e: React.DragEvent<HTMLDivElement>): void => {
-    props.dragAndDrop(e, props.type)
+    props.dragAndDrop(e, type)
   }
 
   return (
     <Wrapper onDragOver={onDragOver} onDrop={onDrop} {...props}>
       <Header>
-        <Title>{props.type}</Title>
+        <Title>{type}</Title>
         <More>
           <IconOval />
         </More>
@@ -129,9 +130,11 @@ const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
   )
 }
 
-const mapStateToProps = (state: AppState) => ({
-  kanbanOption: getKanbanOption(state)
-})
+const mapStateToProps = (state: AppState) => {
+  return {
+    option: getKanbanOption(state)
+  }
+}
 
 export default connect(
   mapStateToProps,

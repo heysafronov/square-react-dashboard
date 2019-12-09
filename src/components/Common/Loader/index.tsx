@@ -9,7 +9,8 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: ${props => (props.height === 'none' ? 'none' : '98vh')};
+  height: ${(props: ILoaderProps) =>
+    props.height === 'none' ? 'none' : '98vh'};
   margin: 0 auto;
 `
 const Svg = styled.svg`

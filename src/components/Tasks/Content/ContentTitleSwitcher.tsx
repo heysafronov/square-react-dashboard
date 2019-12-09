@@ -2,9 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { switchKanban } from 'store/show/actions'
+import GanttIcon from 'components/Common/Icons/Switcher/Gantt'
 import KanbanIcon from 'components/Common/Icons/Switcher/Kanban'
 import DefaultIcon from 'components/Common/Icons/Switcher/Default'
-import GanttIcon from 'components/Common/Icons/Switcher/Gantt'
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,19 +25,19 @@ const Icon = styled.div`
     fill: #b5b5be;
   }
 `
-const Kanban = styled(Icon)`
+const Kanban = styled<SwitcherProps>(Icon)`
   border-radius: 10px 0 0 10px;
-  background-color: ${props => (props.type ? '#b5b5be' : '#fff')};
+  background-color: ${(props: SwitcherProps) => (props.type ? '#b5b5be' : '#fff')};
   svg {
-    fill: ${props => (props.type ? '#fff' : '#b5b5be')};
+    fill: ${(props: SwitcherProps) => (props.type ? '#fff' : '#b5b5be')};
   }
 `
 const Default = styled(Icon)`
   border-right: 1px solid #f1f1f5;
   border-left: 1px solid #f1f1f5;
-  background-color: ${props => (props.type ? '#b5b5be' : '#fff')};
+  background-color: ${(props: SwitcherProps) => (props.type ? '#b5b5be' : '#fff')};
   svg {
-    fill: ${props => (props.type ? '#fff' : '#b5b5be')};
+    fill: ${(props: SwitcherProps) => (props.type ? '#fff' : '#b5b5be')};
   }
 `
 const Gantt = styled(Icon)`
@@ -45,22 +45,28 @@ const Gantt = styled(Icon)`
   cursor: not-allowed;
 `
 
+type SwitcherProps = {
+  type: boolean | number
+}
+
 interface IContentTitleSwitcherProps {
-  switchKanban: typeof switchKanban
+  switcher: typeof switchKanban
 }
 
 const ContentTitleSwitcher: React.FC<IContentTitleSwitcherProps> = props => {
+  const { switcher } = props
+
   const [typeKanban, setTypeKanban] = React.useState<boolean>(true)
   const [typeDefault, setTypeDefault] = React.useState<boolean>(false)
 
   const handleTypeKanban = () => {
-    props.switchKanban(true)
+    switcher(true)
     setTypeKanban(true)
     setTypeDefault(false)
   }
 
   const handleTypeDefault = () => {
-    props.switchKanban(false)
+    switcher(false)
     setTypeDefault(true)
     setTypeKanban(false)
   }
@@ -80,7 +86,11 @@ const ContentTitleSwitcher: React.FC<IContentTitleSwitcherProps> = props => {
   )
 }
 
+const mapDispatchToProps = {
+  switcher: switchKanban
+}
+
 export default connect(
   null,
-  { switchKanban }
+  mapDispatchToProps
 )(ContentTitleSwitcher)

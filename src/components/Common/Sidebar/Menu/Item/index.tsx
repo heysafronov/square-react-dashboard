@@ -2,6 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
+const variables = {
+  blueColor: '#0062ff',
+  grayColor: '#92929d'
+}
+
 const active = 'nav-item-active'
 const NavItem = styled(NavLink).attrs({
   active
@@ -14,13 +19,13 @@ const NavItem = styled(NavLink).attrs({
   letter-spacing: 0.1px;
   border-left: 3px solid #fff;
   svg {
-    fill: #92929d;
+    fill: ${variables.grayColor};
   }
   &.${active} {
-    color: #0062ff;
-    border-left: 3px solid #0062ff;
+    color: ${variables.blueColor};
+    border-left: 3px solid ${variables.blueColor};
     svg {
-      fill: #0062ff;
+      fill: ${variables.blueColor};
     }
   }
 `
@@ -45,11 +50,13 @@ interface IItemProps {
 }
 
 const Item: React.FC<IItemProps> = props => {
+  const { icon, name, link } = props
+
   return (
     <Wrapper>
-      <NavItem exact activeClassName={active} to={props.link}>
-        <Icon>{props.icon}</Icon>
-        <NameLink>{props.name}</NameLink>
+      <NavItem exact activeClassName={active} to={link}>
+        <Icon>{icon}</Icon>
+        <NameLink>{name}</NameLink>
       </NavItem>
     </Wrapper>
   )

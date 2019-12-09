@@ -66,6 +66,8 @@ interface IFormSubmitProps {
 }
 
 const FormSubmit: React.FC<IFormSubmitProps> = props => {
+  const { checkAuth } = props
+
   let dataUser = {
     login: '',
     password: ''
@@ -89,7 +91,7 @@ const FormSubmit: React.FC<IFormSubmitProps> = props => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     if (!error.login && !error.password) {
-      props.checkAuth({
+      checkAuth({
         login: user.login,
         password: user.password
       })
