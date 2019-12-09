@@ -1,5 +1,9 @@
 import React from 'react'
+import { AppState } from 'store'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
+import Task from 'components/Common/Task'
+import { ITaskState } from 'store/tasks/types'
 import IconOval from 'components/Common/Icons/Common/Oval'
 import AddBigButton from 'components/Common/Buttons/AddBigButton'
 
@@ -34,8 +38,25 @@ const Teams = styled.div`
   display: flex;
   flex-wrap: wrap;
 `
+const TasksWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
 
-const ContentTasks = () => {
+interface IContentTasksProps {
+  tasks: ITaskState[]
+}
+
+const ContentTasks: React.FC<IContentTasksProps> = props => {
+  const { tasks } = props
+
+  const tasksList = () => {
+    const tasksList = tasks.slice(0, 3)
+    return tasksList.map((item: ITaskState) => (
+      <Task data={item} key={item.id} />
+    ))
+  }
+
   return (
     <Wrapper>
       <Header>
@@ -45,11 +66,19 @@ const ContentTasks = () => {
         </TeamsMore>
       </Header>
       <Teams>
-        <div>Cards</div>
-        <AddBigButton name='Add task' />
+        <TasksWrapper>
+          {tasksList()}
+          <AddBigButton name='Add task' />
+        </TasksWrapper>
       </Teams>
     </Wrapper>
   )
 }
 
-export default ContentTasks
+const mapStateToProps = (state: AppState) => {
+  return {
+    tasks: state.tasks
+  }
+}
+
+export default connect(mapStateToProps)(ContentTasks)

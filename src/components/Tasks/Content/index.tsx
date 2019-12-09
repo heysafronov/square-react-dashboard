@@ -56,7 +56,7 @@ const Content: React.FC<IContentProps> = props => {
   const { tasks, showState, backlog, progress, complete } = props
 
   React.useEffect(() => {
-    props.fetchTasks()
+    !tasks.length && props.fetchTasks()
   }, [])
 
   return (

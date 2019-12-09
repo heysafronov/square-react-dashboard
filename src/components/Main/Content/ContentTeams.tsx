@@ -56,7 +56,7 @@ const ContentTeams: React.FC<IContentTeamsProps> = props => {
   const { teams } = props
 
   React.useEffect(() => {
-    props.fetchTeams()
+    !teams.length && props.fetchTeams()
   }, [])
 
   return (
