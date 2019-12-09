@@ -13,7 +13,7 @@ const checkChrome = (id: string): string => {
 }
 
 export function tasks(
-  tasks = initialState,
+  state = initialState,
   action: ITasksDragAndDropAction | ITasksFetchTasksAction
 ): ITaskState[] {
   const { type, payload } = action
@@ -21,15 +21,15 @@ export function tasks(
     case DRAG_AND_DROP:
       const id = payload.e.dataTransfer.getData('text/html')
       const checkedId = checkChrome(id)
-      return tasks.filter(task => {
+      return state.filter(task => {
         if (task.id === checkedId) {
           task.type = payload.type
         }
         return task
       })
     case FETCH_TASKS:
-      return [...tasks, ...action.payload]
+      return [...state, ...action.payload]
     default:
-      return tasks
+      return state
   }
 }
