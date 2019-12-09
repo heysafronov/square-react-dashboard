@@ -1,4 +1,4 @@
-import instance from 'api/axios'
+import instance from 'utils/axios'
 import { Dispatch } from 'redux'
 import { FETCH_TASKS } from 'store/tasks/types'
 import { DRAG_AND_DROP, ITasksDragAndDropAction } from 'store/tasks/types'
