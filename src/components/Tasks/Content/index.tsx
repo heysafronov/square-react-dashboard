@@ -26,9 +26,9 @@ const Tasks = styled.div`
   margin-top: 35px;
   display: grid;
   grid-template-columns: ${(props: IContentProps) =>
-    props.kanbanOption ? `repeat(auto-fill, minmax(280px, 1fr))` : 'none'};
+    props.option ? `repeat(auto-fill, minmax(280px, 1fr))` : 'none'};
   grid-template-rows: ${(props: IContentProps) =>
-    props.kanbanOption ? 'none' : 'repeat(4, auto)'};
+    props.option ? 'none' : 'repeat(4, auto)'};
   grid-column-gap: 20px;
   grid-row-gap: 20px;
 `
@@ -40,7 +40,7 @@ interface IContentProps {
   showAll: boolean
   showBacklog: boolean
   showState: IShowTypes
-  kanbanOption: boolean
+  option: boolean
   fetchTasks: typeof fetchTasks
   tasks: ITaskState[]
 }
@@ -53,6 +53,8 @@ const types = {
 }
 
 const Content: React.FC<IContentProps> = props => {
+  const { tasks, showState, backlog, progress, complete } = props
+
   React.useEffect(() => {
     props.fetchTasks()
   }, [])
@@ -60,16 +62,14 @@ const Content: React.FC<IContentProps> = props => {
   return (
     <Wrapper>
       <ContentTitle />
-      {props.tasks.length ? (
+      {tasks.length ? (
         <Tasks {...props}>
-          {props.showState.backlog && (
-            <TaskWrapper data={props.backlog} type='Backlog' />
+          {showState.backlog && <TaskWrapper data={backlog} type='Backlog' />}
+          {showState.progress && (
+            <TaskWrapper data={progress} type='In Progress' />
           )}
-          {props.showState.progress && (
-            <TaskWrapper data={props.progress} type='In Progress' />
-          )}
-          {props.showState.complete && (
-            <TaskWrapper data={props.complete} type='Complete' />
+          {showState.complete && (
+            <TaskWrapper data={complete} type='Complete' />
           )}
           <TaskWrapper data={[]} type='New' />
         </Tasks>
@@ -80,14 +80,16 @@ const Content: React.FC<IContentProps> = props => {
   )
 }
 
-const mapStateToProps = (state: AppState) => ({
-  tasks: state.tasks,
-  kanbanOption: getKanbanOption(state),
-  showState: getShowState(state),
-  backlog: filteredTasks(state, types.backlog),
-  progress: filteredTasks(state, types.progress),
-  complete: filteredTasks(state, types.complete)
-})
+const mapStateToProps = (state: AppState) => {
+  return {
+    tasks: state.tasks,
+    option: getKanbanOption(state),
+    showState: getShowState(state),
+    backlog: filteredTasks(state, types.backlog),
+    progress: filteredTasks(state, types.progress),
+    complete: filteredTasks(state, types.complete)
+  }
+}
 
 const mapDispatchToProps = {
   fetchTasks
