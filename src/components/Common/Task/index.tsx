@@ -13,10 +13,8 @@ import ActivityIcon from 'components/Common/Icons/Menu/Activity'
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: ${(props: ITaskProps) =>
-    !props.kanbanOption && 'space-around'};
-  flex-direction: ${(props: ITaskProps) =>
-    props.kanbanOption ? 'column' : 'row'};
+  justify-content: ${(props: ITaskProps) => !props.option && 'space-around'};
+  flex-direction: ${(props: ITaskProps) => (props.option ? 'column' : 'row')};
   cursor: move;
   border-radius: 20px;
   padding: 15px;
@@ -90,15 +88,15 @@ const Info = styled.div`
 const Score = styled.div`
   display: flex;
   flex-direction: ${(props: ITaskProps) =>
-    props.kanbanOption ? 'column' : 'row-reverse'};
-  align-items: ${(props: ITaskProps) => !props.kanbanOption && 'center'};
+    props.option ? 'column' : 'row-reverse'};
+  align-items: ${(props: ITaskProps) => !props.option && 'center'};
 `
 const ScoreLine = styled.div`
   background-color: #e2e2ea;
   width: 100%;
   height: 3px;
   border-radius: 2.5px;
-  min-width: ${(props: ITaskProps) => !props.kanbanOption && '150px'};
+  min-width: ${(props: ITaskProps) => !props.option && '150px'};
   div {
     height: 3px;
     background-color: #3dd598;
@@ -108,7 +106,7 @@ const ScoreLineTitle = styled(Team)`
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  margin-left: ${(props: ITaskProps) => !props.kanbanOption && '10px'};
+  margin-left: ${(props: ITaskProps) => !props.option && '10px'};
 `
 const Users = styled.div`
   display: grid;
@@ -120,7 +118,7 @@ const Users = styled.div`
 interface ITaskProps {
   data: ITaskState
   key: string
-  kanbanOption: boolean
+  option: boolean
   drag?: boolean
 }
 
@@ -187,8 +185,10 @@ const Task: React.FC<ITaskProps> = props => {
     </>
   )
 }
-const mapStateToProps = (state: AppState) => ({
-  kanbanOption: getKanbanOption(state)
-})
+const mapStateToProps = (state: AppState) => {
+  return {
+    option: getKanbanOption(state)
+  }
+}
 
 export default connect(mapStateToProps)(Task)
