@@ -40,11 +40,21 @@ const More = styled.div`
     display: none;
   }
 `
-const TasksWrapper = styled.div`
+const TasksWrapper = styled<DragWrapperProps>('div')`
   height: auto;
   border-left: 1px solid ${variables.colorBorder};
   border-right: 1px solid ${variables.colorBorder};
   padding: 20px 0;
+  background: ${(props: DragWrapperProps) =>
+    props.dragOver
+      ? `repeating-linear-gradient(
+    45deg,
+    white,
+    white 5px,
+    #E3ECFB 5px,
+    #E3ECFB 10px
+  )`
+      : 'none'};
 `
 const Cross = styled.div`
   position: absolute;
@@ -88,6 +98,10 @@ const Button = styled.button`
   }
 `
 
+type DragWrapperProps = {
+  dragOver: () => void
+}
+
 interface ITaskWrapperProps {
   dragAndDrop: typeof dragAndDrop
   data: ITaskState[]
@@ -104,23 +118,40 @@ const Tasks = (props: ITaskWrapperProps): any => {
 const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
   const { type } = props
 
+  const [dragOver, setDragOver] = React.useState<boolean>(false)
+
   const onDragOver = (e: React.DragEvent<HTMLDivElement>): void => {
     e.preventDefault()
   }
 
+  const onDragEnter = (): void => {
+    setDragOver(prevState => !prevState)
+  }
+
+  const onDragLeave = (): void => {
+    setDragOver(prevState => !prevState)
+  }
+
   const onDrop = (e: React.DragEvent<HTMLDivElement>): void => {
     props.dragAndDrop(e, type)
+    setDragOver(false)
   }
 
   return (
-    <Wrapper onDragOver={onDragOver} onDrop={onDrop} {...props}>
+    <Wrapper
+      onDrop={onDrop}
+      onDragOver={onDragOver}
+      onDragEnter={onDragEnter}
+      onDragLeave={onDragLeave}
+      {...props}
+    >
       <Header>
         <Title>{type}</Title>
         <More>
           <IconOval />
         </More>
       </Header>
-      <TasksWrapper>
+      <TasksWrapper dragOver={dragOver}>
         <Tasks {...props} />
       </TasksWrapper>
       <Button>
