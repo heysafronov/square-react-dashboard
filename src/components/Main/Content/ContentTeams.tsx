@@ -3,6 +3,7 @@ import { AppState } from 'store'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import Loader from 'components/Common/Loader'
+import { getTeams } from 'store/teams/selectors'
 import { fetchTeams } from 'store/teams/actions'
 import TeamCard from 'components/Common/TeamCard'
 import IconOval from 'components/Common/Icons/Common/Oval'
@@ -68,11 +69,7 @@ const ContentTeams: React.FC<IContentTeamsProps> = props => {
         </TeamsMore>
       </Header>
       <Teams>
-        {teams.length ? (
-          <TeamCards {...props} />
-        ) : (
-          <Loader height={'none'} />
-        )}
+        {teams.length ? <TeamCards {...props} /> : <Loader height={'none'} />}
         <AddBigButton name='Add team' />
       </Teams>
     </Wrapper>
@@ -81,7 +78,7 @@ const ContentTeams: React.FC<IContentTeamsProps> = props => {
 
 const mapStateToProps = (state: AppState) => {
   return {
-    teams: state.teams.list
+    teams: getTeams(state)
   }
 }
 

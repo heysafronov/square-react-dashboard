@@ -1,7 +1,20 @@
-export const getShowState = (state: any): object => {
-  return state.show.list
-}
+import { AppState } from 'store'
+import { createSelector } from 'reselect'
+import { IShowTypes } from 'store/show/types'
 
-export const getKanbanOption = (state: any): boolean => {
-  return state.show.kanban
-}
+const showState = (state: AppState): IShowTypes => state.show.list
+const kanbanOption = (state: AppState): boolean => state.show.kanban
+
+export const getShowState = createSelector(
+  [showState],
+  list => {
+    return list
+  }
+)
+
+export const getKanbanOption = createSelector(
+  [kanbanOption],
+  option => {
+    return option
+  }
+)

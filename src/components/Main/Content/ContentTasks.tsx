@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Task from 'components/Common/Task'
 import { ITaskState } from 'store/tasks/types'
 import IconOval from 'components/Common/Icons/Common/Oval'
+import { getTasks } from '../../../store/tasks/selectors'
 
 const Wrapper = styled.div`
   border: 1px solid #e2e2ea;
@@ -70,7 +71,7 @@ const ContentTasks: React.FC<IContentTasksProps> = props => {
 
 const mapStateToProps = (state: AppState) => {
   return {
-    tasks: state.tasks
+    tasks: getTasks(state)
   }
 }
 

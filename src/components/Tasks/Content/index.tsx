@@ -6,7 +6,7 @@ import Loader from 'components/Common/Loader'
 import { IShowTypes } from 'store/show/types'
 import { ITaskState } from 'store/tasks/types'
 import { fetchTasks } from 'store/tasks/actions'
-import { filteredTasks } from 'store/tasks/selectors'
+import { filteredTasks, getTasks } from 'store/tasks/selectors'
 import TaskWrapper from 'components/Common/TaskWrapper'
 import ContentTitle from 'components/Tasks/Content/ContentTitle'
 import { getShowState, getKanbanOption } from 'store/show/selectors'
@@ -82,7 +82,7 @@ const Content: React.FC<IContentProps> = props => {
 
 const mapStateToProps = (state: AppState) => {
   return {
-    tasks: state.tasks,
+    tasks: getTasks(state),
     option: getKanbanOption(state),
     showState: getShowState(state),
     backlog: filteredTasks(state, types.backlog),
