@@ -21,7 +21,7 @@ const Modal = styled.div`
   flex-direction: column;
   min-width: 300px;
   width: 30%;
-  height: 30vh;
+  min-height: 30vh;
   background-color: white;
   border-radius: 20px;
   padding: 20px 25px;
