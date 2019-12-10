@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { ITaskState } from 'store/tasks/types'
+import { deleteTask } from 'store/tasks/actions'
 import Close from 'components/Common/Icons/Common/Close'
 import Shape from 'components/Common/Icons/Common/Shape'
 
@@ -102,13 +104,18 @@ const Delete = styled.button`
 `
 
 interface ITaskModalProps extends ITaskState {
+  deleteTask: typeof deleteTask
   onClose(): void
 }
 
 const TaskModal: React.FC<ITaskModalProps> = props => {
-  const { type, title, onClose } = props
+  const { type, title, onClose, id } = props
 
   const element = document.getElementById('modal')
+
+  const deleteTask = (id: string) => {
+    props.deleteTask(id)
+  }
 
   return ReactDOM.createPortal(
     <Wrapper>
@@ -135,11 +142,17 @@ const TaskModal: React.FC<ITaskModalProps> = props => {
             </TextD>
           </HeaderD>
         </Description>
-        <Delete>Delete</Delete>
+        <Delete onClick={() => deleteTask(id)}>Delete</Delete>
       </Modal>
     </Wrapper>,
     element
   )
 }
 
-export default TaskModal
+const mapDispatchToProps = {
+  deleteTask
+}
+export default connect(
+  null,
+  mapDispatchToProps
+)(TaskModal)

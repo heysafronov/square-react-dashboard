@@ -1,7 +1,12 @@
 import instance from 'utils/axios'
 import { Dispatch } from 'redux'
-import { FETCH_TASKS } from 'store/tasks/types'
-import { DRAG_AND_DROP, ITasksDragAndDropAction } from 'store/tasks/types'
+import {
+  FETCH_TASKS,
+  DELETE_TASK,
+  DRAG_AND_DROP,
+  ITasksDragAndDropAction,
+  ITasksDeleteTasksAction
+} from 'store/tasks/types'
 
 export const fetchTasks = () => async (dispatch: Dispatch): Promise<void> => {
   try {
@@ -19,5 +24,12 @@ export const dragAndDrop = (
   return {
     type: DRAG_AND_DROP,
     payload: { e, type }
+  }
+}
+
+export const deleteTask = (id: string): ITasksDeleteTasksAction => {
+  return {
+    type: DELETE_TASK,
+    payload: id
   }
 }

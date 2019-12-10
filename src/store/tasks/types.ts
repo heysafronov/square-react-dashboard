@@ -1,5 +1,6 @@
 import { ITeamListUserState } from 'store/teams/types'
 
+export const DELETE_TASK = 'DELETE_TASK'
 export const FETCH_TASKS = 'FETCH_TASKS'
 export const DRAG_AND_DROP = 'DRAG_AND_DROP'
 
@@ -26,4 +27,9 @@ export interface ITasksDragAndDropAction {
 export interface ITasksFetchTasksAction {
   type: typeof FETCH_TASKS
   payload: ITaskState[]
+}
+
+export interface ITasksDeleteTasksAction {
+  type: typeof DELETE_TASK
+  payload: string
 }

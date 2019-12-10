@@ -1,21 +1,25 @@
 import {
   DRAG_AND_DROP,
   FETCH_TASKS,
+  DELETE_TASK,
   ITaskState,
   ITasksDragAndDropAction,
-  ITasksFetchTasksAction
+  ITasksFetchTasksAction,
+  ITasksDeleteTasksAction
 } from 'store/tasks/types'
-
-const initialState: ITaskState[] = []
 
 const checkChrome = (id: string): string => {
   return id[0] === '<' ? id.replace(/[^\d]/g, '').slice(1) : id
 }
 
-export function tasks(
-  state = initialState,
-  action: ITasksDragAndDropAction | ITasksFetchTasksAction
-): ITaskState[] {
+type Actions =
+  | ITasksDragAndDropAction
+  | ITasksFetchTasksAction
+  | ITasksDeleteTasksAction
+
+const initialState: ITaskState[] = []
+
+export function tasks(state = initialState, action: Actions): ITaskState[] {
   const { type, payload } = action
   switch (type) {
     case DRAG_AND_DROP:
@@ -29,6 +33,8 @@ export function tasks(
       })
     case FETCH_TASKS:
       return [...state, ...action.payload]
+    case DELETE_TASK:
+      return state.filter(task => task.id !== payload)
     default:
       return state
   }
