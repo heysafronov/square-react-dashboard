@@ -5,6 +5,12 @@ import { ITaskState } from 'store/tasks/types'
 import Close from 'components/Common/Icons/Common/Close'
 import Shape from 'components/Common/Icons/Common/Shape'
 
+const variables = {
+  colorGray: '#92929d',
+  colorRed: '#fc5a5a',
+  colorWhite: '#ffffff'
+}
+
 const Wrapper = styled.section`
   position: absolute;
   top: 0;
@@ -22,7 +28,7 @@ const Modal = styled.div`
   min-width: 300px;
   width: 30%;
   min-height: 30vh;
-  background-color: white;
+  background-color: ${variables.colorWhite};
   border-radius: 20px;
   padding: 20px 25px;
 `
@@ -30,18 +36,18 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #92929d;
+  color: ${variables.colorGray};
   font-size: 14px;
   height: 50px;
   border-bottom: 1px solid #e2e2ea;
 `
 const Button = styled.button`
-  background-color: white;
+  background-color: ${variables.colorWhite};
   border: none;
   outline: none;
   cursor: pointer;
   svg {
-    fill: #92929d;
+    fill: ${variables.colorGray};
     :hover {
       fill: #0062ff;
     }
@@ -55,7 +61,7 @@ const Title = styled.div`
 const Description = styled.div`
   display: flex;
   svg {
-    fill: #92929d;
+    fill: ${variables.colorGray};
   }
 `
 const ShapeWrapper = styled.div`
@@ -74,7 +80,7 @@ const TitleD = styled.span`
 `
 const TextD = styled.span`
   margin-left: 10px;
-  color: #92929d;
+  color: ${variables.colorGray};
   font-size: 14px;
 `
 const Delete = styled.button`
@@ -82,16 +88,16 @@ const Delete = styled.button`
   justify-content: center;
   align-items: center;
   margin-top: 30px;
-  background-color: #fc5a5a;
+  background-color: ${variables.colorRed};
   outline: none;
   cursor: pointer;
-  color: white;
+  color: ${variables.colorWhite};
   height: 38px;
   border-radius: 20px;
-  border: 1px solid #fc5a5a;
+  border: 1px solid ${variables.colorRed};
   :hover {
-    color: #fc5a5a;
-    background-color: white;
+    color: ${variables.colorRed};
+    background-color: ${variables.colorWhite};
   }
 `
 
@@ -100,19 +106,21 @@ interface ITaskModalProps extends ITaskState {
 }
 
 const TaskModal: React.FC<ITaskModalProps> = props => {
+  const { type, title, onClose } = props
+
   const element = document.getElementById('modal')
 
   return ReactDOM.createPortal(
     <Wrapper>
       <Modal>
         <Header>
-          <span>{props.type}</span>
-          <Button onClick={props.onClose}>
+          <span>{type}</span>
+          <Button onClick={onClose}>
             <Close />
           </Button>
         </Header>
         <Title>
-          <span>{props.title}</span>
+          <span>{title}</span>
         </Title>
         <Description>
           <ShapeWrapper>
@@ -121,9 +129,9 @@ const TaskModal: React.FC<ITaskModalProps> = props => {
           <HeaderD>
             <TitleD>Description</TitleD>
             <TextD>
-              {props.title}. Next Friday should be done. Next Monday we should
-              deliver the first iteration. Make sure, we have a good result to
-              be delivered by the day.
+              {title}. Next Friday should be done. Next Monday we should deliver
+              the first iteration. Make sure, we have a good result to be
+              delivered by the day.
             </TextD>
           </HeaderD>
         </Description>
