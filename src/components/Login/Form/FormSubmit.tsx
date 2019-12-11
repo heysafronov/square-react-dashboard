@@ -84,7 +84,7 @@ const FormSubmit: React.FC<IFormSubmitProps> = props => {
 
   const renderRedirect = (): object | void => {
     if (redirect) {
-      return <Redirect to='/tasks/' />
+      window.location.replace('https://github.com/heysafronov/square-dashboard')
     }
   }
 

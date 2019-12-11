@@ -2,14 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import Header from 'components/Common/Header'
 import Sidebar from 'components/Common/Sidebar'
-import ErrorBoundary from 'components/Common/ErrorBoundary'
-
-const Content = React.lazy(() => import('components/Tasks/Content'))
 
 const Wrapper = styled.div`
   display: flex;
   max-width: 1600px;
   margin: 0 auto;
+`
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 250px;
+  background-color: #fafafa;
+  padding: 40px;
+  @media (max-width: 450px) {
+    padding: 10px;
+  }
 `
 
 const Tasks = () => {
@@ -18,11 +26,7 @@ const Tasks = () => {
       <Header />
       <Wrapper>
         <Sidebar />
-        <ErrorBoundary>
-          <React.Suspense fallback={null}>
-            <Content />
-          </React.Suspense>
-        </ErrorBoundary>
+        <Content>CONTENT</Content>
       </Wrapper>
     </>
   )
