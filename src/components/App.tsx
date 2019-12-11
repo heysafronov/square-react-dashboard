@@ -19,30 +19,27 @@ const App = () => {
     <React.Suspense fallback={<Loader />}>
       <Router>
         <Switch>
-          <Route exact path='/'>
+          <PrivateRoute exact path='/'>
             <Main />
-          </Route>
-          <Route path='/messages/'>
+          </PrivateRoute>
+          <PrivateRoute path='/messages/'>
             <Messages />
-          </Route>
-          <Route path='/tasks/'>
+          </PrivateRoute>
+          <PrivateRoute path='/tasks/'>
             <Tasks />
-          </Route>
-          <Route path='/schedule/'>
+          </PrivateRoute>
+          <PrivateRoute path='/schedule/'>
             <Schedule />
-          </Route>
-          <Route path='/activity/'>
+          </PrivateRoute>
+          <PrivateRoute path='/activity/'>
             <Activity />
-          </Route>
-          <Route path='/settings/'>
+          </PrivateRoute>
+          <PrivateRoute path='/settings/'>
             <Settings />
-          </Route>
+          </PrivateRoute>
           <Route path='/login/'>
             <Login />
           </Route>
-          <PrivateRoute path='/dont/'>
-            <div>Dont</div>
-          </PrivateRoute>
         </Switch>
       </Router>
       <GlobalStyle />
