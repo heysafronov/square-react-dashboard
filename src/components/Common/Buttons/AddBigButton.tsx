@@ -70,4 +70,4 @@ const AddBigButton: React.FC<IAddBigButtonProps> = props => {
   )
 }
 
-export default AddBigButton
+export default React.memo(AddBigButton)

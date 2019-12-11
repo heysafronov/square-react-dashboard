@@ -23,6 +23,7 @@ interface ILogoProps {
 
 const Logo = (props: ILogoProps) => {
   const { image, title } = props
+
   return (
     <Section>
       <LogoImage {...image} />
