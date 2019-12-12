@@ -1,6 +1,6 @@
 # Square React Dashboard Template
 
-Built with Webpack, Babel, TypeScript, React, React Router, Redux, styled-components and latest industry best practices.
+Built with [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io/), [TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/), [React Router](https://reacttraining.com/react-router/web/guides/quick-start), [Redux](https://redux.js.org/), [styled-components](https://www.styled-components.com/) and latest industry best practices.
 
 Plus you will see how to use correctly:
 - axios
@@ -16,7 +16,7 @@ Plus you will see how to use correctly:
 
 ## Demo
 
-<a href="https://heysafronov.github.io/square-react-dashboard/dist/#/login" target="_blank">Link</a>. Use login and password "admin" to log in.
+[Link](https://heysafronov.github.io/square-react-dashboard/dist/#/login). Use login and password "admin" to log in.
 
 Try to use drag and drop and other functionality. If this repository is interesting and gains more than 10 stars, then it is planned to expand current functionality and write Style Guide for medium+ projects with React + TypeScript technical stack.
 
