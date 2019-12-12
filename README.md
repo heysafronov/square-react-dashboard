@@ -3,9 +3,9 @@
 Built with [Webpack](https://webpack.js.org/), [Babel](https://babeljs.io/), [TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/), [React Router](https://reacttraining.com/react-router/web/guides/quick-start), [Redux](https://redux.js.org/), [styled-components](https://www.styled-components.com/) and latest industry best practices.
 
 Plus you will see how to use correctly:
-- axios
-- Reselect
-- Redux Thunk
+- [axios](https://github.com/axios/axios)
+- [Reselect](https://github.com/reduxjs/reselect)
+- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
 - React memo
 - React Hooks
 - React Portals
