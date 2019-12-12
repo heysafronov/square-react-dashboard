@@ -20,3 +20,6 @@ Plus you will see how to use correctly:
 
 
 <img src="https://raw.githubusercontent.com/heysafronov/square-react-dashboard/master/src/assets/images/github/1.png?token=AH7OSB5PYK3KP7EJQ5UZIWS57NC7C">
+
+##
+Try to use drag and drop and other functionality
