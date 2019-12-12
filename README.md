@@ -18,9 +18,7 @@ Plus you will see how to use correctly:
 
 <a href="https://heysafronov.github.io/square-react-dashboard/dist/#/login" target="_blank">Link</a>. Use login and password "admin" to log in.
 
-Try to use drag and drop and other functionality. If this repository is
- interesting and gains more than 10 stars, then it is planned to write Style
-  Guide for medium+ projects with React + TypeScript technical stack.
+Try to use drag and drop and other functionality. If this repository is interesting and gains more than 10 stars, then it is planned to expand current functionality and write Style Guide for medium+ projects with React + TypeScript technical stack.
 
 
 <img src="https://raw.githubusercontent.com/heysafronov/square-react-dashboard/master/src/assets/images/github/1.png?token=AH7OSB5PYK3KP7EJQ5UZIWS57NC7C">
