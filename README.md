@@ -32,6 +32,8 @@ Try to use drag and drop and other functionality. If this repository is interest
 ##
 <img src="https://raw.githubusercontent.com/heysafronov/square-react-dashboard/master/src/assets/images/github/4.png?token=AH7OSBY673H43LTKHI6BCC257NFHS">
 
+##
+<img src="https://raw.githubusercontent.com/heysafronov/square-react-dashboard/master/src/assets/images/github/5.png">
 
 ## Back-end
 Using [Firebase](https://firebase.google.com/) as simple backend.
