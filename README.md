@@ -1,1 +1,1 @@
-# React Dashboard Template
+# Square React Dashboard Template built with TypeScript
