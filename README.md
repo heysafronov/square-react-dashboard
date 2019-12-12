@@ -31,3 +31,16 @@ Try to use drag and drop and other functionality. If this repository is interest
 
 ##
 <img src="https://raw.githubusercontent.com/heysafronov/square-react-dashboard/master/src/assets/images/github/4.png?token=AH7OSBY673H43LTKHI6BCC257NFHS">
+
+
+## Back-end
+Using [Firebase](https://firebase.google.com/) as simple backend.
+
+## Browser support
+Compatible with every evergreen browser.
+
+## Web design
+Iconspace. [Stylish Dashboard UI Kit for Various Need](https://iconspace.co/product/square-dashboard-ui-kit/). Made with a unique style using rounded corner shape & modern color scheme. Make it looks dynamic and matches with the current and future design styles.
+
+## License
+Licensed under [MIT](https://github.com/heysafronov/square-react-dashboard/blob/master/LICENSE).
