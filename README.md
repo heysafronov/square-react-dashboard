@@ -16,4 +16,7 @@ Plus you will see how to use correctly:
 
 ## Demo
 
-Link. **Use login and password "admin" to log in.**
+<a href="https://heysafronov.github.io/square-react-dashboard/dist/#/login" target="_blank">Link</a>. Use login and password "admin" to log in.
+
+
+<img src="https://raw.githubusercontent.com/heysafronov/square-react-dashboard/master/src/assets/images/github/1.png?token=AH7OSB5PYK3KP7EJQ5UZIWS57NC7C">
