@@ -1,5 +1,7 @@
 const path = require('path')
+const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin
 
@@ -22,13 +24,18 @@ module.exports = {
       src: path.resolve(__dirname, 'src/')
     }
   },
+  watchOptions: {
+    aggregateTimeout: 1000,
+    poll: 1000
+  },
   performance: {
     hints: false
   },
   optimization: {
+    minimizer: [new UglifyJsPlugin()],
     splitChunks: {
       minSize: 10000,
-      maxSize: 250000,
+      maxSize: 250000
     }
   },
   module: {
@@ -54,6 +61,9 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
+    new Dotenv({
+      systemvars: true
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',

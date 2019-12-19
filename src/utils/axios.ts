@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'https://square-dashboard-6ffae.firebaseio.com'
+  baseURL: process.env.API_URL
 })
 
 export default instance
