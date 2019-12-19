@@ -8,7 +8,7 @@
   "scripts": {
     "clear": "rimraf ./dist",
     "dev": "webpack-dev-server --mode development --open --hot",
-    "build": "npm run clear && webpack --mode production",
+    "build": "npm run clear && webpack --mode production --progress",
     "format": "prettier \"./src/**/*.+(js|jsx|ts|tsx)\" --write",
     "ts": "tsc",
     "bundle-report": "webpack-bundle-analyzer --port 4200 dist/stats.json"
