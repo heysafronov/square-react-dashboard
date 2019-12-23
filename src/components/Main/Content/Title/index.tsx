@@ -23,7 +23,7 @@ const WelcomeText = styled.span`
   font-family: 'Roboto', sans-serif;
 `
 
-const ContentTitle = () => {
+const Title = () => {
   return (
     <HeaderContent>
       <div>
@@ -34,4 +34,4 @@ const ContentTitle = () => {
   )
 }
 
-export default ContentTitle
+export default Title

@@ -59,7 +59,7 @@ const Wrapper = styled.button`
   }
 `
 
-const ActionsButton = () => {
+const Button = () => {
   return (
     <Wrapper>
       <div>
@@ -70,4 +70,4 @@ const ActionsButton = () => {
   )
 }
 
-export default ActionsButton
+export default Button

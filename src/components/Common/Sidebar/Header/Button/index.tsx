@@ -45,7 +45,7 @@ const Cross = styled.div`
   }
 `
 
-const HeaderButton = () => {
+const Button = () => {
   return (
     <Wrapper>
       <TextButton>
@@ -56,4 +56,4 @@ const HeaderButton = () => {
   )
 }
 
-export default HeaderButton
+export default Button

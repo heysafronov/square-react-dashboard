@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import ContentTitleSelector from 'components/Tasks/Content/ContentTitleSelector'
-import ContentTitleSwitcher from 'components/Tasks/Content/ContentTitleSwitcher'
+import ContentTitleSelector from 'components/Tasks/Content/Title/Selector'
+import ContentTitleSwitcher from 'components/Tasks/Content/Title/Switcher'
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
     justify-content: center;
   }
 `
-const Title = styled.div`
+const Header = styled.div`
   @media (max-width: 1050px) {
     display: none;
   }
@@ -37,13 +37,13 @@ const Controls = styled.div`
   margin-right: 20px;
 `
 
-const ContentTitle = () => {
+const Title = () => {
   return (
     <Wrapper>
-      <Title>
+      <Header>
         <Username>Hi James,</Username>
         <Text>here’s your currently tasks</Text>
-      </Title>
+      </Header>
       <Controls>
         <ContentTitleSelector />
         <ContentTitleSwitcher />
@@ -52,4 +52,4 @@ const ContentTitle = () => {
   )
 }
 
-export default ContentTitle
+export default Title

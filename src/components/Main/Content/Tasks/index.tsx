@@ -47,7 +47,7 @@ interface IContentTasksProps {
   tasks: ITaskState[]
 }
 
-const ContentTasks: React.FC<IContentTasksProps> = props => {
+const Tasks: React.FC<IContentTasksProps> = props => {
   const { tasks } = props
 
   const tasksList = tasks.map((item: ITaskState) => (
@@ -75,4 +75,4 @@ const mapStateToProps = (state: AppState) => {
   }
 }
 
-export default connect(mapStateToProps)(ContentTasks)
+export default connect(mapStateToProps)(Tasks)

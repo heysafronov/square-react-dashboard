@@ -65,7 +65,7 @@ interface IFormSubmitProps {
   checkAuth: typeof checkAuth
 }
 
-const FormSubmit: React.FC<IFormSubmitProps> = props => {
+const Sumbit: React.FC<IFormSubmitProps> = props => {
   const { checkAuth } = props
 
   let dataUser = {
@@ -181,4 +181,4 @@ const mapDispatchToProps = {
 export default connect(
   null,
   mapDispatchToProps
-)(FormSubmit)
+)(Sumbit)

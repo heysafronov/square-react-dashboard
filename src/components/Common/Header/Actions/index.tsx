@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import Avatar from 'components/Common/Avatar'
-import ActionsShape from 'components/Common/Header/Actions/ActionsShape'
-import ActionsSearch from 'components/Common/Header/Actions/ActionsSearch'
-import ActionsButton from 'components/Common/Header/Actions/ActionsButton'
+import ActionsShape from 'components/Common/Header/Actions/Shape'
+import ActionsSearch from 'components/Common/Header/Actions/Search'
+import ActionsButton from 'components/Common/Header/Actions/Button'
 
 const Wrapper = styled.div`
   display: grid;

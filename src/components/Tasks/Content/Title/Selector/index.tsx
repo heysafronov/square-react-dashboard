@@ -76,7 +76,7 @@ interface IContentTitleProps {
   showState: IShowTypes
 }
 
-const ContentTitleSelector: React.FC<IContentTitleProps> = props => {
+const Selector: React.FC<IContentTitleProps> = props => {
   const { showState, showMore } = props
 
   const [opened, setOpened] = React.useState<boolean>(false)
@@ -144,4 +144,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ContentTitleSelector)
+)(Selector)

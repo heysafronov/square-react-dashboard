@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import HeaderItems from 'components/Common/Sidebar/Header/HeaderItems'
+import HeaderItems from 'components/Common/Sidebar/Header/Items'
 
 const Wrapper = styled.div`
   height: 230px;

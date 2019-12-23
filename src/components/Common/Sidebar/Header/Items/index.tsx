@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import HeaderTeams from 'components/Common/Sidebar/Header/HeaderTeams'
-import HeaderButton from 'components/Common/Sidebar/Header/HeaderButton'
+import HeaderTeams from 'components/Common/Sidebar/Header/Teams'
+import HeaderButton from 'components/Common/Sidebar/Header/Button'
 
 const variables = {
   color: '#92929d'
@@ -35,7 +35,7 @@ const TeamsTitle = styled.span`
   letter-spacing: 1px;
 `
 
-const HeaderItems = () => {
+const Items = () => {
   const [opened, setOpened] = React.useState<boolean>(true)
 
   const handleOpened = (): void => {
@@ -54,4 +54,4 @@ const HeaderItems = () => {
   )
 }
 
-export default HeaderItems
+export default Items

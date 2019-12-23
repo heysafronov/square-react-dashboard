@@ -38,7 +38,7 @@ const ButtonFacebook = styled(ButtonGoogle)`
   margin-top: 10px;
 `
 
-const LoginSocial = () => {
+const Social = () => {
   return (
     <Wrapper>
       <Text>or</Text>
@@ -54,4 +54,4 @@ const LoginSocial = () => {
   )
 }
 
-export default LoginSocial
+export default Social

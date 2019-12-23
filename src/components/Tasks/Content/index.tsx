@@ -6,9 +6,9 @@ import Loader from 'components/Common/Loader'
 import { IShowTypes } from 'store/show/types'
 import { ITaskState } from 'store/tasks/types'
 import { fetchTasks } from 'store/tasks/actions'
-import { filteredTasks, getTasks } from 'store/tasks/selectors'
 import TaskWrapper from 'components/Common/TaskWrapper'
-import ContentTitle from 'components/Tasks/Content/ContentTitle'
+import ContentTitle from 'components/Tasks/Content/Title'
+import { filteredTasks, getTasks } from 'store/tasks/selectors'
 import { getShowState, getKanbanOption } from 'store/show/selectors'
 
 const Wrapper = styled.div`

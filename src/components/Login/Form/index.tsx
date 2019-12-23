@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import LoginSocial from 'components/Login/LoginSocial'
-import LoginFormSubmit from 'components/Login/Form/FormSubmit'
+import LoginSocial from 'components/Login/Social'
+import LoginFormSubmit from 'components/Login/Form/Submit'
 
 const Section = styled.section`
   display: flex;
@@ -16,7 +16,7 @@ const Section = styled.section`
   margin: 35px 10px 25px 10px;
 `
 
-const Index = () => {
+const Form = () => {
   return (
     <Section>
       <h3>Login to your account</h3>
@@ -26,4 +26,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Form

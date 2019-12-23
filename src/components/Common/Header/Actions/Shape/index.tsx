@@ -87,7 +87,7 @@ const ShapeIcon = (): object => {
   )
 }
 
-const ActionShape = () => {
+const Shape = () => {
   const notification = true
 
   return (
@@ -107,4 +107,4 @@ const ActionShape = () => {
   )
 }
 
-export default ActionShape
+export default Shape
