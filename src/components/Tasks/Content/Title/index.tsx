@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import ContentTitleSelector from 'components/Tasks/Content/ContentTitleSelector'
-import ContentTitleSwitcher from 'components/Tasks/Content/ContentTitleSwitcher'
+import ContentTitleSelector from 'components/Tasks/Content/Title/Selector'
+import ContentTitleSwitcher from 'components/Tasks/Content/Title/Switcher'
 
 const Wrapper = styled.div`
   display: flex;
@@ -37,7 +37,7 @@ const Controls = styled.div`
   margin-right: 20px;
 `
 
-const ContentTitle = () => {
+const Index = () => {
   return (
     <Wrapper>
       <Title>
@@ -52,4 +52,4 @@ const ContentTitle = () => {
   )
 }
 
-export default ContentTitle
+export default Index

@@ -57,7 +57,7 @@ interface IAddBigButtonProps {
   name: string
 }
 
-const AddBigButton: React.FC<IAddBigButtonProps> = props => {
+const Index: React.FC<IAddBigButtonProps> = props => {
   const { name } = props
 
   return (
@@ -70,4 +70,4 @@ const AddBigButton: React.FC<IAddBigButtonProps> = props => {
   )
 }
 
-export default React.memo(AddBigButton)
+export default React.memo(Index)

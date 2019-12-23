@@ -53,7 +53,7 @@ const TeamCards = (props: IContentTeamsProps): any => {
   ))
 }
 
-const ContentTeams: React.FC<IContentTeamsProps> = props => {
+const Index: React.FC<IContentTeamsProps> = props => {
   const { teams } = props
 
   React.useEffect(() => {
@@ -89,4 +89,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ContentTeams)
+)(Index)

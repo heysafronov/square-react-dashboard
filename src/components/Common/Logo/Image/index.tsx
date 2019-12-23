@@ -5,7 +5,7 @@ interface ILogoImageProps {
   color: string
 }
 
-const LogoImage: React.FC<ILogoImageProps> = props => {
+const Index: React.FC<ILogoImageProps> = props => {
   const { size, color } = props
 
   return (
@@ -38,4 +38,4 @@ const LogoImage: React.FC<ILogoImageProps> = props => {
   )
 }
 
-export default LogoImage
+export default Index

@@ -29,7 +29,7 @@ const Input = styled.input`
   }
 `
 
-const ActionsSearch = () => {
+const Index = () => {
   return (
     <Wrapper>
       <Input type='search' placeholder='' />
@@ -37,4 +37,4 @@ const ActionsSearch = () => {
   )
 }
 
-export default ActionsSearch
+export default Index

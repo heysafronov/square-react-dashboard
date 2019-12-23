@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import LoginSocial from 'components/Login/LoginSocial'
-import LoginFormSubmit from 'components/Login/Form/FormSubmit'
+import LoginSocial from 'components/Login/Social'
+import LoginFormSubmit from 'components/Login/Form/Submit'
 
 const Section = styled.section`
   display: flex;

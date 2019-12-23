@@ -14,10 +14,10 @@ interface ILogoTitleProps {
   text: string
 }
 
-const LogoTitle: React.FC<ILogoTitleProps> = props => {
+const Index: React.FC<ILogoTitleProps> = props => {
   const { text } = props
 
   return <Title {...props}>{text}</Title>
 }
 
-export default LogoTitle
+export default Index
