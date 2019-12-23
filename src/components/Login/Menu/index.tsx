@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   }
 `
 
-const Index = () => {
+const Menu = () => {
   return (
     <Wrapper>
       <Link to='#'>Privacy policy</Link> • <Link to='#'>Terms of use</Link>
@@ -23,4 +23,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Menu

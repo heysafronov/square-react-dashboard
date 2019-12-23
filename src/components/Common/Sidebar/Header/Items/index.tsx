@@ -35,7 +35,7 @@ const TeamsTitle = styled.span`
   letter-spacing: 1px;
 `
 
-const Index = () => {
+const Items = () => {
   const [opened, setOpened] = React.useState<boolean>(true)
 
   const handleOpened = (): void => {
@@ -54,4 +54,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Items

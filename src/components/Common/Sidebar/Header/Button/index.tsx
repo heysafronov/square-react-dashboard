@@ -45,7 +45,7 @@ const Cross = styled.div`
   }
 `
 
-const Index = () => {
+const Button = () => {
   return (
     <Wrapper>
       <TextButton>
@@ -56,4 +56,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Button

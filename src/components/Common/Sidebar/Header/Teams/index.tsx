@@ -76,7 +76,7 @@ const users = usersData.map((user: IUserProps, idx: number): object => (
   <Avatar key={idx} {...user} />
 ))
 
-const Index = () => {
+const Teams = () => {
   return (
     <>
       <Wrapper>
@@ -91,4 +91,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Teams

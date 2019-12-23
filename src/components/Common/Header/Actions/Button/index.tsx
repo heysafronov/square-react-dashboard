@@ -59,7 +59,7 @@ const Wrapper = styled.button`
   }
 `
 
-const Index = () => {
+const Button = () => {
   return (
     <Wrapper>
       <div>
@@ -70,4 +70,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Button

@@ -38,7 +38,7 @@ const ButtonFacebook = styled(ButtonGoogle)`
   margin-top: 10px;
 `
 
-const Index = () => {
+const Social = () => {
   return (
     <Wrapper>
       <Text>or</Text>
@@ -54,4 +54,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Social

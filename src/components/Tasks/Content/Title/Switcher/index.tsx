@@ -53,7 +53,7 @@ interface IContentTitleSwitcherProps {
   switcher: typeof switchKanban
 }
 
-const Index: React.FC<IContentTitleSwitcherProps> = props => {
+const Switcher: React.FC<IContentTitleSwitcherProps> = props => {
   const { switcher } = props
 
   const [typeKanban, setTypeKanban] = React.useState<boolean>(true)
@@ -93,4 +93,4 @@ const mapDispatchToProps = {
 export default connect(
   null,
   mapDispatchToProps
-)(Index)
+)(Switcher)

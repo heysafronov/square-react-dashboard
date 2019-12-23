@@ -23,7 +23,7 @@ const WelcomeText = styled.span`
   font-family: 'Roboto', sans-serif;
 `
 
-const Index = () => {
+const Title = () => {
   return (
     <HeaderContent>
       <div>
@@ -34,4 +34,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export default Title

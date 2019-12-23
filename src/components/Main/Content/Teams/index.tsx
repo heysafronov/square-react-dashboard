@@ -37,7 +37,7 @@ const TeamsMore = styled.div`
     display: none;
   }
 `
-const Teams = styled.div`
+const TeamsList = styled.div`
   display: flex;
   flex-wrap: wrap;
 `
@@ -53,7 +53,7 @@ const TeamCards = (props: IContentTeamsProps): any => {
   ))
 }
 
-const Index: React.FC<IContentTeamsProps> = props => {
+const Teams: React.FC<IContentTeamsProps> = props => {
   const { teams } = props
 
   React.useEffect(() => {
@@ -68,10 +68,10 @@ const Index: React.FC<IContentTeamsProps> = props => {
           <IconOval />
         </TeamsMore>
       </Header>
-      <Teams>
+      <TeamsList>
         {teams.length ? <TeamCards {...props} /> : <Loader height={'none'} />}
         <AddBigButton name='Add team' />
-      </Teams>
+      </TeamsList>
     </Wrapper>
   )
 }
@@ -89,4 +89,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Index)
+)(Teams)
