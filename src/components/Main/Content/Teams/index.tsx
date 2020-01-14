@@ -54,10 +54,10 @@ const TeamCards = (props: IContentTeamsProps): any => {
 }
 
 const Teams: React.FC<IContentTeamsProps> = props => {
-  const { teams } = props
+  const { teams, fetchTeams } = props
 
   React.useEffect(() => {
-    !teams.length && props.fetchTeams()
+    !teams.length && fetchTeams()
   }, [])
 
   return (

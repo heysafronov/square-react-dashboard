@@ -1,5 +1,5 @@
-import instance from 'utils/axios'
 import { Dispatch } from 'redux'
+import instance from 'utils/axios'
 import { FETCH_TEAMS } from 'store/teams/types'
 
 export const fetchTeams = () => async (dispatch: Dispatch): Promise<void> => {

@@ -109,12 +109,12 @@ interface ITaskModalProps extends ITaskState {
 }
 
 const TaskModal: React.FC<ITaskModalProps> = props => {
-  const { type, title, onClose, id } = props
+  const { type, title, onClose, id, deleteTask } = props
 
   const element = document.getElementById('modal')
 
-  const deleteTask = (id: string) => {
-    props.deleteTask(id)
+  const removeTask = (id: string) => {
+    deleteTask(id)
   }
 
   return ReactDOM.createPortal(
@@ -142,7 +142,7 @@ const TaskModal: React.FC<ITaskModalProps> = props => {
             </TextD>
           </HeaderD>
         </Description>
-        <Delete onClick={() => deleteTask(id)}>Delete</Delete>
+        <Delete onClick={() => removeTask(id)}>Delete</Delete>
       </Modal>
     </Wrapper>,
     element

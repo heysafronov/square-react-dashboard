@@ -100,7 +100,8 @@ const ScoreLine = styled.div`
   div {
     height: 3px;
     background-color: #3dd598;
-    width: ${(props: ITaskProps) => `${props.data.line}%`}
+    width: ${(props: ITaskProps) => `${props.data.line}%`};
+  }
 `
 const ScoreLineTitle = styled(Team)`
   display: flex;

@@ -53,10 +53,10 @@ const types = {
 }
 
 const Content: React.FC<IContentProps> = props => {
-  const { tasks, showState, backlog, progress, complete } = props
+  const { tasks, showState, backlog, progress, complete, fetchTasks } = props
 
   React.useEffect(() => {
-    !tasks.length && props.fetchTasks()
+    !tasks.length && fetchTasks()
   }, [])
 
   return (

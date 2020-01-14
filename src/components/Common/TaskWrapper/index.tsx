@@ -116,7 +116,7 @@ const Tasks = (props: ITaskWrapperProps): any => {
 }
 
 const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
-  const { type } = props
+  const { type, dragAndDrop } = props
 
   const [dragOver, setDragOver] = React.useState<boolean>(false)
 
@@ -133,7 +133,7 @@ const TaskWrapper: React.FC<ITaskWrapperProps> = props => {
   }
 
   const onDrop = (e: React.DragEvent<HTMLDivElement>): void => {
-    props.dragAndDrop(e, type)
+    dragAndDrop(e, type)
     setDragOver(false)
   }
 
@@ -167,7 +167,11 @@ const mapStateToProps = (state: AppState) => {
   }
 }
 
+const mapDispatchToProps = {
+  dragAndDrop
+}
+
 export default connect(
   mapStateToProps,
-  { dragAndDrop }
+  mapDispatchToProps
 )(TaskWrapper)
