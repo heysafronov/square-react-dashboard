@@ -22,22 +22,22 @@ const App = () => {
           <PrivateRoute exact path='/'>
             <Main />
           </PrivateRoute>
-          <PrivateRoute path='/messages/'>
+          <PrivateRoute path='/messages'>
             <Messages />
           </PrivateRoute>
-          <PrivateRoute path='/tasks/'>
+          <PrivateRoute path='/tasks'>
             <Tasks />
           </PrivateRoute>
-          <PrivateRoute path='/schedule/'>
+          <PrivateRoute path='/schedule'>
             <Schedule />
           </PrivateRoute>
-          <PrivateRoute path='/activity/'>
+          <PrivateRoute path='/activity'>
             <Activity />
           </PrivateRoute>
-          <PrivateRoute path='/settings/'>
+          <PrivateRoute path='/settings'>
             <Settings />
           </PrivateRoute>
-          <Route path='/login/'>
+          <Route path='/login'>
             <Login />
           </Route>
         </Switch>

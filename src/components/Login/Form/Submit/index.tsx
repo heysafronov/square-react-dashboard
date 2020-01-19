@@ -84,7 +84,7 @@ const Sumbit: React.FC<IFormSubmitProps> = props => {
 
   const renderRedirect = (): object | void => {
     if (redirect) {
-      return <Redirect to='/tasks/' />
+      return <Redirect to='/tasks' />
     }
   }
 

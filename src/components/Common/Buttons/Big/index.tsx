@@ -53,11 +53,11 @@ const Text = styled.span`
   margin-left: 5px;
 `
 
-interface IAddBigButtonProps {
+interface IBigProps {
   name: string
 }
 
-const AddBigButton: React.FC<IAddBigButtonProps> = props => {
+const Big: React.FC<IBigProps> = props => {
   const { name } = props
 
   return (
@@ -70,4 +70,4 @@ const AddBigButton: React.FC<IAddBigButtonProps> = props => {
   )
 }
 
-export default React.memo(AddBigButton)
+export default React.memo(Big)
