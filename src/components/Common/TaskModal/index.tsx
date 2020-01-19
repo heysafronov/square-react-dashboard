@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { ITaskState } from 'store/tasks/types'
 import { deleteTask } from 'store/tasks/actions'
 import Close from 'components/Common/Icons/Common/Close'
-import Shape from 'components/Common/Icons/Common/Shape'
+import Description from 'components/Common/TaskModal/Description'
 
 const variables = {
   colorGray: '#92929d',
@@ -60,31 +60,6 @@ const Title = styled.div`
   font-size: 24px;
   margin: 30px 0;
 `
-const Description = styled.div`
-  display: flex;
-  svg {
-    fill: ${variables.colorGray};
-  }
-`
-const ShapeWrapper = styled.div`
-  width: 20px;
-`
-const HeaderD = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-`
-const TitleD = styled.span`
-  font-size: 14px;
-  letter-spacing: 0.1px;
-  color: #171725;
-  margin: 0 0 10px 10px;
-`
-const TextD = styled.span`
-  margin-left: 10px;
-  color: ${variables.colorGray};
-  font-size: 14px;
-`
 const Delete = styled.button`
   display: flex;
   justify-content: center;
@@ -129,19 +104,7 @@ const TaskModal: React.FC<ITaskModalProps> = props => {
         <Title>
           <span>{title}</span>
         </Title>
-        <Description>
-          <ShapeWrapper>
-            <Shape />
-          </ShapeWrapper>
-          <HeaderD>
-            <TitleD>Description</TitleD>
-            <TextD>
-              {title}. Next Friday should be done. Next Monday we should deliver
-              the first iteration. Make sure, we have a good result to be
-              delivered by the day.
-            </TextD>
-          </HeaderD>
-        </Description>
+        <Description title={title} />
         <Delete onClick={() => removeTask(id)}>Delete</Delete>
       </Modal>
     </Wrapper>,

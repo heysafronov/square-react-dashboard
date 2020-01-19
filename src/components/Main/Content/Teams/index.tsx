@@ -3,12 +3,12 @@ import { AppState } from 'store'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import Loader from 'components/Common/Loader'
+import Big from 'components/Common/Buttons/Big'
 import { getTeams } from 'store/teams/selectors'
 import { fetchTeams } from 'store/teams/actions'
 import TeamCard from 'components/Common/TeamCard'
 import IconOval from 'components/Common/Icons/Common/Oval'
 import { ITeamsState, ITeamListState } from 'store/teams/types'
-import AddBigButton from 'components/Common/Buttons/AddBigButton'
 
 const Wrapper = styled.div`
   border: 1px solid #e2e2ea;
@@ -70,7 +70,7 @@ const Teams: React.FC<IContentTeamsProps> = props => {
       </Header>
       <TeamsList>
         {teams.length ? <TeamCards {...props} /> : <Loader height={'none'} />}
-        <AddBigButton name='Add team' />
+        <Big name='Add team' />
       </TeamsList>
     </Wrapper>
   )

@@ -26,27 +26,27 @@ const itemsData = [
   {
     name: 'Messages',
     icon: IconMessages(),
-    link: '/messages/'
+    link: '/messages'
   },
   {
     name: 'Tasks',
     icon: IconTasks(),
-    link: '/tasks/'
+    link: '/tasks'
   },
   {
     name: 'Schedule',
     icon: IconSchedule(),
-    link: '/schedule/'
+    link: '/schedule'
   },
   {
     name: 'Activity',
     icon: IconActivity(),
-    link: '/activity/'
+    link: '/activity'
   },
   {
     name: 'Settings',
     icon: IconSettings(),
-    link: '/settings/'
+    link: '/settings'
   }
 ]
 
