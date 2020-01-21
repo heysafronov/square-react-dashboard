@@ -3,8 +3,8 @@ import { auth } from 'store/auth/reducers'
 import { show } from 'store/show/reducers'
 import { tasks } from 'store/tasks/reducers'
 import { teams } from 'store/teams/reducers'
-import { composeWithDevTools } from 'redux-devtools-extension'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
 
 const rootReducer = combineReducers({
   auth,
