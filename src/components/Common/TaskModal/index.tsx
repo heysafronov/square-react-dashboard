@@ -87,6 +87,9 @@ const TaskModal: React.FC<ITaskModalProps> = props => {
   const { type, title, onClose, id, deleteTask } = props
 
   const element = document.getElementById('modal')
+  if (!element) {
+    throw new Error('The element #portal wasn`t found')
+  }
 
   const removeTask = (id: string) => {
     deleteTask(id)
@@ -115,6 +118,7 @@ const TaskModal: React.FC<ITaskModalProps> = props => {
 const mapDispatchToProps = {
   deleteTask
 }
+
 export default connect(
   null,
   mapDispatchToProps

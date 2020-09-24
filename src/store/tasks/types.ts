@@ -18,10 +18,7 @@ export interface ITaskState {
 
 export interface ITasksDragAndDropAction {
   type: typeof DRAG_AND_DROP
-  payload: {
-    e: any
-    type: string
-  }
+  payload: any
 }
 
 export interface ITasksFetchTasksAction {

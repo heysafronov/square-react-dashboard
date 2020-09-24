@@ -7,8 +7,8 @@ import Big from 'components/Common/Buttons/Big'
 import { getTeams } from 'store/teams/selectors'
 import { fetchTeams } from 'store/teams/actions'
 import TeamCard from 'components/Common/TeamCard'
+import { ITeamListState } from 'store/teams/types'
 import IconOval from 'components/Common/Icons/Common/Oval'
-import { ITeamsState, ITeamListState } from 'store/teams/types'
 
 const Wrapper = styled.div`
   border: 1px solid #e2e2ea;
@@ -43,11 +43,11 @@ const TeamsList = styled.div`
 `
 
 interface IContentTeamsProps {
-  fetchTeams: typeof fetchTeams
-  teams: ITeamsState[]
+  fetchTeams: () => void
+  teams: ITeamListState[]
 }
 
-const TeamCards = (props: IContentTeamsProps): any => {
+const TeamCards: Function = (props: IContentTeamsProps): JSX.Element[] => {
   return props.teams.map((card: ITeamListState) => (
     <TeamCard key={card.id} {...card} />
   ))

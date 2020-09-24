@@ -41,12 +41,12 @@ const More = styled.div`
     display: none;
   }
 `
-const TasksWrapper = styled<DragWrapperProps>('div')`
+const TasksWrapper = styled.div<DragWrapperProps>`
   height: auto;
   border-left: 1px solid ${variables.colorBorder};
   border-right: 1px solid ${variables.colorBorder};
   padding: 20px 0;
-  background: ${(props: DragWrapperProps) =>
+  background: ${props =>
     props.dragOver
       ? `repeating-linear-gradient(
     45deg,
@@ -59,7 +59,7 @@ const TasksWrapper = styled<DragWrapperProps>('div')`
 `
 
 type DragWrapperProps = {
-  dragOver: () => void
+  dragOver: boolean
 }
 
 interface ITaskWrapperProps {
@@ -69,7 +69,7 @@ interface ITaskWrapperProps {
   option: boolean
 }
 
-const Tasks = (props: ITaskWrapperProps): any => {
+const Tasks: Function = (props: ITaskWrapperProps): JSX.Element[] => {
   return props.data.map((item: ITaskState) => (
     <Task data={item} key={item.id} />
   ))

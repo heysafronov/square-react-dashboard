@@ -167,7 +167,7 @@ const Sumbit: React.FC<IFormSubmitProps> = props => {
       <InputSubmit
         type='submit'
         value='Sign in'
-        disabled={error.login || error.password}
+        disabled={!!(error.login || error.password)}
       />
       {renderRedirect()}
     </form>

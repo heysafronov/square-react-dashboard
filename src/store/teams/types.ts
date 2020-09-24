@@ -15,7 +15,7 @@ export interface ITeamListState {
 }
 
 export interface ITeamsState {
-  list: ITeamListState[]
+  list: ITeamListState[] | object
 }
 
 export interface ITeamsFetchTeamsAction {
