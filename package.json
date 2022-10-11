@@ -34,7 +34,7 @@
     "webpack": "^4.41.2",
     "webpack-bundle-analyzer": "^4.6.1",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.11.3"
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "@types/react": "^16.9.11",
